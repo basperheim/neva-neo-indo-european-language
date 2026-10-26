@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import csv
 import re
 import sys
 from pathlib import Path
@@ -338,6 +337,15 @@ def main() -> None:
     translation.add_argument("--strict", action="store_true",
                              help="Exit 2 on unknown/unsupported input instead of echoing it")
 
+    coverage = subcommands.add_parser(
+        "coverage", help="Audit Oxford English Corpus top-100 word senses against Neva"
+    )
+    coverage.add_argument(
+        "--status", choices=("lemma", "grammar", "partial", "gap"),
+        help="Filter to direct dictionary words, grammar, partial senses, or gaps",
+    )
+    coverage.add_argument("--limit", type=int, default=100)
+
     examples = subcommands.add_parser(
         "examples", help="Show curated bilingual conversation, directions and story examples"
     )
@@ -431,6 +439,18 @@ def main() -> None:
                     parser.exit(2, f"Translation unavailable: {prefix}{exc}\n")
                 print(sentence)
                 print(f"Untranslated (unsupported): {prefix}{exc}", file=sys.stderr)
+    elif arguments.command == "coverage":
+        if not 1 <= arguments.limit <= 100:
+            parser.error("--limit must be between 1 and 100")
+        audit_path = Path(__file__).resolve().parents[1] / "data" / "english_top100_coverage.tsv"
+        with audit_path.open(encoding="utf-8", newline="") as handle:
+            entries = list(csv.DictReader(handle, delimiter="\t"))
+        matching = [entry for entry in entries
+                    if not arguments.status or entry["Status"] == arguments.status]
+        for entry in matching[:arguments.limit]:
+            print(f'{int(entry["Rank"]):3} {entry["English"]:11} '
+                  f'{entry["Status"]:8} {entry["Neva expression"]} '
+                  f'— {entry["Notes"]}')
     elif arguments.command == "examples":
         if arguments.limit < 1 or arguments.limit > 1000:
             parser.error("--limit must be between 1 and 1000")
