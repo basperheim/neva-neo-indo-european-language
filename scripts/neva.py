@@ -283,6 +283,14 @@ def main() -> None:
     gender.add_argument("--inanimate", action="store_true",
                         help="New inanimate concept without an inherited analogy")
 
+    translation = subcommands.add_parser(
+        "translate",
+        help="Translate supported simple clauses offline; defaults to Neva -> English",
+    )
+    translation.add_argument("text", help="One simple sentence (quote as a single argument)")
+    translation.add_argument("--from", dest="source", choices=("neva", "en"), default="neva")
+    translation.add_argument("--to", dest="target", choices=("en", "neva"), default="en")
+
     pronunciation = subcommands.add_parser("ipa", help="Pronounce Neva orthography as IPA")
     pronunciation.add_argument("text")
 
@@ -306,6 +314,13 @@ def main() -> None:
         )
         print(f"{assigned['word']}: {assigned['gender'] or 'undetermined'} "
               f"({assigned['basis']}; {assigned['status']})")
+    elif arguments.command == "translate":
+        from neva_translate import TranslationError, translate
+
+        try:
+            print(translate(arguments.text, source=arguments.source, target=arguments.target))
+        except TranslationError as exc:
+            parser.exit(2, f"Translation unavailable: {exc}\n")
     elif arguments.command == "ipa":
         print(transcribe(arguments.text))
 
