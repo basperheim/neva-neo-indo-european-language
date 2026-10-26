@@ -23,6 +23,54 @@ class NevaTests(unittest.TestCase):
         self.assertEqual(neva.decline("vodrom", "N", "accusative", "plural"), "vodra")
         self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkoi")
 
+    def test_d1_rejected_keep_masculine_oi(self):
+        # D1 (-oes) was explicitly rejected; do not convert vulkoi to vulkoes.
+        self.assertEqual(
+            neva.ENDINGS["M"]["plural"]["nominative"], "oi"
+        )
+        self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkoi")
+
+    def test_d3_d4_approved_endings(self):
+        # D3: neuter collective -a, same for nominative and accusative.
+        self.assertEqual(neva.ENDINGS["N"]["plural"]["nominative"], "a")
+        self.assertEqual(neva.ENDINGS["N"]["plural"]["accusative"], "a")
+        for number, grammatical_case in (
+            ("singular", "genitive"),
+            ("singular", "dative"),
+            ("plural", "genitive"),
+            ("plural", "dative"),
+        ):
+            # D4: shared masculine/neuter thematic oblique endings.
+            self.assertEqual(
+                neva.ENDINGS["M"][number][grammatical_case],
+                neva.ENDINGS["N"][number][grammatical_case],
+            )
+        # Neuter plural subjects take the normal plural verb ending.
+        self.assertEqual(neva.conjugate("kapen")[5], "kapont")
+
+    def test_d6_dictionary_gender_metadata(self):
+        entries = neva.load_lexicon()
+        nouns = [entry for entry in entries if entry["Part of speech"] == "noun"]
+        self.assertEqual(len(nouns), 436)
+        self.assertTrue(all(entry["Gender"] in {"M", "F", "N"} for entry in nouns))
+        self.assertTrue(all(entry["Gender basis"] and entry["Gender status"]
+                            for entry in nouns))
+        self.assertEqual(neva.assign_gender("patheros")["gender"], "M")
+        self.assertEqual(neva.assign_gender("patheros")["status"], "provisional")
+        self.assertEqual(neva.assign_gender("berotrom")["gender"], "N")
+        self.assertEqual(neva.assign_gender("berotrom")["status"], "rule_based")
+
+    def test_d6_new_noun_gender_assignment(self):
+        self.assertEqual(neva.assign_gender("novotrom")["gender"], "N")
+        self.assertEqual(neva.assign_gender("novitia")["gender"], "F")
+        self.assertEqual(neva.assign_gender("novotoros")["gender"], "M")
+        self.assertEqual(neva.assign_gender("unknown", sex="female")["gender"], "F")
+        self.assertEqual(neva.assign_gender("unknown", inanimate=True)["gender"], "N")
+        self.assertEqual(neva.assign_gender("novopontos", head="pontos")["gender"], "M")
+        self.assertEqual(neva.assign_gender("unknown")["status"], "provisional")
+        with self.assertRaises(ValueError):
+            neva.assign_gender("word", head="nonexistenthead")
+
     def test_invalid_declension(self):
         with self.assertRaises(ValueError):
             neva.decline("vulkos", "N", "dative", "singular")
