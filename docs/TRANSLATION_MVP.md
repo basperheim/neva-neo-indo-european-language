@@ -55,6 +55,7 @@ The default is Neva to English. `--from` takes `neva` or `en`, and `--to` takes 
 ## Supported grammar subset
 
 Neva to English:
+- Approved agreeing demonstrative and interrogative-determiner noun phrases: `shos/sha/shod`, `so/sa/tod`, `kinos/kina/kinom`, inflected for noun gender, case and number. Recognizes `sam matheram` as a determiner+noun combination rather than always treating `sam` as a standalone object pronoun.
 - Exactly one simple clause, optionally ended by a period, exclamation mark, or question mark.
 - A small curated set of common verbs in present/past, future with vel, negation with ne, optional explicit subject pronouns, basic nominative noun subjects.
 - Perfect with kapen + -oto participle (Kapo beroto vodrom).
@@ -63,6 +64,7 @@ Neva to English:
 - Limited copular predicates (noun/adjective), present-tense yes/no questions with ka, and a few singular imperatives.
 
 English to Neva:
+- Selected singular `this/that` noun phrases, including forms such as `I see this wolf.` → `Ego vido shom vulkom.`; unrestricted English plurals and `which ...?` questions remain unsupported.
 - Basic personal pronouns and a curated list of singular nouns, common transitive verbs, basic adjectives and recipients.
 - Present, past, future, and have + past participle.
 - Generates explicit Neva subject pronouns for clarity even though the language allows dropping them.
@@ -80,11 +82,11 @@ This Python implementation is the reference behavior for a later pinned Go dicti
 
 ## Status of function words
 
-Core forms defined: distal demonstratives so/sa/tod ("that"), interrogatives kis/kid/ku/koda/komo, question marker ka, conjunctions ke ("and"), **ve ("or")** and **at ("but/yet")**, negation ne, and future marker vel. The translator currently parses `ke` only in a constrained direct-object coordination pattern; `ve`/`at` are recognized dictionary entries but not yet general clause conjunction grammar.
+Core forms defined: proximal demonstratives shos/sha/shod ("this"), distal demonstratives so/sa/tod ("that"), attributive interrogatives kinos/kina/kinom ("which"), independent interrogatives kis/kid/ku/koda/komo, question marker ka, conjunctions ke ("and"), **ve ("or")** and **at ("but/yet")**, negation ne, and future marker vel. The translator currently parses `ke` only in a constrained direct-object coordination pattern; `ve`/`at` are recognized dictionary entries but not yet general clause conjunction grammar.
 
 Not fully finalized: complete demonstrative and interrogative case paradigms, proximal "this", relative pronouns, and subordinate clause construction.
 
-Not yet adopted: "however", "although", "because", and "if". Candidates include **atoge** (from at + emphatic ge), **jaba** (Proto-Germanic-inspired “if”), and **pro tod** (“for that [reason]”). None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
+Not yet adopted: "however", "although", a full causal conjunction "because", and relative clauses. The word `jaba` (“if”) is already adopted, but two-clause parsing is not implemented. Candidates include **atoge** (“however”), **kod** (causal “because”), and relative **jos/josa/jod**. The approved `pro tod` remains a causal phrase (“for that reason”), not a full clause connective. None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
 
 Neva ke is an independent connective, inspired by PIE enclitic *-kwe (whose reflexes appear throughout early Indo-European languages). The independent position is a deliberate simplification.
 
@@ -110,3 +112,16 @@ In interactive `zsh`, single quotes are the safest way to pass a literal exclama
     python3 scripts/neva.py translate --from en --to neva 'Hello!'
 
 A `dquote>` prompt indicates an **unclosed double-quoted string**. A history-expansion complaint involving `!` is separate; single quotes avoid that too. If you see `dquote>`, press Ctrl+C to cancel the incomplete command and re-enter it.
+
+## New determiner CLI
+
+    python3 scripts/neva.py decline-determiner shos --case accusative
+    # shom
+    python3 scripts/neva.py decline-determiner kina --case dative
+    # kine
+    python3 scripts/neva.py translate 'Vido shom vulkom.'
+    # I see this wolf.
+    python3 scripts/neva.py translate --from en --to neva 'I see this wolf.'
+    # Ego vido shom vulkom.
+
+Full conditional, causal, and relative-clause translation is not yet supported; use the documented grammar proposals rather than trusting a partial parser to infer scope and meaning.
