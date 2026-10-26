@@ -1,12 +1,12 @@
 # Neva (Neo-Indo-European) — Core Reference v1.1
 
-**Status:** Working specification v1.1; not a historical reconstruction of Proto-Indo-European. **Noun declensions and gender policy are being reviewed in [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).** Do not consider those choices frozen until approved.  
+**Status:** Working specification v1.1 (decision update 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D3 neuter plural, D4 shared masculine/neuter obliques, D6 gender assignment. **Rejected:** D1 proposed `-oes` (retaining `-oi`). **Still under discussion:** D2 feminine declension and D5 noun ablaut. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
 **Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (798 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
 
-**Established in v1.1:** phonemic spelling, pronunciation of written forms, penultimate stress. **Pending review:** the detailed noun/adjective endings and gender-assignment policy. The verbal personal endings, the infinitive, the regular past, strong past convention, imperative, perfect, default compounding, negation, and question formation.
+**Established in v1.1:** phonemic spelling, pronunciation, penultimate stress, verbal personal endings, infinitive, regular past, strong past convention, imperative, perfect, compounding, negation, and questions. **Now approved:** neuter nominative/accusative plural `-a`, shared M/N oblique forms, and the evidence-first gender policy. **D1 rejected:** keep masculine nominative plural `-oi`. **Not yet settled:** feminine declension details (D2) and whether noun stem ablaut will have limited irregular patterns (D5); existing paradigms continue provisionally, without new forms being introduced.
 
 **Still provisional:** which reconstructed PIE input should be selected for each concept; the complete chain of historical sound changes; semantic naturalness and adoption of candidate compound words. Forms in the dictionary are Neva adaptations, not guaranteed mechanically regular derivations from their listed PIE anchors. In particular, intervocalic `t > th` should be treated as a *historically inspired lexical adaptation in inherited words*, NOT as an automatic sound change applied to new Neva suffixes or compounds. This corrects a conflict in the earlier draft (`patheros` but `gerbotrom`, `beroto`).
 
@@ -26,7 +26,7 @@ Examples of stress: `KA-po be-RO-to VO-drom`, `pa-THE-ros`, `ma-THE-ra`, `me-NO-
 
 ### Nouns and adjectives
 
-Three genders: **M -os**, **F -a**, **N -om**. All ordinary declinable nouns follow the same noun stems and case/number endings; adjectives use the same paradigm and agree in gender, number, case. Gender is lexical; a neuter diminutive stays neuter.
+Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/number paradigm, although historically appropriate M/N oblique endings coincide. Within each current declension class, noun stems normally remain stable; whether limited inherited noun ablaut becomes part of the formal grammar is **D5: unresolved**. Adjectives agree with nouns in gender, number and case. D2 feminine endings remain provisional pending discussion. Gender is lexical; a neuter diminutive stays neuter.
 
 | Case | Masc. sg. *vulk-* | Fem. sg. *mather-* | Neut. sg. *vodr-* | Masc. pl. | Fem. pl. | Neut. pl. |
 |---|---|---|---|---|---|---|
@@ -34,6 +34,19 @@ Three genders: **M -os**, **F -a**, **N -om**. All ordinary declinable nouns fol
 | Accusative | vulkom | matheram | vodrom | vulkons | matherans | vodra |
 | Genitive | vulkosio | matheras | vodrosio | vulkon | matheron | vodron |
 | Dative | vulkoi | matherai | vodroi | vulkois | matherais | vodrois |
+
+**Decisions applied:** D1 **rejected**, so the masculine nominative plural stays `vulkoi`, not `vulkoes`. D3 **approved**: `vodrom → vodra` for both neuter nominative and accusative plural, with normal **plural verb agreement**. D4 **approved**: masculine and neuter share thematic genitive/dative endings (`-osio`, `-oi`, `-on`, `-ois`). These are not additional noun classes. D2 (feminine) and D5 (noun ablaut) have not been approved.
+
+**Gender assignment — D6 approved:**
+
+1. Preserve reasonably evidenced **inherited late-PIE gender** when available; mark uncertain reconstructions provisional instead of pretending they are proven.
+2. For new sex-specific referents, choose M/F unless inherited evidence warrants otherwise.
+3. Use the gender of productive suffixes for derived nouns: e.g., `-otrom` instruments are N; `-otia/-itia` action/abstract nouns F; `-otoros` agents M. Diminutives preserve the base gender.
+4. Compounds inherit the gender of their **final noun head**.
+5. Unattested modern inanimate concepts without a convincing inherited analogy default to **N**, by Neva convention, not purported PIE law.
+6. When a historical assignment is unclear, retain the working lexical gender but label it **provisional** and document the evidence needing review.
+
+The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
 
 Neuter nominative and accusative forms are identical. A separate vocative and dual do not exist. Default SVO order; case endings permit flexible order. **No required articles** (as in Latin or Russian). Genitive precedes the possessed noun (`patherosio eshvos`, the father's horse). Indirect recipients take the dative without a preposition. The simple core uses prepositions + accusative (`en`, `ad`, `apo`, `kom`, `uper`, `per`).
 
@@ -134,7 +147,7 @@ A compound takes the gender, case, and number of the final head. Example `menotr
 - **Compound**: a transparent compound, often an optional candidate rather than a fully lexicalized term.
 - **Function**: pronouns, particles and other grammar words.
 - The source column identifies a comparative PIE resource relevant to the root. **It is not per-row peer review**. To research/confirm each etymology, consult the original PIE lexical entries and their comparative evidence.
-- Dictionary gender abbreviations: M masculine, F feminine, N neuter.
+- Dictionary gender abbreviations: M masculine, F feminine, N neuter. **Gender basis** describes the rule or candidate evidence; **Gender status** distinguishes `rule_based` from `provisional`. Only nouns have these extra fields.
 
 ### Historical reference sources
 
@@ -149,10 +162,12 @@ Google Translate can read arbitrary pseudo-Latin inputs when the language's List
 
 ## Open problems for a later edition
 
-1. Verify each inherited stem against at least one full PIE root entry and implement a *complete deterministic normalization system* or clearly classify lexical remodeling exceptions.
-2. Finalize demonstrative and interrogative declensions and a system for relative clauses.
-3. Standardize more idiomatic technical meanings; many compounds are mechanically interpretable but context-sensitive.
-4. Decide whether to allow a few conventional irregular compound link vowels and whether to differentiate personal vs. inanimate possessive structures.
-5. Create a machine-readable pronunciation lexicon/IPA transcriber and a small corpus to catch ambiguous syllabification.
+1. **D2 (still under discussion):** determine the final feminine singular/plural case endings before updating feminine nouns/adjectives.
+2. **D5 (still under discussion):** decide whether to preserve a closed set of nominal ablaut alternations; stable noun stems remain the working behavior for now.
+3. Verify each inherited stem **and historical gender** against full PIE root and inflection sources, documenting source confidence and any remodeling exceptions.
+4. Finalize demonstrative and interrogative declensions and a system for relative clauses.
+5. Standardize more idiomatic technical meanings; many compounds are mechanically interpretable but context-sensitive.
+6. Decide whether to allow a few conventional irregular compound link vowels and whether to differentiate personal vs. inanimate possessive structures.
+7. Continue improving the existing machine-readable IPA transcriber and build a corpus for compound stress and ambiguous syllabification.
 
 The currently **frozen part** is a usable consistent language skeleton. The PIE ancestry and idiomatic vocabulary are the parts still needing academic and stylistic editorial review.
