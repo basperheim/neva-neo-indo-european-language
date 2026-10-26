@@ -1,4 +1,5 @@
 """Bounded translator contract: supported sentences work; unsupported ones fail loudly."""
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -46,6 +47,36 @@ class TranslatorTests(unittest.TestCase):
                 self.assertEqual(
                     translate(source, source="en", target="neva"), expected
                 )
+
+    def test_cli_translate_command_and_flags(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "neva.py"
+        cases = [
+            (["translate", "Kapo beroto vodrom."], "I have carried water.\n"),
+            (["translate", "--from", "neva", "--to", "en",
+              "Bero vodrom mathere."], "I carry water to the mother.\n"),
+            (["translate", "--from", "en", "--to", "neva",
+              "I carry water."], "Ego bero vodrom.\n"),
+        ]
+        for args, expected in cases:
+            with self.subTest(args=args):
+                completed = subprocess.run(
+                    [sys.executable, str(script), *args],
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                self.assertEqual(completed.returncode, 0, completed.stderr)
+                self.assertEqual(completed.stdout, expected)
+
+    def test_cli_rejects_unsupported_input(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "neva.py"
+        completed = subprocess.run(
+            [sys.executable, str(script), "translate", "Some nonsense statement."],
+            text=True, capture_output=True, check=False,
+        )
+        self.assertEqual(completed.returncode, 2)
+        self.assertIn("Translation unavailable:", completed.stderr)
+        self.assertEqual(completed.stdout, "")
 
     def test_unsupported_input_is_explicit(self):
         invalid = [
