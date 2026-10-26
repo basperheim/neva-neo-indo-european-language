@@ -46,7 +46,7 @@ Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/n
 5. Unattested modern inanimate concepts without a convincing inherited analogy default to **N**, by Neva convention, not purported PIE law.
 6. When a historical assignment is unclear, retain the working lexical gender but label it **provisional** and document the evidence needing review.
 
-The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
+The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
 
 Neuter nominative and accusative forms are identical. A separate vocative and dual do not exist. Default SVO order; case endings permit flexible order. **No required articles** (as in Latin or Russian). Genitive precedes the possessed noun (`patherosio eshvos`, the father's horse). Indirect recipients take the dative without a preposition. The simple core uses prepositions + accusative (`en`, `ad`, `apo`, `kom`, `uper`, `per`).
 
