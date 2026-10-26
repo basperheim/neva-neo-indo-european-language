@@ -48,6 +48,48 @@ class NevaTests(unittest.TestCase):
         # Neuter plural subjects take the normal plural verb ending.
         self.assertEqual(neva.conjugate("kapen")[5], "kapont")
 
+    def test_d5_closed_noun_ablaut(self):
+        # podos continues PIE foot's o/e alternation; nom/acc vs gen/dat.
+        expected = {
+            ("singular", "nominative"): "podos",
+            ("singular", "accusative"): "podom",
+            ("singular", "genitive"): "pedosio",
+            ("singular", "dative"): "pedoi",
+            ("plural", "nominative"): "podoi",
+            ("plural", "accusative"): "podons",
+            ("plural", "genitive"): "pedon",
+            ("plural", "dative"): "pedois",
+        }
+        for (number, grammatical_case), form in expected.items():
+            with self.subTest(number=number, grammatical_case=grammatical_case):
+                self.assertEqual(
+                    neva.decline("podos", "M", grammatical_case, number),
+                    form,
+                )
+        # No irregular stem may be inferred for a novel, normal noun.
+        self.assertEqual(
+            neva.decline("novos", "M", "genitive", "singular"),
+            "novosio",
+        )
+
+    def test_d5_lexicon_metadata_and_compound_heads(self):
+        entries = {entry["Neva"]: entry for entry in neva.load_lexicon()}
+        self.assertNotIn("pedos", entries)
+        self.assertEqual(entries["podos"]["Noun class"], "ablaut")
+        self.assertEqual(entries["podos"]["Strong stem"], "pod")
+        self.assertEqual(entries["podos"]["Oblique stem"], "ped")
+        self.assertEqual(
+            sorted(word for word, row in entries.items()
+                   if row["Noun class"] == "ablaut"),
+            ["podos"],
+        )
+        for word in ("eshvopodos", "shvonopodos", "vulkopodos"):
+            self.assertIn(word, entries)
+            self.assertEqual(entries[word]["Gender basis"], "compound_head:podos")
+        self.assertNotIn("eshvopedos", entries)
+        self.assertNotIn("shvonopedos", entries)
+        self.assertNotIn("vulkopedos", entries)
+
     def test_d6_dictionary_gender_metadata(self):
         entries = neva.load_lexicon()
         nouns = [entry for entry in entries if entry["Part of speech"] == "noun"]
