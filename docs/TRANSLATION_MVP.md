@@ -71,7 +71,7 @@ English to Neva:
 
 ## Limitations and honesty contract
 
-- No unrestricted relative/subordinate clauses, compound sentence parsing, full English question translation, plural English noun generation, or free-form semantics.
+- **Bounded** conditional (`jaba`), causal (`kod`), postnominal relative (`jos/josa/jod`), and pairwise independent-clause coordination (`ke/ve/at`) are supported. **Not supported:** nested clauses, unrestricted relative syntax, free-form discourse, full English question translation, English plural noun generation, or unknown semantics.
 - Translation is deterministic and lexicon-backed. **By default**, unsupported input is preserved unchanged and warns on stderr; **with `--strict`**, unsupported grammar returns `Translation unavailable: ...` and exit code 2. The underlying translation function still raises an explicit exception on unsupported input, so downstream code can make its own policy choice.
 - Neva has no obligatory definite/indefinite articles. The English rendering *conventionally* uses "the" for a subject count noun and "a" for an object count noun; neither definiteness nor indefiniteness is explicitly encoded by the Neva source.
 - Many of the 798 dictionary headwords are provisional derived words and compounds. Glosses are not always idiomatic.
@@ -84,9 +84,9 @@ This Python implementation is the reference behavior for a later pinned Go dicti
 
 Core forms defined: proximal demonstratives shos/sha/shod ("this"), distal demonstratives so/sa/tod ("that"), attributive interrogatives kinos/kina/kinom ("which"), independent interrogatives kis/kid/ku/koda/komo, question marker ka, conjunctions ke ("and"), **ve ("or")** and **at ("but/yet")**, negation ne, and future marker vel. The translator currently parses `ke` only in a constrained direct-object coordination pattern; `ve`/`at` are recognized dictionary entries but not yet general clause conjunction grammar.
 
-Not fully finalized: complete demonstrative and interrogative case paradigms, proximal "this", relative pronouns, and subordinate clause construction.
+Not fully finalized: independent interrogative `kis/kid` case paradigms, general wh-questions, long-distance relative syntax, nested subordinate clauses, and counterfactual conditional mood.
 
-Not yet adopted: "however", "although", a full causal conjunction "because", and relative clauses. The word `jaba` (“if”) is already adopted, but two-clause parsing is not implemented. Candidates include **atoge** (“however”), **kod** (causal “because”), and relative **jos/josa/jod**. The approved `pro tod` remains a causal phrase (“for that reason”), not a full clause connective. None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
+Already adopted: `jaba` (“if”), `kod` (full-clause “because”), and relative pronouns `jos/josa/jod`. Still unapproved: “however” (`atoge`), “although,” and more advanced clause-scope rules. **Atoge** (“however”) remains a candidate. The approved **pro tod** is a causal phrase (“for that reason”); **kod** is the full-clause causal connector. None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
 
 Neva ke is an independent connective, inspired by PIE enclitic *-kwe (whose reflexes appear throughout early Indo-European languages). The independent position is a deliberate simplification.
 
@@ -124,4 +124,24 @@ A `dquote>` prompt indicates an **unclosed double-quoted string**. A history-exp
     python3 scripts/neva.py translate --from en --to neva 'I see this wolf.'
     # Ego vido shom vulkom.
 
-Full conditional, causal, and relative-clause translation is not yet supported; use the documented grammar proposals rather than trusting a partial parser to infer scope and meaning.
+One simple conditional, causal, or relative clause is now supported in the experimental translator, as documented in the [beginner reader](BEGINNER_READER.md). **Nested clauses and unrecognized syntax still require rejection or passthrough.** Do not infer unrestricted scope or idiomatic fluency from a few working examples.
+
+## Clause, adjective, and corpus examples
+
+```bash
+python3 scripts/neva.py translate 'Jaba beres vodrom, vel kapo vodrom.'
+# If you carry water, I will have water.
+python3 scripts/neva.py translate 'Vido matheram josa bereth vodrom.'
+# I see a mother who carries water.
+python3 scripts/neva.py translate 'Bero vodrom kod mathera ne bereth vodrom.'
+# I carry water because the mother does not carry water.
+python3 scripts/neva.py translate 'Shos vulkos est mezoteros apo som vulkom.'
+# This wolf is bigger than that wolf.
+python3 scripts/neva.py decline-relative josa --case accusative
+# josam
+python3 scripts/neva.py compare mezos --degree comparative --gender F
+# mezotera
+python3 scripts/neva.py examples --category Story
+```
+
+`data/sentence_corpus.tsv` is a small, curated bilingual corpus; the test suite verifies every Neva → English row, including short story sentences and direction idioms. The `examples` command prints pairs without requiring any models or web connection. This corpus documents a *tested subset*, not the full space of possible Neva sentences.
