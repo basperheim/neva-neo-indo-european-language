@@ -273,6 +273,19 @@ def main() -> None:
                       default="nominative")
     noun.add_argument("--number", choices=("singular", "plural"), default="singular")
 
+    determiner = subcommands.add_parser(
+        "decline-determiner",
+        help="Decline this/that/which by gender, case and number",
+    )
+    determiner.add_argument(
+        "word", help="Singular nominative: shos/sha/shod, so/sa/tod, kinos/kina/kinom"
+    )
+    determiner.add_argument(
+        "--case", choices=("nominative", "accusative", "genitive", "dative"),
+        default="nominative",
+    )
+    determiner.add_argument("--number", choices=("singular", "plural"), default="singular")
+
     verb = subcommands.add_parser("conjugate", help="Conjugate an infinitive (e.g. beren)")
     verb.add_argument("infinitive")
     verb.add_argument("--tense", choices=("present", "past", "future"), default="present")
@@ -307,6 +320,13 @@ def main() -> None:
             print("No matching headwords")
     elif arguments.command == "decline":
         print(decline(arguments.word, arguments.gender, arguments.case, arguments.number))
+    elif arguments.command == "decline-determiner":
+        from neva_determiners import decline_determiner
+
+        try:
+            print(decline_determiner(arguments.word, arguments.case, arguments.number))
+        except ValueError as exc:
+            parser.exit(2, f"Invalid determiner: {exc}\n")
     elif arguments.command == "conjugate":
         for pronoun, form in zip(PRONOUNS, conjugate(arguments.infinitive, arguments.tense)):
             print(f"{pronoun:12} {form}")
