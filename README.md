@@ -40,6 +40,7 @@ python3 scripts/neva.py compare mezos --degree comparative --gender F  # mezoter
 python3 scripts/neva.py compare nevos --degree superlative --gender N # nevistom
 python3 scripts/neva.py examples --category Greeting --limit 7
 python3 scripts/neva.py examples --category Story
+python3 scripts/neva.py translate --file examples/wolf_and_horse.neva --strict
 python3 scripts/neva.py gender patheros
 python3 scripts/neva.py gender berotrom
 python3 scripts/neva.py gender unknownobject --inanimate
@@ -95,6 +96,8 @@ NEVA_OVERVIEW.md
 data/
   neva_dictionary_v1_1.csv
   sentence_corpus.tsv
+examples/
+  wolf_and_horse.neva
 docs/
   NOUN_MORPHOLOGY_PROPOSAL.md
   OFFLINE_TTS_ROADMAP.md
