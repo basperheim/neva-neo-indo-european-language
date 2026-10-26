@@ -7,6 +7,8 @@
 ## Start here
 
 - **[Language overview and core grammar](NEVA_OVERVIEW.md)** — pronunciation, six vowels (including upsilon `y` /y/), `th/dh/sh`, pronouns, cases, genders, verbs, strong stems, questions, compounds, examples, and references.
+- **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — simple-vowel masculine plurals, feminine dative -e/-es, and historically grounded examples for D5; **not adopted**.
+- **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — **D1 rejected** (retain masc. plural `-oi`), **D3/D4/D6 approved**, **D2/D5 still under discussion**. Approved rules are reflected in the guide, dictionary and Python tools.
 - **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and new **Gender basis / Gender status** provenance fields for all 436 nouns.
 - **[Offline speech/TTS roadmap](docs/OFFLINE_TTS_ROADMAP.md)** — how to produce Neva phonemes and run speech locally, without Google APIs.
