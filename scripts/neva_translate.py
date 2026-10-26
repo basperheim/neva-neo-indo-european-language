@@ -56,7 +56,7 @@ ENGLISH_ADJECTIVES = {
     "new": "nevos", "big": "mezos", "cold": "gelos", "good": "vesos",
     "bad": "dusos", "old": "senos", "red": "rudhos",
     "all": "solvos", "some": "somos", "any": "kvenos",
-    "other": "alteros", "first": "primos",
+    "other": "alteros", "another": "alteros", "first": "primos",
 }
 # English comparative/superlative spellings are outputs of the regular
 # Neva morphology engine, not additional irregular Neva paradigms.
