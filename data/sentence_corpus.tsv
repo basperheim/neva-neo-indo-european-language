@@ -31,3 +31,7 @@ Story	Eshvos videth vulkom.	The horse sees a wolf.
 Story	Mathera videth eshvom.	The mother sees a horse.
 Story	Vulkos gemeth ad domom.	The wolf comes toward the home.
 Story	Vulkos videth eshvom at eshvos videth vulkom.	The wolf sees a horse but the horse sees a wolf.
+Story	Eshvos ieth ad domom.	The horse goes toward the home.
+Story	Shos vulkos est mezoteros apo som eshvom.	This wolf is bigger than that horse.
+Story	Jaba eshvos videth vulkom, eshvos ieth ad domom.	If the horse sees a wolf, the horse goes toward the home.
+Story	Vulkos ne ieth ad domom.	The wolf does not go toward the home.
