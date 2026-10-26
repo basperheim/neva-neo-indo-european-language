@@ -1,6 +1,6 @@
 # Neva everyday vocabulary and English high-frequency coverage
 
-**Status: working lexicon expansion, 2026-10-26.** The canonical CSV contains **828 distinct headwords**, including **449 nouns**, with all noun genders marked by the usual Neva rules. This is **not** a verified list of 828 PIE roots. Source-based adaptations, modern Neva derivations, inherited-inspired extensions, and uncertain coinages are labeled separately.
+**Status: working lexicon expansion, 2026-10-26.** The canonical CSV contains **851 distinct headwords**, including **450 nouns**, with all noun genders marked by the usual Neva rules. This is **not** a verified list of 828 PIE roots. Source-based adaptations, modern Neva derivations, inherited-inspired extensions, and uncertain coinages are labeled separately.
 
 ## Why "language" is `denegva`
 
@@ -97,10 +97,10 @@ The Wikipedia [Most common words in English](https://en.wikipedia.org/wiki/Most_
 
 | Audit status | Count | What it means |
 |---|---:|---|
-| `lemma` | 43 | A basic Neva dictionary headword exists |
-| `grammar` | 23 | Case, affix, agreement, or multi-form construction expresses its grammatical function |
-| `partial` | 7 | At least one sense is expressible, but the English term has further meanings |
-| `gap` | 27 | No reliable general equivalent/rule yet |
+| `lemma` | 57 | A direct Neva dictionary headword or corresponding lexical entry now exists |
+| `grammar` | 25 | A case, affix, agreement, or explicit multi-form construction expresses a grammatical function |
+| `partial` | 18 | One useful meaning has been addressed, but other senses or scope rules remain unresolved |
+| `gap` | 0 | No ranked row lacks a defined treatment (this does **not** imply general translation support) |
 | **Total** | **100** | **100/100 entries assessed; not 100/100 translated** |
 
 Use the new command:
@@ -108,7 +108,7 @@ Use the new command:
 ```bash
 python3 scripts/neva.py coverage --limit 25
 python3 scripts/neva.py coverage --status grammar
-python3 scripts/neva.py coverage --status gap
+python3 scripts/neva.py coverage --status partial
 ```
 
 Some examples:
@@ -121,11 +121,16 @@ Some examples:
 - **than**: `apo` + accusative in comparative constructions.
 - **most**: adjective degree `-ist-` exists, but quantifier “most people” is **not** automatically covered.
 
+### Closing the previous 27 gaps
+
+The user approved a further design pass in October 2026. All 27 originally unaddressed top-100 English words now have a **defined Neva expression or consciously partial sense**, documented in [`ENGLISH_GAPS_RESOLUTION.md`](ENGLISH_GAPS_RESOLUTION.md). In particular, `epi` means on/upon, `api` at/near, `somos` some, `kvenos` any, `solvos` all, `magen` + infinitive expresses can/could (ability), `vela` + present expresses a hypothetical would, and `prodhen` means use.
+
+**Caution:** zero completely unaddressed English frequency rows is *not* a claim of complete machine translation or full English polysemy. The 18 partial rows include especially *as/by/would/so/out/about/get/like/just/could/back/even*, which need discourse rules, context and further grammar.
+
 ### Next priorities
 
-1. Resolve the most valuable **27 top-100 gaps** by grammar family, particularly *can/would*, *some/any/all/other*, *at/on/out*, *there/then*, *also/only*, *about/by*, and ordinal *first*. Avoid a one-English-word/one-Neva-word assumption.
-2. Expand a **small useful animal + everyday objects vocabulary** with etymology/confidence flags; prioritize collocations over dozens of generic compounds.
-3. Create everyday conversational idioms and test them against a beginner corpus; add nouns for ordinary household environments and spatial directions.
-4. Continue a PIE **source audit**, distinguishing firmly reconstructible bases from later family-level sources and Neva analogies.
-
-The current `translate` CLI is a **bounded language-learning prototype**. Exact headword lookup helps with single words, but cannot infer case, article use, or the intended sense of polysemous English words.
+1. Complete *partial-sense* grammar: epistemic/counterfactual/polite modals, quantifier scope, spatial vs abstract prepositions, and phrasal-verb **get**.
+2. Expand natural conversation: please/thanks/goodbye, help, ask/answer, direct speech, left/right/straight, seasons and weather.
+3. Increase sentence corpus and build an explicit parse-tree-based translation engine with honest ambiguity reporting.
+4. Audit etymology and noun gender for all newly coined/borrowed forms before expanding the dictionary again.
+5. Keep [AGENTS.md](../AGENTS.md) and [HANDOFF.md](../HANDOFF.md) updated for future conversations.
