@@ -21,14 +21,23 @@ class NevaTests(unittest.TestCase):
         self.assertEqual(neva.decline("mathera", "F", "genitive", "singular"), "matheras")
         self.assertEqual(neva.decline("vodrom", "N", "nominative", "plural"), "vodra")
         self.assertEqual(neva.decline("vodrom", "N", "accusative", "plural"), "vodra")
-        self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkoi")
+        self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkes")
 
-    def test_d1_rejected_keep_masculine_oi(self):
-        # D1 (-oes) was explicitly rejected; do not convert vulkoi to vulkoes.
-        self.assertEqual(
-            neva.ENDINGS["M"]["plural"]["nominative"], "oi"
-        )
-        self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkoi")
+    def test_d1b_masculine_nominative_plural_es(self):
+        # D1 original -oes rejected; D1b -es explicitly approved.
+        self.assertEqual(neva.ENDINGS["M"]["plural"]["nominative"], "es")
+        self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkes")
+        self.assertEqual(neva.decline("podos", "M", "nominative", "plural"), "podes")
+
+    def test_d2_feminine_dat_singular_and_plural(self):
+        self.assertEqual(neva.ENDINGS["F"]["singular"]["dative"], "e")
+        self.assertEqual(neva.ENDINGS["F"]["plural"]["dative"], "es")
+        self.assertEqual(neva.decline("mathera", "F", "dative", "singular"), "mathere")
+        self.assertEqual(neva.decline("mathera", "F", "dative", "plural"), "matheres")
+        # Other feminine endings remain unchanged.
+        self.assertEqual(neva.decline("mathera", "F", "nominative", "plural"), "matheras")
+        self.assertEqual(neva.decline("mathera", "F", "accusative", "plural"), "matherans")
+        self.assertEqual(neva.decline("mathera", "F", "genitive", "plural"), "matheron")
 
     def test_d3_d4_approved_endings(self):
         # D3: neuter collective -a, same for nominative and accusative.
@@ -55,7 +64,7 @@ class NevaTests(unittest.TestCase):
             ("singular", "accusative"): "podom",
             ("singular", "genitive"): "pedosio",
             ("singular", "dative"): "pedoi",
-            ("plural", "nominative"): "podoi",
+            ("plural", "nominative"): "podes",
             ("plural", "accusative"): "podons",
             ("plural", "genitive"): "pedon",
             ("plural", "dative"): "pedois",
@@ -89,6 +98,14 @@ class NevaTests(unittest.TestCase):
         self.assertNotIn("eshvopedos", entries)
         self.assertNotIn("shvonopedos", entries)
         self.assertNotIn("vulkopedos", entries)
+
+    def test_g_reconstruction_exception_remains_genom(self):
+        # PIE palatovelar ǵ > z is a tendency, not a mandatory input rule.
+        # Genom remains intentionally recognizable in the lexicon.
+        entries = {entry["Neva"]: entry for entry in neva.load_lexicon()}
+        self.assertIn("genom", entries)
+        self.assertEqual(entries["genom"]["English"], "child")
+        self.assertIn("lexical exception", entries["genom"]["Notes"].lower())
 
     def test_d6_dictionary_gender_metadata(self):
         entries = neva.load_lexicon()
