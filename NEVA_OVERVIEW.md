@@ -1,7 +1,7 @@
 # Neva (Neo-Indo-European) — Core Reference v1.4
 
 **Status:** Working specification v1.4 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
-**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (812 candidate headwords).  
+**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (828 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
@@ -46,7 +46,7 @@ Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/n
 5. Unattested modern inanimate concepts without a convincing inherited analogy default to **N**, by Neva convention, not purported PIE law.
 6. When a historical assignment is unclear, retain the working lexical gender but label it **provisional** and document the evidence needing review.
 
-The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
+The dictionary now has `Gender basis` and `Gender status` columns for 449 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
 
 **Closed noun-ablaut inventory (D5, first entry):** `podos` “foot” (M) replaces older draft `pedos`. Its case endings are **unchanged**, but the explicitly listed stem alternates:
 
@@ -235,6 +235,22 @@ A compound takes the gender, case, and number of the final head. Example `menotr
 ## Pronunciation with Google Translate
 
 Google Translate can read arbitrary pseudo-Latin inputs when the language's Listen control is available. **Latin** is a good stylistic approximation, but not accurate Neva TTS. Classical Latin stresses a heavy penultimate syllable; otherwise it stresses the antepenult in words of 3+ syllables, whereas Neva always stresses the penult. A Latin voice also usually interprets `th/dh/sh` and `y` differently. **Italian** is worth A/B testing for flowing cadence, but its rules are also not exact. **Polish** has predominantly penultimate stress, but its spelling conventions, vowel quality and dental fricatives are a poor match. **Icelandic** distinguishes /θ/ and /ð/ using `þ` and `ð` but has initial stress and its letter y no longer indicates /y/. For exact Neva pronunciation, use phoneme/IPA-controlled speech synthesis, not a mismatched natural-language voice.
+
+## Everyday vocabulary and grammatical high-frequency words
+
+The dictionary now includes **828 headwords**, with **449 nouns**. Newly specialized basic vocabulary includes **denegva** (F) “tongue; language,” **vekom** (N) “speech,” and **verdom** (N) “word.” This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern “language” term.
+
+Regular feminine cases: **denegva / denegvam / denegvas / denegve** (nominative / accusative / genitive / dative singular). Other new words include **ovisa** “sheep,” **gansa** “goose,” **susos** “pig,” **miava** “cat” (onomatopoeic Neva invention), **sedotrom** “chair,” **svepotrom** “bed,” **avosa** “dawn,” and **nu** “now.”
+
+Neva now audits all **100** items of the Wikipedia/Oxford English Corpus frequency list in [the coverage dataset](data/english_top100_coverage.tsv): **43 direct headwords**, **23 represented by grammar**, **7 partial senses**, and **27 unresolved gaps**. This is **100/100 assessed, not 100/100 translated**. English articles do not need forms in an article-less language; *of* can be expressed by genitive; future *will* by `vel`; and modal *can/would* still need explicit grammar.
+
+```bash
+python3 scripts/neva.py translate --from en --to neva language
+# denegva
+python3 scripts/neva.py coverage --status gap
+```
+
+For source-graded vocabulary and notes about later inventions, see [Everyday vocabulary](docs/VOCABULARY_EXPANSION.md).
 
 ## PIE laryngeals (h₁, h₂, h₃) and new prepositions
 
