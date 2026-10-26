@@ -11,10 +11,10 @@ import neva  # noqa: E402
 
 
 class NevaTests(unittest.TestCase):
-    def test_dictionary_has_828_distinct_entries(self):
+    def test_dictionary_has_851_distinct_entries(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 828)
-        self.assertEqual(len({entry["Neva"] for entry in entries}), 828)
+        self.assertEqual(len(entries), 851)
+        self.assertEqual(len({entry["Neva"] for entry in entries}), 851)
 
     def test_new_conjunctions_are_registered(self):
         words = {row["Neva"]: row for row in neva.load_lexicon()}
@@ -131,7 +131,7 @@ class NevaTests(unittest.TestCase):
     def test_d6_dictionary_gender_metadata(self):
         entries = neva.load_lexicon()
         nouns = [entry for entry in entries if entry["Part of speech"] == "noun"]
-        self.assertEqual(len(nouns), 449)
+        self.assertEqual(len(nouns), 450)
         self.assertTrue(all(entry["Gender"] in {"M", "F", "N"} for entry in nouns))
         self.assertTrue(all(entry["Gender basis"] and entry["Gender status"]
                             for entry in nouns))
