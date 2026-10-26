@@ -88,6 +88,19 @@ class VocabularyExpansionTests(unittest.TestCase):
                 if row["Status"] == "lemma":
                     self.assertIn(row["Neva expression"], headwords)
 
+    def test_coverage_cli_reports_explicit_gaps(self):
+        script = ROOT / "scripts" / "neva.py"
+        run = subprocess.run(
+            [sys.executable, str(script), "coverage", "--status", "gap",
+             "--limit", "5"],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(run.returncode, 0, run.stderr)
+        lines = run.stdout.splitlines()
+        self.assertEqual(len(lines), 5)
+        self.assertTrue(all("gap" in line for line in lines))
+        self.assertIn("on", run.stdout)
+
     def test_cli_standalone_word_and_uncertain_article(self):
         script = ROOT / "scripts" / "neva.py"
         for args, expected in (
