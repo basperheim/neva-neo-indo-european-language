@@ -59,6 +59,21 @@ class NewGrammarTests(unittest.TestCase):
             with self.subTest(sentence=sentence):
                 self.assertEqual(translate(sentence), expected)
 
+    def test_coordinated_clauses(self):
+        self.assertEqual(
+            translate("Vulkos videth eshvom at eshvos videth vulkom."),
+            "The wolf sees a horse but the horse sees a wolf.",
+        )
+        self.assertEqual(
+            translate("The wolf sees a horse but the horse sees a wolf.", "en", "neva"),
+            "Vulkos videth eshvom at eshvos videth vulkom.",
+        )
+        # Coordination within an object phrase should remain simple syntax.
+        self.assertEqual(
+            translate("Kapo gerbotrom ke menotrom."),
+            "I have a pen and a computer.",
+        )
+
     def test_english_conditional_and_causal(self):
         cases = {
             "If you carry water, I will have water.":
