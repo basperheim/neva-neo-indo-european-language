@@ -114,7 +114,7 @@ class NewGrammarTests(unittest.TestCase):
         self.assertEqual(translate("Ie ad dhverom!"), "Go to the door!")
         self.assertEqual(translate("Ie per dhverom!"), "Go through the door!")
         self.assertEqual(
-            translate("Where is the house?"), "Where is the house?"
+            translate("Ku est domom?"), "Where is the house?"
         )
         self.assertEqual(
             translate("Where is the house?", "en", "neva"),
