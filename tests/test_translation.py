@@ -24,6 +24,30 @@ class TranslatorTests(unittest.TestCase):
             with self.subTest(source=original):
                 self.assertEqual(translate(original, source=source, target=target), expected)
 
+    def test_agreeing_demonstratives_in_translation(self):
+        neva_to_english = {
+            "Shos vulkos videth vodrom.": "This wolf sees water.",
+            "Sha mathera videth shom vulkom.": "This mother sees this wolf.",
+            "Vido shom vulkom.": "I see this wolf.",
+            "Vido sam matheram.": "I see that mother.",
+            "Bero vodrom she mathere.": "I carry water to this mother.",
+            "Vido kinom menotrom.": "I see which computer.",
+        }
+        for source, expected in neva_to_english.items():
+            with self.subTest(source=source):
+                self.assertEqual(translate(source), expected)
+
+        english_to_neva = {
+            "I see this wolf.": "Ego vido shom vulkom.",
+            "I see that mother.": "Ego vido sam matheram.",
+            "The mother sees this wolf.": "Mathera videth shom vulkom.",
+            "This mother sees a wolf.": "Sha mathera videth vulkom.",
+            "I carry water to this mother.": "Ego bero vodrom she mathere.",
+        }
+        for source, expected in english_to_neva.items():
+            with self.subTest(source=source):
+                self.assertEqual(translate(source, source="en", target="neva"), expected)
+
     def test_neva_statements(self):
         examples = {
             "Bero vodrom.": "I carry water.",
