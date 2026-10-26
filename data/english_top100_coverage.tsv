@@ -1,0 +1,101 @@
+Rank	English	Status	Neva expression	Notes
+1	the	grammar	—	No obligatory definite article in Neva.
+2	be	lemma	esen	Copula with irregular conjugation.
+3	to	grammar	ad; -en; dative	Direction, infinitive and recipient are separate usages.
+4	of	grammar	genitive case	Inflect possessor rather than inserting a universal preposition.
+5	and	lemma	ke	Independent conjunction.
+6	a	grammar	—	No obligatory indefinite article.
+7	in	lemma	en	Preposition, accusative in the current simplified grammar.
+8	that	grammar	so/sa/tod; jos/josa/jod	Determiner versus relative pronoun are distinct.
+9	have	lemma	kapen	Have/hold; also perfect auxiliary.
+10	I	lemma	ego	Subject may be omitted when clear.
+11	it	lemma	tod	Neuter pronoun, contextual.
+12	for	lemma	pro	Purposive preposition.
+13	not	lemma	ne	Negative particle.
+14	on	gap	—	On/at-a-surface not separately codified; do not confuse with uper 'over'.
+15	with	lemma	kom	Preposition.
+16	he	lemma	so	Masc. third-person pronoun.
+17	as	gap	—	Comparative or role-marking as not standardized.
+18	you	grammar	ty; jus	Singular/plural distinction.
+19	do	lemma	dhen	General do/place; some English 'do' is auxiliary with no direct equivalent.
+20	at	gap	—	English locative 'at' needs a form; Neva at already means 'but', not 'at'.
+21	this	grammar	shos/sha/shod	Agree for gender, case, number.
+22	but	lemma	at	Conjunction only.
+23	his	grammar	sosio (gen.)	Genitive of so, not a universal possessive suffix.
+24	by	gap	—	Agent/means/near are distinct senses requiring rules.
+25	from	lemma	apo	Preposition.
+26	they	grammar	toi/tai/ta	Distinguishes gender; person/number agreement.
+27	we	lemma	vei	1st plural pronoun.
+28	say	partial	veken	Speak is covered, but quote/report 'say/tell' needs dedicated usage.
+29	her	grammar	sam (acc.); sas (gen.)	Object vs possessive form.
+30	she	lemma	sa	Feminine 3rd pronoun.
+31	or	lemma	ve	Conjunction.
+32	an	grammar	—	No obligatory indefinite article.
+33	will	grammar	vel + finite present	Future marker, not English volitional noun/verb.
+34	my	grammar	mei (gen.)	Genitive 1st-person pronoun.
+35	one	lemma	oinos	Numeral.
+36	all	gap	—	Universal determiner/quantifier not locked.
+37	would	gap	—	Hypothetical/counterfactual mood not adopted.
+38	there	gap	—	Distal place adverb not adopted.
+39	their	grammar	ton (gen.)	Genitive plural pronoun.
+40	what	lemma	kid	Interrogative.
+41	so	gap	—	English consequence/discourse 'so' != Neva so (he/that).
+42	up	partial	uper	'Above/over' is available; directional up needs specification.
+43	out	gap	—	Out/outside not distinct from apo 'from'.
+44	if	lemma	jaba	Conditional conjunction.
+45	about	gap	—	Topic/approximation/circa senses unresolved.
+46	who	grammar	kis; jos/josa/jod	Question who vs relative who.
+47	get	gap	—	Get has many meanings; receiving deshen only covers one.
+48	which	grammar	kinos/kina/kinom	Attributive which, with case/number agreement.
+49	go	lemma	ien	Verb.
+50	me	lemma	me	Accusative first singular.
+51	when	lemma	koda	Interrogative; temporal subordinating when not yet defined.
+52	make	partial	teshen; dhen	Build/do cover narrower senses; no unrestricted make.
+53	can	gap	—	Ability modal not defined.
+54	like	gap	—	Similarity, enjoyment, and examples are distinct.
+55	time	gap	—	Year vetom and day deinom exist, but generic time is open.
+56	no	grammar	ne	Answer particle (also ne = not in standard grammar).
+57	just	gap	—	Only/recently/justice meanings unresolved.
+58	him	lemma	som	Masc. accusative object pronoun.
+59	know	lemma	zenen	Recognize/know; more abstract knowledge in vidom.
+60	take	partial	segen; deshen	Grasp/receive are narrower than general take.
+61	people	partial	manos (human being)	Plural/collective people needs explicit usage.
+62	into	lemma	en	Goal location: en + accusative; distinguish at-rest vs motion in context.
+63	year	lemma	vetom	Neuter noun.
+64	your	grammar	tei (sg. gen.); voso (pl. gen.)	Possession by case.
+65	good	lemma	vesos	Adjective with gender and case endings.
+66	some	gap	—	Partitive indefinite determiner not defined.
+67	could	gap	—	Modal possibility/ability (past/polite) not defined.
+68	them	grammar	tons/tans/ta	Accusative plural gender forms.
+69	see	lemma	viden	Verb.
+70	other	gap	—	Contrastive demonstrative/adjective not defined.
+71	than	grammar	apo + accusative	Comparison with -oter- adjective.
+72	then	gap	—	Temporal/consequential adverb not defined.
+73	now	lemma	nu	Adverb, no gender ending.
+74	look	lemma	dershen	To look at/observe.
+75	only	gap	—	Focus particle not defined.
+76	come	lemma	gemen	Verb.
+77	its	grammar	tosio (gen.)	Neuter possessive.
+78	over	lemma	uper	Preposition.
+79	think	lemma	menen	Verb.
+80	also	gap	—	Additive discourse particle not defined.
+81	back	gap	—	Direction/return and bodily back require distinctions.
+82	after	gap	—	Temporal/spatial after not codified.
+83	use	gap	—	Use as verb or noun needs lexical choice.
+84	two	lemma	dvo	Numeral.
+85	how	lemma	komo	Interrogative.
+86	our	grammar	noso (gen.)	1st-person plural genitive.
+87	work	lemma	verzen	Verb 'work'; noun work requires context.
+88	first	gap	—	Ordinal first not defined; need numeral ordinal rule.
+89	well	lemma	vese	Adverb; greeting extended separately.
+90	way	partial	pontos	Road/path sense only, not method/manner.
+91	even	gap	—	Degree/adverb and adjective meanings unresolved.
+92	new	lemma	nevos	Adjective with regular gender and cases.
+93	want	lemma	velen	Verb.
+94	because	lemma	kod	Finite causal clause connector; pro tod for 'because of that'.
+95	any	gap	—	Indefinite quantifier not locked.
+96	these	grammar	shes/shas/sha	Proximal plural determiner.
+97	give	lemma	doen	Verb.
+98	day	lemma	deinom	Neuter noun.
+99	most	partial	-ist-	Superlative degree exists, generalized most/quantifier unresolved.
+100	us	lemma	nos	Accusative first-person plural.
