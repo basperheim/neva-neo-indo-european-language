@@ -286,6 +286,31 @@ def main() -> None:
     )
     determiner.add_argument("--number", choices=("singular", "plural"), default="singular")
 
+    relative = subcommands.add_parser(
+        "decline-relative", help="Decline jos/josa/jod relative pronouns",
+    )
+    relative.add_argument("word", help="jos (M), josa (F), jod (N)")
+    relative.add_argument(
+        "--case", choices=("nominative", "accusative", "genitive", "dative"),
+        default="nominative",
+    )
+    relative.add_argument("--number", choices=("singular", "plural"), default="singular")
+
+    comparison = subcommands.add_parser(
+        "compare", help="Inflect comparative/superlative adjectives",
+    )
+    comparison.add_argument("word", help="positive M sg. adjective, e.g. mezos")
+    comparison.add_argument(
+        "--degree", choices=("positive", "comparative", "superlative"),
+        default="comparative",
+    )
+    comparison.add_argument("--gender", choices=("M", "F", "N"), default="M")
+    comparison.add_argument(
+        "--case", choices=("nominative", "accusative", "genitive", "dative"),
+        default="nominative",
+    )
+    comparison.add_argument("--number", choices=("singular", "plural"), default="singular")
+
     verb = subcommands.add_parser("conjugate", help="Conjugate an infinitive (e.g. beren)")
     verb.add_argument("infinitive")
     verb.add_argument("--tense", choices=("present", "past", "future"), default="present")
@@ -327,6 +352,27 @@ def main() -> None:
             print(decline_determiner(arguments.word, arguments.case, arguments.number))
         except ValueError as exc:
             parser.exit(2, f"Invalid determiner: {exc}\n")
+    elif arguments.command == "decline-relative":
+        from neva_relatives import decline_relative
+
+        try:
+            print(decline_relative(arguments.word, arguments.case, arguments.number))
+        except ValueError as exc:
+            parser.exit(2, f"Invalid relative pronoun: {exc}\n")
+    elif arguments.command == "compare":
+        from neva_comparison import inflect_adjective
+
+        try:
+            valid_words = {row["Neva"] for row in load_lexicon()
+                           if row["Part of speech"] == "adjective"}
+            if arguments.word not in valid_words:
+                raise ValueError("choose an adjective headword in the Neva dictionary")
+            print(inflect_adjective(
+                arguments.word, arguments.degree, gender=arguments.gender,
+                grammatical_case=arguments.case, number=arguments.number,
+            ))
+        except ValueError as exc:
+            parser.exit(2, f"Invalid comparison: {exc}\n")
     elif arguments.command == "conjugate":
         for pronoun, form in zip(PRONOUNS, conjugate(arguments.infinitive, arguments.tense)):
             print(f"{pronoun:12} {form}")
