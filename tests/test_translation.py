@@ -10,6 +10,20 @@ from neva_translate import TranslationError, translate
 
 
 class TranslatorTests(unittest.TestCase):
+    def test_phrasebook_bidirectional(self):
+        examples = [
+            ("Vese!", "Hello!", "neva", "en"),
+            ("Vesom deinom!", "Good day!", "neva", "en"),
+            ("Komo es?", "How are you?", "neva", "en"),
+            ("Hello!", "Vese!", "en", "neva"),
+            ("Good day!", "Vesom deinom!", "en", "neva"),
+            ("How are you?", "Komo es?", "en", "neva"),
+            ("Good day", "Vesom deinom", "en", "neva"),
+        ]
+        for original, expected, source, target in examples:
+            with self.subTest(source=original):
+                self.assertEqual(translate(original, source=source, target=target), expected)
+
     def test_neva_statements(self):
         examples = {
             "Bero vodrom.": "I carry water.",
@@ -71,12 +85,34 @@ class TranslatorTests(unittest.TestCase):
     def test_cli_rejects_unsupported_input(self):
         script = Path(__file__).resolve().parents[1] / "scripts" / "neva.py"
         completed = subprocess.run(
-            [sys.executable, str(script), "translate", "Some nonsense statement."],
+            [sys.executable, str(script), "translate", "--strict", "Some nonsense statement."],
             text=True, capture_output=True, check=False,
         )
         self.assertEqual(completed.returncode, 2)
         self.assertIn("Translation unavailable:", completed.stderr)
         self.assertEqual(completed.stdout, "")
+
+    def test_cli_passes_unknown_through_without_claiming_translation(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "neva.py"
+        for text in ("Hello!", "Good day!", "Unknown @#$ text.", "Bero xyz vodrom."):
+            with self.subTest(text=text):
+                completed = subprocess.run(
+                    [sys.executable, str(script), "translate", text],
+                    text=True, capture_output=True, check=False,
+                )
+                self.assertEqual(completed.returncode, 0)
+                self.assertEqual(completed.stdout, text + "\n")
+                self.assertIn("Untranslated (unsupported):", completed.stderr)
+
+    def test_cli_phrasebook_reverse_flags(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "neva.py"
+        completed = subprocess.run(
+            [sys.executable, str(script), "translate", "--from", "en",
+             "--to", "neva", "Hello!"],
+            text=True, capture_output=True, check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertEqual(completed.stdout, "Vese!\n")
 
     def test_unsupported_input_is_explicit(self):
         invalid = [
