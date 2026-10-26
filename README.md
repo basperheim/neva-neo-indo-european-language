@@ -7,10 +7,10 @@
 ## Start here
 
 - **[Language overview and core grammar](NEVA_OVERVIEW.md)** — pronunciation, six vowels (including upsilon `y` /y/), `th/dh/sh`, pronouns, cases, genders, verbs, strong stems, questions, compounds, examples, and references.
-- **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — simple-vowel masculine plurals, feminine dative -e/-es, and historically grounded examples for D5; **not adopted**.
+- **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — simple-vowel masculine plurals and feminine dative -e/-es (**pending**), plus documented D5 inherited-noun ablaut examples (first one adopted).
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
-- **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — **D1 rejected** (retain masc. plural `-oi`), **D3/D4/D6 approved**, **D2/D5 still under discussion**. Approved rules are reflected in the guide, dictionary and Python tools.
-- **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and new **Gender basis / Gender status** provenance fields for all 436 nouns.
+- **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — **D1 rejected** (retain masc. plural `-oi`), **D3/D4/D5/D6 approved**, **D1b (simpler masculine plural) and D2 (feminine datives) still under discussion**. Approved rules are reflected in the guide, dictionary and Python tools.
+- **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
 - **[Offline speech/TTS roadmap](docs/OFFLINE_TTS_ROADMAP.md)** — how to produce Neva phonemes and run speech locally, without Google APIs.
 
 ## Try the Python tools
@@ -22,6 +22,7 @@ python3 scripts/neva.py lookup water
 python3 scripts/neva.py lookup vulkos --neva
 python3 scripts/neva.py decline vulkos M --case accusative --number plural
 python3 scripts/neva.py decline mathera F --case genitive
+python3 scripts/neva.py decline podos M --case genitive
 python3 scripts/neva.py gender patheros
 python3 scripts/neva.py gender berotrom
 python3 scripts/neva.py gender unknownobject --inanimate
@@ -45,10 +46,10 @@ This is a **lookup, inflection, evidence-qualified gender suggestion and pronunc
 | Stress | Penultimate syllable |
 | Genders | Masculine, feminine, neuter; **D6 policy approved**, source genders still subject to evidence review |
 | Cases | Nominative, accusative, genitive, dative; M/N thematic genitive/dative sharing approved (D4); feminine endings D2 pending |
-| Numbers | Singular/plural; no dual. Masc. nominative plural **-oi** retained (D1 rejected), neuter nominative/accusative plural **-a** approved (D3) |
+| Numbers | Singular/plural; no dual. Masc. nominative plural currently **-oi** (original `-oes` rejected; simpler replacement D1b pending), neuter nominative/accusative plural **-a** approved (D3) |
 | Subjects | Optional (pro-drop), explicit for emphasis/clarity |
 | Verbs | One ending set; small closed set of strong past stems, one suppletive copula |
-| Word formation | Regular suffixes and head-final compounds; nominal ablaut D5 pending |
+| Word formation | Regular suffixes and head-final compounds; D5 approves a closed set of inherited-inspired noun ablaut exceptions, starting with `podos → pedosio` |
 
 ## Project layout
 
