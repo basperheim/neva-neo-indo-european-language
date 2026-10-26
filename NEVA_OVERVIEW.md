@@ -1,12 +1,12 @@
-# Neva (Neo-Indo-European) — Core Reference v1.3
+# Neva (Neo-Indo-European) — Core Reference v1.4
 
-**Status:** Working specification v1.3 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
-**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (808 candidate headwords).  
+**Status:** Working specification v1.4 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
+**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (812 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
 
-**Established in v1.3:** phonemic spelling, pronunciation, penultimate stress, verbal personal endings, infinitive, regular past, strong past convention, imperative, perfect, compounding, negation, and questions. **Newly approved:** D1b `vulkos → vulkes` (masculine nominative plural `-es`) and D2 `mathera → mathere/matheres` (feminine dative singular/plural `-e/-es`). D3 retains neuter nominative/accusative plural `-a`. D4 retains M/N shared oblique endings. **D5 approved:** ordinary nouns have stable stems, while a closed list of historically motivated exceptions is stored explicitly in the lexicon. The first is `podos` (foot), with `pod-` for nominative/accusative and `ped-` for genitive/dative. Other nouns never alternate automatically.
+**Established in v1.4:** phonemic spelling, pronunciation, penultimate stress, verbal personal endings, infinitive, regular past, strong past convention, imperative, perfect, compounding, negation, and questions. **Newly approved:** D1b `vulkos → vulkes` (masculine nominative plural `-es`) and D2 `mathera → mathere/matheres` (feminine dative singular/plural `-e/-es`). D3 retains neuter nominative/accusative plural `-a`. D4 retains M/N shared oblique endings. **D5 approved:** ordinary nouns have stable stems, while a closed list of historically motivated exceptions is stored explicitly in the lexicon. The first is `podos` (foot), with `pod-` for nominative/accusative and `ped-` for genitive/dative. Other nouns never alternate automatically.
 
 **Still provisional:** which reconstructed PIE input should be selected for each concept; the complete chain of historical sound changes; semantic naturalness and adoption of candidate compound words. Forms in the dictionary are Neva adaptations, not guaranteed mechanically regular derivations from their listed PIE anchors. **Etymological adaptations are guidelines, not unbreakable spelling laws:** a limited, explicitly documented exception is acceptable when a form is easier to pronounce, more recognizable, or preferred for Neva. For example, `genom` (child) intentionally keeps initial `g` although a tentative PIE `ǵ → z` tendency might predict `z`; the lexicon records the deviation and its reason. In particular, intervocalic `t > th` should be treated as a *historically inspired lexical adaptation in inherited words*, NOT as an automatic sound change applied to new Neva suffixes or compounds. This corrects a conflict in the earlier draft (`patheros` but `gerbotrom`, `beroto`).
 
@@ -135,9 +135,29 @@ Examples: **Shod genom** (“this child”), **sha mathera** (“this mother”)
 
 **Existing conjunctions and particles:** `ke` “and”, `ve` “or”, `at` “but/yet”, `ne` “not”, `ka` yes/no question marker, `vel` future marker. **Adopted `jaba`** /ˈja.ba/ means “if” (adapted from Proto-Germanic *jabai*). Simple conditions use ordinary indicative clauses, e.g. `Jaba beres vodrom, vel kapo vodrom.` (“If you carry water, I will have water”). The current translator does **not yet parse** subordinate conditional clauses.
 
-**Unresolved next choices:** relative pronouns (candidate `jos / josa / jod`), full-clause “because” (recommended `kod` vs `pro jod`), adjective comparative/superlative morphology (`-oter- / -ist-`), and `atoge` “however.” The existing `pro tod` remains a *prepositional phrase* “for that reason”, not a general finite clause conjunction. See [clauses and adjective comparison discussion](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md).
+**Now approved:** Relative pronouns **jos/josa/jod**, causal conjunction **kod** (“because” introducing a full finite clause), comparative adjective **-oter-**, superlative **-ist-**, and comparative **apo + accusative** (“than”). The already approved **jaba** (“if”) uses normal finite clauses for real/likely conditions. Relative pronouns agree in gender/number with their antecedents, but their case comes from their grammatical role in the relative clause. Neva `ja` already means “yes”; feminine relative `josa` avoids a collision. The existing `pro tod` remains a prepositional phrase “for that reason”, distinct from finite-clause `kod`. `atoge` (“however”) remains a proposal. See [the approved grammar and outstanding decisions](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md).
 
 Neva independent `ke` is inspired by PIE enclitic `*-kʷe` (compare Latin `-que` and Sanskrit `ca`); proximal `sh-` is independently inspired by PIE deictic `*ḱe-`. These are *different* roots and intentionally different Neva phonemes.
+
+### Relative, conditional, causal, and comparison examples
+
+| Neva | English |
+|---|---|
+| Vido matheram josa bereth vodrom. | I see a mother who carries water. |
+| Jaba beres vodrom, vel kapo vodrom. | If you carry water, I will have water. |
+| Bero vodrom kod mathera ne bereth vodrom. | I carry water because the mother does not carry water. |
+| Shos vulkos est mezoteros apo som vulkom. | This wolf is bigger than that wolf. |
+| Vulkos videth eshvom at eshvos videth vulkom. | The wolf sees a horse but the horse sees a wolf. |
+
+| Degree | Masculine | Feminine | Neuter |
+|---|---|---|---|
+| Big (positive) | mezos | meza | mezom |
+| Bigger (comparative) | mezoteros | mezotera | mezoterom |
+| Biggest (superlative) | mezistos | mezista | mezistom |
+
+All comparative and superlative forms take ordinary case/number endings after `-oter-` and `-ist-`. Simple factual conditionals use no new conjugation or mandatory subjunctive. Full relative declension is defined in `scripts/neva_relatives.py`; generation is available via `decline-relative`. The limited translator recognizes the documented subset; it is **not** a general parser for nested subordinate clauses.
+
+See the [beginner reader](docs/BEGINNER_READER.md) and its 36-sentence [verified bilingual corpus](data/sentence_corpus.tsv).
 
 ### Experimental offline translation
 
@@ -151,6 +171,11 @@ The CLI now accepts `translate` for a deliberately **small, strict** grammar sub
     # Ego bero vodrom.
     python3 scripts/neva.py decline-determiner shos --case accusative
     # shom
+    python3 scripts/neva.py decline-relative josa --case accusative
+    # josam
+    python3 scripts/neva.py compare mezos --degree comparative --gender F
+    # mezotera
+    python3 scripts/neva.py examples --category Story --limit 5
     python3 scripts/neva.py translate --from en --to neva "I see this wolf."
     # Ego vido shom vulkom.
 
@@ -220,7 +245,7 @@ We propose preserving PIE laryngeal **vowel-coloring effects** while removing la
 1. **Vowel-simplification follow-up:** review other inflection endings containing `oi`, `ai`, or adjacent vowels without retroactively treating all vowel combinations as prohibited. D1b and D2 are implemented; further changes require a separate decision.
 2. **D5 (accepted, narrow scope):** review evidence before proposing additional irregular nouns for the *closed list*. The current exceptional noun is `podos`; no irregular declension is allowed without explicit stem data, a motivation, and tests.
 3. Verify each inherited stem **and historical gender** against full PIE root and inflection sources, documenting source confidence and any remodeling exceptions.
-4. Finalize demonstrative and interrogative declensions and a system for relative clauses.
+4. **Partially completed:** demonstrative/which and relative pronoun declensions are approved. Finish separate interrogative `kis/kid` case declension and more complex relative/wh syntax.
 5. Standardize more idiomatic technical meanings; many compounds are mechanically interpretable but context-sensitive.
 6. Decide whether to allow a few conventional irregular compound link vowels and whether to differentiate personal vs. inanimate possessive structures.
 7. Continue improving the existing machine-readable IPA transcriber and build a corpus for compound stress and ambiguous syllabification.
