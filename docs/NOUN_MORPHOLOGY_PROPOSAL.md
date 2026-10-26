@@ -1,6 +1,6 @@
-# Neva noun morphology: decisions for review
+# Neva noun morphology: accepted decisions and history
 
-**Decision status (2026-10-26):** **D1 rejected** (keep masculine nominative plural `-oi`); **D3, D4, D5 (closed irregular noun set), and D6 approved and adopted**; **D2 remains under discussion**, as does the separate D1b vowel-simplification question. D1's `-oes` was rejected. The closed irregular noun inventory begins with `podos`. This document records both the historical motivation and the user's votes. The adopted rules also appear in `NEVA_OVERVIEW.md`, the dictionary metadata, and `scripts/neva.py`.
+**Decision status (2026-10-26):** D1's `-oes` proposal was **rejected**. Its interim `-oi` masculine nominative plural was subsequently replaced by approved **D1b `-es`** (`vulkes`). **D2 approved** feminine dative singular `-e` (`mathere`) and plural `-es` (`matheres`), leaving the other six forms unchanged. **D3, D4, D5 (closed irregular noun set), and D6 remain approved.** The first irregular noun is `podos`. This document retains rejected options as historical design notes; the current canonical paradigm and `scripts/neva.py` take precedence.
 
 ## Clarification: gender and declension are different concepts
 
@@ -10,13 +10,13 @@ Neva should keep **three productive gender-associated patterns** initially (M `-
 
 ## D1 — Masculine *o*-stem plural nominative
 
-**REJECTED: `-oes`. Retain the existing nominative plural `-oi` (e.g., `vulkoi`).** The explanation below records the rejected alternative for historical comparison only.
+**D1 `-oes` rejected. D1b `-es` APPROVED, replacing temporary `-oi`.** Masculine nominative plural is now `vulkes` (wolf → wolves), not `vulkoes` or `vulkoi`. This deliberately generalizes the PIE *athematic* nominative plural ending `*-es` to Neva masculine nouns instead of directly continuing the thematic `*-ōs`.
 
-PIE thematic animate nom. pl. *-ōs* is historically associated with *-o-es*; Neva does not contrast long/short vowels. The spelling `-oes` (two vowel syllables under current Neva rules; **not** the existing `oe` diphthong) retains a transparent plural distinction: `vulkos` (wolf) vs. `vulkoes` (wolves). This is an *invented analogical spelling*, not a reconstructed PIE surface form. Alternative A: `-os` like PIE *-ōs* with lost length, leading to nominative singular/plural homophony. Alternative B: keep `-oi` (v1.1, but historically weaker).
+PIE thematic animate nom. pl. *-ōs* is historically associated with *-o-es*; Neva does not contrast long/short vowels. The spelling `-oes` (two vowel syllables under current Neva rules; **not** the existing `oe` diphthong) retains a transparent plural distinction: `vulkos` (wolf) vs. `vulkoes` (wolves). This is an *invented analogical spelling*, not a reconstructed PIE surface form. Alternative A: `-os` like PIE *-ōs* with lost length, leading to nominative singular/plural homophony. Alternative B (formerly interim): `-oi` (v1.1, now superseded by `-es`).
 
 ## D2 — Feminine *-a* declension
 
-**UNDER DISCUSSION: currently retain v1.1 `-a, -am, -as, -ai` singular; `-as, -ans, -on, -ais` plural provisionally** (nom., acc., gen., dat.). These broadly echo later Indo-European *ā*-stem patterns and PIE *-eh₂* stems. Identical F singular genitive and plural nominative (`matheras`) is normal syncretism, not a defect.
+**APPROVED:** `-a, -am, -as, -e` singular and `-as, -ans, -on, -es` plural (nom., acc., gen., dat.). Thus `mathera, matheram, matheras, mathere` and `matheras, matherans, matheron, matheres`. This approximates the historical `*-eh₂` feminine class, while `-ai > -e` and `-ais > -es` are Neva regularizations inspired by later Greek monophthongization. Identical F singular genitive and plural nominative (`matheras`) is normal syncretism.
 
 ## D3 — Neuter collective plural
 
@@ -28,7 +28,7 @@ PIE thematic animate nom. pl. *-ōs* is historically associated with *-o-es*; Ne
 
 ## D5 — Stems and noun ablaut
 
-**APPROVED: ordinary nouns do not undergo productive stem ablaut, but a small, closed inventory of inherited-inspired irregular nouns is allowed.** Use stable stems (`vulk-`, `mather-`, `vodr-`) across four cases and two numbers. PIE athematic nouns could change stem vowels and accent, but recreating such alternations in every noun would defeat our simplicity goal. The first documented exception is `podos` (foot): strong stem `pod-` (nominative/accusative), oblique `ped-` (genitive/dative). Thus `podos, podom, pedosio, pedoi`; nominative plural currently `podoi`. This reflects PIE *pṓds / ped-* vowel grades but uses Neva case endings. Other inherited noun exceptions require a historical argument and **explicit lexicon stem columns**; new noun formations remain regular.
+**APPROVED: ordinary nouns do not undergo productive stem ablaut, but a small, closed inventory of inherited-inspired irregular nouns is allowed.** Use stable stems (`vulk-`, `mather-`, `vodr-`) across four cases and two numbers. PIE athematic nouns could change stem vowels and accent, but recreating such alternations in every noun would defeat our simplicity goal. The first documented exception is `podos` (foot): strong stem `pod-` (nominative/accusative), oblique `ped-` (genitive/dative). Thus `podos, podom, pedosio, pedoi`; nominative plural now `podes`. This reflects PIE *pṓds / ped-* vowel grades but uses Neva case endings. Other inherited noun exceptions require a historical argument and **explicit lexicon stem columns**; new noun formations remain regular.
 
 ## D6 — Assigning grammatical gender
 
@@ -50,16 +50,16 @@ In PIE, an earlier common/animate vs neuter/inanimate system probably preceded a
 Nominative    vulkos        mathera         vodrom
 Accusative    vulkom        matheram        vodrom
 Genitive      vulkosio      matheras        vodrosio
-Dative        vulkoi        matherai        vodroi
+Dative        vulkoi        mathere         vodroi
 
               M PLURAL      F PLURAL        N PLURAL
-Nominative    vulkoi         matheras        vodra
+Nominative    vulkes        matheras        vodra
 Accusative    vulkons       matherans       vodra
 Genitive      vulkon        matheron        vodron
-Dative        vulkois       matherais       vodrois
+Dative        vulkois       matheres        vodrois
 ```
 
-**Compatibility decision:** Keep the v1.1 form `vulkoi`; D1's proposed `vulkoes` was rejected. D2 feminine endings remain as existing draft behavior while discussed. **D5 is now implemented** via explicitly stored noun stems, beginning with `podos`; D1b masculine plural vowel simplification is still open. No alternative forms should enter production vocabulary yet.
+**Compatibility decision:** The former masculine plural `vulkoi` and feminine datives `matherai/matherais` are obsolete as generated inflections; use `vulkes` and `mathere/matheres`. D4's existing M/N genitive/dative spellings `-osio`, `-oi`, `-on`, `-ois` **remain unchanged**, because the user approved their shared behavior but has not selected replacements for their vowel sequences. D5 remains implemented using explicit lexical strong/oblique stems. Use the v1.2 grammar for current generated forms.
 
 **D6 metadata:** The dictionary records `Gender basis` and `Gender status` for nouns. A base noun with an unverified PIE anchor is marked `inherited_candidate` / `provisional`. Rule-formed derivations are marked `rule_based`; compounds inherit the head noun's `provisional` status when its historical gender is not yet verified. Other compounds with well-established heads may be `rule_based`. The generator can recommend a new modern inanimate noun as neuter, but it does not overwrite existing gender assignments.
 
@@ -75,8 +75,9 @@ Dative        vulkois       matherais       vodrois
 
 | Decision | Recommendation | Status |
 |---|---|---|
-| D1: masculine nominative plural | proposed `-oes`; retain `-oi` | **REJECTED** (`-oi` stays) |
-| D2: feminine paradigm | retain v1.1 provisionally | **DISCUSS** (not adopted) |
+| D1: masculine nominative plural | proposed `-oes` | **REJECTED** |
+| D1b: masculine nominative plural | `-es` replaces interim `-oi` | **APPROVED / IMPLEMENTED** |
+| D2: feminine dative singular/plural | `-e/-es` replaces `-ai/-ais` | **APPROVED / IMPLEMENTED** |
 | D3: neuter plural | `-a`, nom.=acc. | **APPROVED** |
 | D4: M/N shared oblique endings | retain | **APPROVED** |
 | D5: noun ablaut | regular by default; closed irregular inventory, first `podos` | **APPROVED / IMPLEMENTED** |
