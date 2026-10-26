@@ -355,9 +355,18 @@ def from_neva(text: str) -> str:
         else:
             adj = next((x for x in adjective_forms().get(after[0], [])
                         if x.grammatical_case == "nominative"), None)
-            if adj is None or len(after) != 1:
-                raise TranslationError("copula supports one simple nominative noun or adjective predicate")
+            if adj is None:
+                raise TranslationError("copula supports a nominative noun or adjective predicate")
             predicate = adj.english
+            if len(after) > 1:
+                if len(after) < 3 or after[1] != "apo" or not after[0].endswith(
+                    ("oteros", "otera", "oterom", "oteres", "oteras")
+                ):
+                    raise TranslationError("only comparative 'apo + accusative noun' complements are supported")
+                comparison, end = _render_np(after, "accusative", 2, "dative")
+                if end != len(after):
+                    raise TranslationError("unsupported trailing comparative phrase")
+                predicate += " than " + comparison
         phrase = _verb_phrase(infinitive, person, tense, negated)
     else:
         phrase = _verb_phrase(infinitive, person, tense, negated, perfect)
@@ -460,6 +469,36 @@ def from_english(text: str) -> str:
         tokens = tokens[pos:]
     if not tokens:
         raise TranslationError("missing English finite verb")
+    if tokens[0] in {"is", "am", "are", "was", "were"}:
+        copula_word = tokens.pop(0)
+        copula_tense = "past" if copula_word in {"was", "were"} else "present"
+        if not tokens or tokens[0] not in ENGLISH_ADJECTIVES:
+            raise TranslationError("copular English requires a supported adjective")
+        adjective = ENGLISH_ADJECTIVES[tokens.pop(0)]
+        # A noun subject has recoverable gender. A personal 'I/you' does not;
+        # don't guess their grammatical gender when forming an adjective.
+        if subject.lower() in {"ego", "ty", "vei", "jus", "toi", "so", "sa", "tod"}:
+            gender = {"so": "M", "sa": "F", "tod": "N"}.get(subject.lower())
+            if gender is None:
+                raise TranslationError("gender of a pronoun subject is needed for adjective agreement")
+        else:
+            noun_at_end = subject.split()[-1]
+            entry = next((r for r in neva.load_lexicon()
+                          if r["Neva"] == noun_at_end and r["Part of speech"] == "noun"), None)
+            if entry is None:
+                raise TranslationError("unknown noun gender for copular adjective")
+            gender = entry["Gender"]
+        predicate = neva.noun_stem(adjective, "M") + neva.ENDINGS[gender]["singular"]["nominative"]
+        if tokens:
+            if tokens.pop(0) != "than":
+                raise TranslationError("only 'than + noun' follows an English comparative")
+            noun, modifier, determiner, pos = _find_en_noun(tokens, 0)
+            if pos != len(tokens):
+                raise TranslationError("unsupported comparison phrase")
+            predicate += " apo " + _make_np(noun, modifier, "accusative", determiner)
+        finite = neva.conjugate("esen", copula_tense)[person]
+        result = f"{subject} {finite} {predicate}"
+        return result[0].upper() + result[1:] + punctuation
     future = tokens.pop(0) == "will" if tokens[0] == "will" else False
     if future and not tokens:
         raise TranslationError("missing verb after will")
