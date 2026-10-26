@@ -428,9 +428,9 @@ def main() -> None:
             except TranslationError as exc:
                 prefix = f"line {line_number}: " if arguments.file is not None else ""
                 if arguments.strict:
-                    parser.exit(2, f"Translation unavailable ({prefix}{exc})\n")
+                    parser.exit(2, f"Translation unavailable: {prefix}{exc}\n")
                 print(sentence)
-                print(f"Untranslated ({prefix}{exc})", file=sys.stderr)
+                print(f"Untranslated (unsupported): {prefix}{exc}", file=sys.stderr)
     elif arguments.command == "examples":
         if arguments.limit < 1 or arguments.limit > 1000:
             parser.error("--limit must be between 1 and 1000")
