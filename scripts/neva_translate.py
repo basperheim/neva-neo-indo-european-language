@@ -11,6 +11,7 @@ import re
 
 import neva
 from neva_determiners import decline_determiner, english_determiner, match_determiner
+from neva_comparison import english_degree, inflect_adjective
 
 PERSONS = {
     "ego": ("I", 0), "ty": ("you", 1), "so": ("he", 2),
@@ -41,8 +42,24 @@ ENGLISH_NOUNS = {
     "mother": "mathera", "father": "patheros", "brother": "bratheros",
     "sister": "svesora", "daughter": "dhugathera", "child": "genom",
     "foot": "podos", "pen": "gerbotrom", "computer": "menotrom",
+    "door": "dhverom", "tree": "dorom", "sun": "savelom",
 }
-ENGLISH_ADJECTIVES = {"new": "nevos"}
+ENGLISH_ADJECTIVES = {
+    "new": "nevos", "big": "mezos", "cold": "gelos", "good": "vesos",
+    "bad": "dusos", "old": "senos", "red": "rudhos",
+}
+# English comparative/superlative spellings are outputs of the regular
+# Neva morphology engine, not additional irregular Neva paradigms.
+for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
+    for _degree in ("comparative", "superlative"):
+        ENGLISH_ADJECTIVES[english_degree(_meaning, _degree)] = inflect_adjective(
+            _adjective, _degree
+        )
+PREPOSITIONS = {
+    "ad": "toward", "en": "into", "apo": "from",
+    "per": "through", "kom": "with", "uper": "over", "pro": "for",
+}
+ENGLISH_PREPOSITIONS = {value: key for key, value in PREPOSITIONS.items()}
 MASS_NOUNS = {"water", "rain", "fire", "rainwater"}
 PERSON_ENGLISH_TO_NEVA = {
     "i": ("ego", 0), "you": ("ty", 1), "he": ("so", 2),
@@ -106,14 +123,18 @@ def adjective_forms() -> dict[str, list[AdjectiveForm]]:
     for row in neva.load_lexicon():
         if row["Part of speech"] != "adjective" or not row["Neva"].endswith("os"):
             continue
-        stem = row["Neva"][:-2]
         gloss = row["English"].split(",", 1)[0].strip().lower()
-        for gender, numbers in neva.ENDINGS.items():
-            for number, cases in numbers.items():
-                for case, ending in cases.items():
-                    forms.setdefault(stem + ending, []).append(
-                        AdjectiveForm(gloss, gender, case, number)
-                    )
+        for degree in ("positive", "comparative", "superlative"):
+            for gender, numbers in neva.ENDINGS.items():
+                for number, cases in numbers.items():
+                    for case in cases:
+                        spelling = inflect_adjective(
+                            row["Neva"], degree, gender=gender,
+                            grammatical_case=case, number=number,
+                        )
+                        forms.setdefault(spelling, []).append(
+                            AdjectiveForm(english_degree(gloss, degree), gender, case, number)
+                        )
     return forms
 
 
@@ -233,7 +254,11 @@ def _render_tail(tokens: list[str]) -> str:
             object_text, pos = _render_np(tokens, "accusative", pos + 1, "object")
             objects.append(object_text)
     rest = " and ".join(objects)
-    if pos < len(tokens):
+    if pos < len(tokens) and tokens[pos] in PREPOSITIONS:
+        preposition = PREPOSITIONS[tokens[pos]]
+        obj, pos = _render_np(tokens, "accusative", pos + 1, "dative")
+        rest += (" " if rest else "") + preposition + " " + obj
+    elif pos < len(tokens):
         recipient, pos = _render_np(tokens, "dative", pos, "dative")
         rest += (" " if rest else "") + "to " + recipient
     if pos != len(tokens):
@@ -275,9 +300,9 @@ def from_neva(text: str) -> str:
         words.pop(0)
     if not words:
         raise TranslationError("missing verb after question particle")
-    if punctuation == "!" and words[0] in {"bere", "vide", "kape", "mene"}:
+    if punctuation == "!" and words[0] in {"bere", "vide", "kape", "mene", "ie"}:
         imperative = {"bere": "Carry", "vide": "See", "kape": "Have",
-                      "mene": "Think"}[words.pop(0)]
+                      "mene": "Think", "ie": "Go"}[words.pop(0)]
         return imperative + (" " + _render_tail(words) if words else "") + "!"
     verb_position = next(
         (pos for pos, word in enumerate(words) if word in finite_forms()), None
@@ -403,6 +428,11 @@ def _make_en_objects(tokens: list[str]) -> str:
     pos = 0
     parts = []
     while pos < len(tokens):
+        if tokens[pos] in ENGLISH_PREPOSITIONS:
+            prep = ENGLISH_PREPOSITIONS[tokens[pos]]
+            noun, adjective, determiner, pos = _find_en_noun(tokens, pos + 1)
+            parts.append(prep + " " + _make_np(noun, adjective, "accusative", determiner))
+            continue
         if tokens[pos] == "to":
             noun, adjective, determiner, pos = _find_en_noun(tokens, pos + 1)
             parts.append(_make_np(noun, adjective, "dative", determiner))
@@ -486,10 +516,14 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
         raise TranslationError("use --from neva --to en, or --from en --to neva")
 
     from neva_phrases import translate_phrase
+    from neva_clauses import translate_complex
 
     known_phrase = translate_phrase(text, source=source, target=target)
     if known_phrase is not None:
         return known_phrase
+    complex_clause = translate_complex(text, source=source, target=target)
+    if complex_clause is not None:
+        return complex_clause
     if (source, target) == ("neva", "en"):
         return from_neva(text)
     return from_english(text)
