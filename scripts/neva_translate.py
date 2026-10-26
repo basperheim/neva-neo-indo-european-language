@@ -10,6 +10,7 @@ from functools import lru_cache
 import re
 
 import neva
+from neva_determiners import decline_determiner, english_determiner, match_determiner
 
 PERSONS = {
     "ego": ("I", 0), "ty": ("you", 1), "so": ("he", 2),
@@ -137,30 +138,44 @@ def _words(text: str) -> tuple[list[str], str]:
 
 
 def _find_noun(tokens: list[str], case: str, start: int) -> tuple[NounForm, str | None, int]:
+    """Parse a simple [determiner] [adjective] noun phrase with agreement."""
     if start >= len(tokens):
         raise TranslationError("expected a noun phrase")
-    options = noun_forms().get(tokens[start], [])
-    one = next((form for form in options if form.grammatical_case == case), None)
-    if one is not None:
-        return one, None, start + 1
-    if start + 1 < len(tokens):
-        options = noun_forms().get(tokens[start + 1], [])
-        for noun in options:
-            if noun.grammatical_case != case:
+    for det_present in (False, True):
+        for adjective_present in (False, True):
+            noun_index = start + int(det_present) + int(adjective_present)
+            if noun_index >= len(tokens):
                 continue
-            matches = adjective_forms().get(tokens[start], [])
-            modifier = next((
-                item for item in matches
-                if item.gender == noun.gender and item.number == noun.number
-                and item.grammatical_case == case
-            ), None)
-            if modifier:
-                return noun, modifier.english, start + 2
+            for noun in noun_forms().get(tokens[noun_index], []):
+                if noun.grammatical_case != case:
+                    continue
+                determiner_text = None
+                if det_present:
+                    meaning = match_determiner(
+                        tokens[start], noun.gender, noun.number, case
+                    )
+                    if meaning is None:
+                        continue
+                    determiner_text = english_determiner(meaning, noun.number)
+                adjective_text = None
+                if adjective_present:
+                    adjective_index = start + int(det_present)
+                    adjective = next((
+                        item for item in adjective_forms().get(tokens[adjective_index], [])
+                        if item.gender == noun.gender and item.number == noun.number
+                        and item.grammatical_case == case
+                    ), None)
+                    if adjective is None:
+                        continue
+                    adjective_text = adjective.english
+                modifier = " ".join(
+                    part for part in (determiner_text, adjective_text) if part
+                ) or None
+                return noun, modifier, noun_index + 1
     raise TranslationError(
         f"unrecognized {case} noun phrase near {tokens[start]!r}; "
         "check spelling, gender, number, or vocabulary"
     )
-
 
 def _english_plural(word: str) -> str:
     if word in {"child", "foot", "wolf", "man", "woman", "mouse"}:
@@ -179,6 +194,8 @@ def _render_noun(noun: NounForm, modifier: str | None, role: str) -> str:
         english = _english_plural(english)
     if modifier:
         english = modifier + " " + english
+        if modifier.split()[0] in {"this", "that", "these", "those", "which"}:
+            return english
     if noun.number == "plural":
         return ("the " if role in {"subject", "dative"} else "") + english
     if noun.english in MASS_NOUNS:
@@ -201,12 +218,11 @@ def _render_tail(tokens: list[str]) -> str:
         return ""
     pos = 0
     objects = []
-    if tokens[0] in OBJECT_PRONOUNS or any(
-        form.grammatical_case == "accusative" for form in noun_forms().get(tokens[0], [])
-    ) or (len(tokens) > 1 and any(
-        form.grammatical_case == "accusative" for form in noun_forms().get(tokens[1], [])
-    )):
+    try:
         object_text, pos = _render_np(tokens, "accusative", pos, "object")
+    except TranslationError:
+        pass  # The phrase may be a dative recipient instead.
+    else:
         objects.append(object_text)
         while pos < len(tokens) and tokens[pos] == "ke":
             object_text, pos = _render_np(tokens, "accusative", pos + 1, "object")
@@ -340,25 +356,40 @@ def from_neva(text: str) -> str:
     return result[0].upper() + result[1:] + punctuation
 
 
-def _find_en_noun(tokens: list[str], pos: int) -> tuple[str, str | None, int]:
+def _find_en_noun(tokens: list[str], pos: int) -> tuple[str, str | None, str | None, int]:
+    determiner = None
     if pos < len(tokens) and tokens[pos] in {"the", "a", "an"}:
         pos += 1
+    elif pos < len(tokens) and tokens[pos] in {"this", "that"}:
+        determiner = tokens[pos]
+        pos += 1
+    elif pos < len(tokens) and tokens[pos] in {"these", "those", "which"}:
+        raise TranslationError("English plural and interrogative noun phrases need more grammar")
     adjective = None
     if pos < len(tokens) and tokens[pos] in ENGLISH_ADJECTIVES:
         adjective = ENGLISH_ADJECTIVES[tokens[pos]]
         pos += 1
     if pos == len(tokens) or tokens[pos] not in ENGLISH_NOUNS:
         raise TranslationError("English input supports only basic nouns from the documented starter set")
-    return ENGLISH_NOUNS[tokens[pos]], adjective, pos + 1
+    return ENGLISH_NOUNS[tokens[pos]], adjective, determiner, pos + 1
 
 
-def _make_np(noun: str, adjective: str | None, case: str) -> str:
+def _make_np(noun: str, adjective: str | None, case: str, determiner: str | None = None) -> str:
     row = next(r for r in neva.load_lexicon() if r["Neva"] == noun)
-    noun_form = neva.decline(noun, row["Gender"], case, "singular")
-    if adjective is None:
-        return noun_form
-    stem = neva.noun_stem(adjective, "M")
-    return stem + neva.ENDINGS[row["Gender"]]["singular"][case] + " " + noun_form
+    gender = row["Gender"]
+    noun_form = neva.decline(noun, gender, case, "singular")
+    parts = []
+    if determiner is not None:
+        headword = {
+            "this": {"M": "shos", "F": "sha", "N": "shod"},
+            "that": {"M": "so", "F": "sa", "N": "tod"},
+        }[determiner][gender]
+        parts.append(decline_determiner(headword, case, "singular"))
+    if adjective is not None:
+        stem = neva.noun_stem(adjective, "M")
+        parts.append(stem + neva.ENDINGS[gender]["singular"][case])
+    parts.append(noun_form)
+    return " ".join(parts)
 
 
 def _make_en_objects(tokens: list[str]) -> str:
@@ -368,16 +399,15 @@ def _make_en_objects(tokens: list[str]) -> str:
     parts = []
     while pos < len(tokens):
         if tokens[pos] == "to":
-            noun, adjective, pos = _find_en_noun(tokens, pos + 1)
-            parts.append(_make_np(noun, adjective, "dative"))
+            noun, adjective, determiner, pos = _find_en_noun(tokens, pos + 1)
+            parts.append(_make_np(noun, adjective, "dative", determiner))
             continue
-        noun, adjective, pos = _find_en_noun(tokens, pos)
-        parts.append(_make_np(noun, adjective, "accusative"))
+        noun, adjective, determiner, pos = _find_en_noun(tokens, pos)
+        parts.append(_make_np(noun, adjective, "accusative", determiner))
         if pos < len(tokens) and tokens[pos] == "and":
             parts.append("ke")
             pos += 1
     return " ".join(parts)
-
 
 def from_english(text: str) -> str:
     tokens, punctuation = _words(text)
@@ -389,9 +419,8 @@ def from_english(text: str) -> str:
         subject, person = PERSON_ENGLISH_TO_NEVA[tokens[0]]
         tokens = tokens[1:]
     else:
-        pos = 1 if tokens[0] == "the" else 0
-        noun, adj, pos = _find_en_noun(tokens, pos)
-        subject = _make_np(noun, adj, "nominative")
+        noun, adj, det, pos = _find_en_noun(tokens, 0)
+        subject = _make_np(noun, adj, "nominative", det)
         person = 2
         tokens = tokens[pos:]
     if not tokens:
