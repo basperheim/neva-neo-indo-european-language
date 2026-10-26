@@ -158,7 +158,9 @@ def _relative_from_english(text: str) -> str | None:
     noun_gloss = main.lower().split()[-1]
     neva_noun = t.ENGLISH_NOUNS.get(noun_gloss)
     if neva_noun is None:
-        raise ValueError("unsupported relative-clause antecedent")
+        # "I see that mother" uses a demonstrative determiner, not a
+        # relative pronoun. Let the ordinary simple-clause parser handle it.
+        return None
     entry = next(x for x in neva.load_lexicon() if x["Neva"] == neva_noun)
     gender = entry["Gender"]
     if connector.lower() == "who" and noun_gloss not in _HUMAN_NOUNS:
