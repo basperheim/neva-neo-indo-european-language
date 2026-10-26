@@ -88,10 +88,10 @@ class VocabularyExpansionTests(unittest.TestCase):
                 if row["Status"] == "lemma":
                     self.assertIn(row["Neva expression"], headwords)
 
-    def test_coverage_cli_reports_explicit_gaps(self):
+    def test_coverage_cli_reports_partial_meanings(self):
         script = ROOT / "scripts" / "neva.py"
         run = subprocess.run(
-            [sys.executable, str(script), "coverage", "--status", "gap",
+            [sys.executable, str(script), "coverage", "--status", "partial",
              "--limit", "5"],
             capture_output=True, text=True,
         )
