@@ -572,6 +572,7 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
 
     from neva_phrases import translate_phrase
     from neva_words import translate_headword
+    from neva_modals import translate_modal
     from neva_clauses import translate_complex
 
     known_phrase = translate_phrase(text, source=source, target=target)
@@ -583,6 +584,9 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
         raise TranslationError(str(exc)) from exc
     if known_word is not None:
         return known_word
+    modal_clause = translate_modal(text, source=source, target=target)
+    if modal_clause is not None:
+        return modal_clause
     complex_clause = translate_complex(text, source=source, target=target)
     if complex_clause is not None:
         return complex_clause
