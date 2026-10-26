@@ -34,6 +34,9 @@ def _base_translate(piece: str, source: str) -> str:
 
 
 def _lower_start(s: str) -> str:
+    # English first-person 'I' is always uppercase, including after a comma.
+    if s == "I" or s.startswith("I "):
+        return s
     return s[0].lower() + s[1:] if s else s
 
 
