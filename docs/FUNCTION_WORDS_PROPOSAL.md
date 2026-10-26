@@ -1,6 +1,6 @@
 # Function words: current status and candidates
 
-**Status (2026-10-26):** The user approved **at** “but/yet” and **ve** “or” alongside existing **ke** “and”; these are now official dictionary entries. Other words in this document remain candidates, not implemented or automatically supported by sentence translation.
+**Status (2026-10-26):** The user approved **at** “but/yet” and **ve** “or” alongside existing **ke** “and”; these are now official dictionary entries. The user has also approved the preposition **pro** ('for, for the sake of') from PIE *pró*; it is in the working dictionary. Remaining proposals are not automatically supported by sentence translation.
 
 ## Existing Neva core (provisionally established)
 
@@ -23,7 +23,7 @@ PIE *kʷís* / *kʷíd* provides the historical model for "who / what"; PIE *so 
 | **but / yet** | **at** | From PIE *h₂et-* connective family, compare Latin at "but, whereas" and Sanskrit atha. Short and phonologically simple. | **ADOPTED / dictionary** |
 | **however / nevertheless** | **atoge** | New proposal: **at** “but” + linking **-o-** + **ge** from PIE intensifier *g⁽ʰ⁾e* “indeed, in fact.” Pronounced /a.ˈto.ge/. A Neva compound, not an attested PIE conjunction; avoids Latin/Esperanto *tamen*. | **PROPOSED** |
 | **and** | **ke** | Established: independent analogue of PIE clitic *-kʷe*. | ALREADY CORE |
-| **because** | **pro tod** (reason phrase) | Candidate “for that [reason], because of that,” with **pro** from PIE *pró* “forward/for” + **tod** “that.” This is **not automatically a clause conjunction** and must not substitute for all uses of “because.” | **PROPOSED** |
+| **because of that** | **pro tod** (reason phrase) | Approved literal construction, “for that [reason], because of that,” with **pro** from PIE *pró* “forward/for” + **tod** “that.” This is **not a clause conjunction** and must not substitute for all uses of “because.” | **APPROVED as prepositional phrase, NOT a subordinate conjunction** |
 | **if** | **jaba** | Suggested from Proto-Germanic *jabai / *ibai* “if,” associated with *jabą* “condition.” Neva /ˈja.ba/ removes the diphthong; this is a **Germanic-inspired borrowing/adaptation**, not a reconstructed PIE conditional. Conditional-clause syntax still needed. | **PROPOSED** |
 | **although** | TBD | Can be a phrase/compound once concession and contrast morphology is defined. | OPEN |
 
