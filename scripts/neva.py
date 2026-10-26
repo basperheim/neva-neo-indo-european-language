@@ -327,7 +327,12 @@ def main() -> None:
         "translate",
         help="Translate supported simple clauses offline; defaults to Neva -> English",
     )
-    translation.add_argument("text", help="One simple sentence (quote as a single argument)")
+    translation.add_argument(
+        "text", nargs="?", help="One short sentence (quote as a single argument)"
+    )
+    translation.add_argument(
+        "--file", help="UTF-8 text file with one Neva/English sentence per line"
+    )
     translation.add_argument("--from", dest="source", choices=("neva", "en"), default="neva")
     translation.add_argument("--to", dest="target", choices=("en", "neva"), default="en")
     translation.add_argument("--strict", action="store_true",
@@ -403,13 +408,29 @@ def main() -> None:
 
         if arguments.source == arguments.target:
             parser.error("source and target languages must differ")
-        try:
-            print(translate(arguments.text, source=arguments.source, target=arguments.target))
-        except TranslationError as exc:
-            if arguments.strict:
-                parser.exit(2, f"Translation unavailable: {exc}\n")
-            print(arguments.text)
-            print(f"Untranslated (unsupported): {exc}", file=sys.stderr)
+        if (arguments.text is None) == (arguments.file is None):
+            parser.error("provide either one sentence or --file, but not both")
+        if arguments.file is not None:
+            try:
+                lines = Path(arguments.file).read_text(encoding="utf-8").splitlines()
+            except OSError as exc:
+                parser.exit(2, f"Could not read translation file: {exc}\n")
+            except UnicodeError as exc:
+                parser.exit(2, f"Translation file must be UTF-8: {exc}\n")
+        else:
+            lines = [arguments.text]
+        for line_number, sentence in enumerate(lines, start=1):
+            if not sentence.strip():
+                print("")
+                continue
+            try:
+                print(translate(sentence, source=arguments.source, target=arguments.target))
+            except TranslationError as exc:
+                prefix = f"line {line_number}: " if arguments.file is not None else ""
+                if arguments.strict:
+                    parser.exit(2, f"Translation unavailable ({prefix}{exc})\n")
+                print(sentence)
+                print(f"Untranslated ({prefix}{exc})", file=sys.stderr)
     elif arguments.command == "examples":
         if arguments.limit < 1 or arguments.limit > 1000:
             parser.error("--limit must be between 1 and 1000")
