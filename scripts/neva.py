@@ -447,6 +447,8 @@ def main() -> None:
             entries = list(csv.DictReader(handle, delimiter="\t"))
         matching = [entry for entry in entries
                     if not arguments.status or entry["Status"] == arguments.status]
+        if not matching:
+            print(f"No coverage entries with status '{arguments.status}'.")
         for entry in matching[:arguments.limit]:
             print(f'{int(entry["Rank"]):3} {entry["English"]:11} '
                   f'{entry["Status"]:8} {entry["Neva expression"]} '
