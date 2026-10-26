@@ -11,10 +11,10 @@ import neva  # noqa: E402
 
 
 class NevaTests(unittest.TestCase):
-    def test_dictionary_has_801_distinct_entries(self):
+    def test_dictionary_has_808_distinct_entries(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 801)
-        self.assertEqual(len({entry["Neva"] for entry in entries}), 801)
+        self.assertEqual(len(entries), 808)
+        self.assertEqual(len({entry["Neva"] for entry in entries}), 808)
 
     def test_new_conjunctions_are_registered(self):
         words = {row["Neva"]: row for row in neva.load_lexicon()}
@@ -29,6 +29,13 @@ class NevaTests(unittest.TestCase):
         self.assertTrue(words["pro"]["English"].startswith("for"))
         self.assertIn("pro kid", words["pro"]["Notes"])
         self.assertIn("pro tod", words["pro"]["Notes"])
+
+    def test_adopted_deictics_and_condition(self):
+        items = {entry["Neva"]: entry for entry in neva.load_lexicon()}
+        for word in ("shos", "sha", "shod", "kinos", "kina", "kinom"):
+            self.assertEqual(items[word]["Part of speech"], "determiner")
+        self.assertEqual(items["jaba"]["Part of speech"], "conjunction")
+        self.assertIn("if", items["jaba"]["English"])
 
     def test_gender_specific_declensions(self):
         self.assertEqual(neva.decline("vulkos", "M", "accusative", "plural"), "vulkons")
