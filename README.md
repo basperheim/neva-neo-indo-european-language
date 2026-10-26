@@ -11,6 +11,7 @@
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — original **D1 `-oes` rejected**; **D1b `-es`**, **D2 `-e/-es`**, and **D3/D4/D5/D6 approved**. Approved rules are reflected in the guide, dictionary and Python tools.
 - **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
+- **[Function-word and conjunction proposals](docs/FUNCTION_WORDS_PROPOSAL.md)** — established demonstratives/interrogatives, and historically motivated candidate words for “or,” “but,” and “however” (not yet adopted).
 - **[Experimental offline translator](docs/TRANSLATION_MVP.md)** — bounded Neva ↔ English simple clauses and explicit errors for unsupported input.
 - **[Offline speech/TTS roadmap](docs/OFFLINE_TTS_ROADMAP.md)** — how to produce Neva phonemes and run speech locally, without Google APIs.
 
