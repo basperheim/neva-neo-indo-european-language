@@ -1,6 +1,6 @@
 # Neva noun morphology: decisions for review
 
-**Decision status (2026-10-26):** **D1 rejected** (keep masculine nominative plural `-oi`); **D3, D4, and D6 approved and adopted**; **D2 and D5 remain under discussion**, with current draft behavior unchanged. This document records both the historical motivation and the user's votes. The adopted rules also appear in `NEVA_OVERVIEW.md`, the dictionary metadata, and `scripts/neva.py`.
+**Decision status (2026-10-26):** **D1 rejected** (keep masculine nominative plural `-oi`); **D3, D4, D5 (closed irregular noun set), and D6 approved and adopted**; **D2 remains under discussion**, as does the separate D1b vowel-simplification question. D1's `-oes` was rejected. The closed irregular noun inventory begins with `podos`. This document records both the historical motivation and the user's votes. The adopted rules also appear in `NEVA_OVERVIEW.md`, the dictionary metadata, and `scripts/neva.py`.
 
 ## Clarification: gender and declension are different concepts
 
@@ -28,7 +28,7 @@ PIE thematic animate nom. pl. *-ōs* is historically associated with *-o-es*; Ne
 
 ## D5 — Stems and noun ablaut
 
-**UNDER DISCUSSION: the current implementation has no *productive* vowel-change plurals; this has NOT been ratified.** Use stable stems (`vulk-`, `mather-`, `vodr-`) across four cases and two numbers. PIE athematic nouns could change stem vowels and accent, but recreating such alternations in every noun would defeat our simplicity goal. A later short, explicitly listed set of inherited irregular stems could preserve this historical flavor (like a few English `man/men`-type remnants). Do not invent those until each is researched.
+**APPROVED: ordinary nouns do not undergo productive stem ablaut, but a small, closed inventory of inherited-inspired irregular nouns is allowed.** Use stable stems (`vulk-`, `mather-`, `vodr-`) across four cases and two numbers. PIE athematic nouns could change stem vowels and accent, but recreating such alternations in every noun would defeat our simplicity goal. The first documented exception is `podos` (foot): strong stem `pod-` (nominative/accusative), oblique `ped-` (genitive/dative). Thus `podos, podom, pedosio, pedoi`; nominative plural currently `podoi`. This reflects PIE *pṓds / ped-* vowel grades but uses Neva case endings. Other inherited noun exceptions require a historical argument and **explicit lexicon stem columns**; new noun formations remain regular.
 
 ## D6 — Assigning grammatical gender
 
@@ -59,7 +59,7 @@ Genitive      vulkon        matheron        vodron
 Dative        vulkois       matherais       vodrois
 ```
 
-**Compatibility decision:** Keep the v1.1 form `vulkoi`; D1's proposed `vulkoes` was rejected. D2 feminine endings and D5 noun ablaut remain as existing draft behavior while discussed. No alternative forms should enter production vocabulary yet.
+**Compatibility decision:** Keep the v1.1 form `vulkoi`; D1's proposed `vulkoes` was rejected. D2 feminine endings remain as existing draft behavior while discussed. **D5 is now implemented** via explicitly stored noun stems, beginning with `podos`; D1b masculine plural vowel simplification is still open. No alternative forms should enter production vocabulary yet.
 
 **D6 metadata:** The dictionary records `Gender basis` and `Gender status` for nouns. A base noun with an unverified PIE anchor is marked `inherited_candidate` / `provisional`. Rule-formed derivations are marked `rule_based`; compounds inherit the head noun's `provisional` status when its historical gender is not yet verified. Other compounds with well-established heads may be `rule_based`. The generator can recommend a new modern inanimate noun as neuter, but it does not overwrite existing gender assignments.
 
@@ -79,5 +79,5 @@ Dative        vulkois       matherais       vodrois
 | D2: feminine paradigm | retain v1.1 provisionally | **DISCUSS** (not adopted) |
 | D3: neuter plural | `-a`, nom.=acc. | **APPROVED** |
 | D4: M/N shared oblique endings | retain | **APPROVED** |
-| D5: noun ablaut | current: stable stems | **DISCUSS** (not adopted) |
+| D5: noun ablaut | regular by default; closed irregular inventory, first `podos` | **APPROVED / IMPLEMENTED** |
 | D6: gender assignment | inherited evidence → derivation/head → default | **APPROVED** |
