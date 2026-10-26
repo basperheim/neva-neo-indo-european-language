@@ -1,5 +1,7 @@
 # Neva — Neo-Indo-European
 
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/54b5bc27-7b82-4209-8458-14b2e9ba5503" />
+
 *An imagined modern descendant of Proto-Indo-European with simplified grammar, regular pronunciation, and a productive PIE-rooted vocabulary.*
 
 **Status:** collaborative constructed-language project, **working draft v1.5**. This is **not** an academically reconstructed PIE language. Its etymological source forms, sound-change details, many historical gender assignments, and idiomatic lexicon remain subject to review. The **D6 gender assignment procedure** is now adopted, but that does not automatically verify every inherited noun's gender.
