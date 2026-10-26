@@ -10,7 +10,8 @@
 - **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — the now-approved masculine plural `-es` and feminine dative `-e/-es`, plus still-open reductions to other vowel sequences and documented D5 inherited-noun ablaut.
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — original **D1 `-oes` rejected**; **D1b `-es`**, **D2 `-e/-es`**, and **D3/D4/D5/D6 approved**. Approved rules are reflected in the guide, dictionary and Python tools.
-- **[Working lexicon — 812 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
+- **[Everyday vocabulary and 100-word coverage audit](docs/VOCABULARY_EXPANSION.md)** — `denegva` language, animals, tools, household and time words; honest coverage statuses for the top 100 English words.
+- **[Working lexicon — 828 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 449 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
 - **[Adopted demonstrative and interrogative paradigms](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md)** — Option A `shos/sha/shod` and W1 `kinos/kina/kinom`, with case/number tables. Alternatives are retained for design history.
 - **[Approved clauses, comparisons, and vocabulary review](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md)** — `jos/josa/jod` relatives, `kod` because, `-oter-/-ist-` adjective comparison, with outstanding research tasks.
 - **[Beginner reader and verified sentence corpus](docs/BEGINNER_READER.md)** — conversations, directions, an elementary wolf-and-horse tale, and links to 36 bilingual regression examples.
@@ -57,6 +58,11 @@ python3 scripts/neva.py translate --from en --to neva "This wolf is bigger."
 python3 scripts/neva.py translate --from en --to neva "I see this wolf."
 python3 scripts/neva.py translate --from en --to neva "I carry water."
 python3 scripts/neva.py translate --from en --to neva "I have carried water."
+python3 scripts/neva.py translate --from en --to neva language    # denegva
+python3 scripts/neva.py translate denegva                       # tongue / language
+python3 scripts/neva.py translate --from en --to neva sheep      # ovisa
+python3 scripts/neva.py coverage --status gap                    # unresolved frequent words
+python3 scripts/neva.py coverage --status grammar                # covered by cases/rules
 python3 scripts/neva.py translate --from en --to neva 'Hello!'       # Vese!
 python3 scripts/neva.py translate --from en --to neva 'Good day!'    # Vesom deinom!
 python3 scripts/neva.py translate --from en --to neva 'How are you?' # Komo es?
@@ -96,6 +102,7 @@ NEVA_OVERVIEW.md
 data/
   neva_dictionary_v1_1.csv
   sentence_corpus.tsv
+  english_top100_coverage.tsv
 examples/
   wolf_and_horse.neva
 docs/
@@ -107,6 +114,7 @@ docs/
   DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md
   TRANSLATION_MVP.md
   BEGINNER_READER.md
+  VOCABULARY_EXPANSION.md
 scripts/
   neva.py
   neva_translate.py
@@ -115,12 +123,14 @@ scripts/
   neva_relatives.py
   neva_comparison.py
   neva_clauses.py
+  neva_words.py
 tests/
   test_neva.py
   test_translation.py
   test_determiners.py
   test_conversation.py
   test_sentence_corpus.py
+  test_lexicon_extension.py
 ```
 
 ## Pronunciation and lexical adaptation
@@ -131,4 +141,4 @@ PIE-to-Neva sound changes are **historically inspired tendencies**, not a rule t
 
 For any new inherited-inspired headword, record its *Neva form, English gloss, part of speech, gender, gender basis, gender status, etymological anchor, source, and whether the result is historical or invented*. Do not silently treat coinages or uncertain PIE forms as attested reconstructed words. Prefer adjusting rules and adding tests over hand-fixing a growing list of exceptions.
 
-**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 812 entries include derived words, compounds, and function words—not 812 verified ancient roots. The filename `neva_dictionary_v1_1.csv` is retained temporarily for compatibility; it now includes later approved additions.
+**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 828 entries include derived words, compounds, and function words—not 828 verified ancient roots. The filename `neva_dictionary_v1_1.csv` is retained temporarily for compatibility; it now includes later approved additions.
