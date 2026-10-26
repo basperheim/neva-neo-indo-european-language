@@ -1,7 +1,7 @@
 # Neva (Neo-Indo-European) — Core Reference v1.2
 
 **Status:** Working specification v1.2 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
-**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (800 candidate headwords).  
+**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (801 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
@@ -59,7 +59,7 @@ The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns.
 
 This is an **inspired Neo-IE system**, not a reconstruction of the full PIE `*pṓds` paradigm. The foot-based compounds are `eshvopodos`, `shvonopodos`, and `vulkopodos`; related adjective and diminutive stems may retain `ped-`. The lexicon explicitly stores `Noun class`, `Strong stem`, and `Oblique stem` instead of silently inferring alternations from spelling. PIE `*pṓds` had historic `pod-/ped-` grade alternations, but daughter languages generalized different grades.
 
-Neuter nominative and accusative forms are identical. A separate vocative and dual do not exist. Default SVO order; case endings permit flexible order. **No required articles** (as in Latin or Russian). Genitive precedes the possessed noun (`patherosio eshvos`, the father's horse). Indirect recipients take the dative without a preposition. The simple core uses prepositions + accusative (`en`, `ad`, `apo`, `kom`, `uper`, `per`).
+Neuter nominative and accusative forms are identical. A separate vocative and dual do not exist. Default SVO order; case endings permit flexible order. **No required articles** (as in Latin or Russian). Genitive precedes the possessed noun (`patherosio eshvos`, the father's horse). Indirect recipients take the dative without a preposition. The simple core uses **prepositions + accusative** (`en`, `ad`, `apo`, `kom`, `uper`, `per`, and newly approved **`pro`**). Neva `pro` means *for, on behalf of, on account of*; `pro kid?` means *for what reason?/why?*, and `pro tod` can mean *for that reason/because of that*. These are prepositional phrases; there is **still no approved general causal clause conjunction** introducing arbitrary subordinate clauses.
 
 ### Pronouns and pro-drop
 
@@ -120,7 +120,7 @@ Yes/no questions are marked with initial **ka**: `Ka beres vodrom?` — Do you c
 
 **Defined core forms:** third-person `so / sa / tod` double as distal demonstratives ("that", masc./fem./neut.); interrogatives `kis` (who), `kid` (what), `ku` (where), `koda` (when), `komo` (how); `ka` begins a yes/no question; **`ke` means “and”, `ve` means “or”, `at` means “but/yet”**; `ne` negates. The translator currently only handles `ke` in a restricted direct-object pattern.
 
-**Not yet fixed:** all case/number forms of demonstratives and interrogatives, a proximal set meaning "this", relative pronouns, and core words for "however", "if", and "because". Candidates are `atoge` (however, at + linking vowel + PIE-derived intensifier `ge`), `jaba` (if, Germanic-inspired) and `pro tod` (because of that). PIE *g⁽ʰ⁾e* is historically emphatic, not directly a fully inflected proximal demonstrative; see [function-word discussion](docs/FUNCTION_WORDS_PROPOSAL.md). These should not be silently manufactured by machine translation.
+**Not yet fixed:** all case/number forms of demonstratives and interrogatives, a proximal set meaning "this", relative pronouns, and core clause-introducing words for "however", "if", and "because". The approved `pro tod` is only a causal **phrase**. See [three demonstrative options and the prioritized roadmap](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md) before adopting any proposed paradigm. Candidates are `atoge` (however, at + linking vowel + PIE-derived intensifier `ge`), `jaba` (if, Germanic-inspired) and `pro tod` (because of that). PIE *g⁽ʰ⁾e* is historically emphatic, not directly a fully inflected proximal demonstrative; see [function-word discussion](docs/FUNCTION_WORDS_PROPOSAL.md). These should not be silently manufactured by machine translation.
 
 Neva independent `ke` is inspired by PIE enclitic `*-kʷe` (compare Latin `-que` and Vedic Sanskrit `ca`), generalized to an independent connective for predictable word order.
 
