@@ -1,6 +1,6 @@
 # Experimental offline translator — MVP
 
-**Status:** limited grammar prototype, not general-purpose machine translation. This program rejects unknown constructions rather than inventing output. It runs on Python 3.10+ standard library with no hosted service, Google API, LLM, or network access.
+**Status:** limited grammar prototype, not general-purpose machine translation. It translates only confidently supported structures, **passes unsupported input back unchanged by default** (with a warning on stderr), and can still reject unsupported constructs with `--strict`. It runs on Python 3.10+ standard library with no hosted service, Google API, LLM, or network access.
 
 ## CLI usage
 
@@ -27,9 +27,30 @@ All commands run at the repository root (copy and paste the lines below).
     python3 scripts/neva.py translate --from en --to neva "I have carried water."
     # Ego kapo beroto vodrom.
 
+    # Phrasebook: English -> Neva
+    python3 scripts/neva.py translate --from en --to neva 'Hello!'
+    # Vese!
+
+    python3 scripts/neva.py translate --from en --to neva 'Good day!'
+    # Vesom deinom!
+
+    python3 scripts/neva.py translate --from en --to neva 'How are you?'
+    # Komo es?
+
+    # Phrasebook: Neva -> English
+    python3 scripts/neva.py translate 'Vesom deinom!'
+    # Good day!
+
+    # Unrecognized text: unchanged, warning on stderr
+    python3 scripts/neva.py translate 'Hello!'
+    # Hello!  (no conversion: default source is Neva)
+
+    # Old strict behavior, exit status 2 on unsupported input
+    python3 scripts/neva.py translate --strict 'Bero inventedword.'
+
     python3 -m unittest discover -s tests -v
 
-The default is Neva to English. The --from flag takes neva or en, and --to takes en or neva. Only distinct direction pairs are supported. Run translate --help for flags.
+The default is Neva to English. `--from` takes `neva` or `en`, and `--to` takes `en` or `neva`. Only distinct direction pairs are supported. Use `--strict` to restore the former nonzero exit code for unknown grammar. Without `--strict`, unsupported sentences are printed **byte-for-byte as passed to the argument** with a warning on stderr. This avoids guessing meaning; it does **not** attempt unsafe token-by-token translation of a partly unknown clause. Run `translate --help` for flags.
 
 ## Supported grammar subset
 
@@ -49,7 +70,7 @@ English to Neva:
 ## Limitations and honesty contract
 
 - No unrestricted relative/subordinate clauses, compound sentence parsing, full English question translation, plural English noun generation, or free-form semantics.
-- Translation is deterministic and lexicon-backed. Unsupported grammar returns an explicit "Translation unavailable: ..." message and exit code 2.
+- Translation is deterministic and lexicon-backed. **By default**, unsupported input is preserved unchanged and warns on stderr; **with `--strict`**, unsupported grammar returns `Translation unavailable: ...` and exit code 2. The underlying translation function still raises an explicit exception on unsupported input, so downstream code can make its own policy choice.
 - Neva has no obligatory definite/indefinite articles. The English rendering *conventionally* uses "the" for a subject count noun and "a" for an object count noun; neither definiteness nor indefiniteness is explicitly encoded by the Neva source.
 - Many of the 798 dictionary headwords are provisional derived words and compounds. Glosses are not always idiomatic.
 - Noun case syncretism can produce more than one theoretical interpretation. The current small parser uses case position and agreement; it does not model full ambiguity.
@@ -59,12 +80,33 @@ This Python implementation is the reference behavior for a later pinned Go dicti
 
 ## Status of function words
 
-Core forms defined: distal demonstratives so/sa/tod ("that"), interrogatives kis/kid/ku/koda/komo, question marker ka, conjunction ke ("and"), negation ne, and future marker vel.
+Core forms defined: distal demonstratives so/sa/tod ("that"), interrogatives kis/kid/ku/koda/komo, question marker ka, conjunctions ke ("and"), **ve ("or")** and **at ("but/yet")**, negation ne, and future marker vel. The translator currently parses `ke` only in a constrained direct-object coordination pattern; `ve`/`at` are recognized dictionary entries but not yet general clause conjunction grammar.
 
 Not fully finalized: complete demonstrative and interrogative case paradigms, proximal "this", relative pronouns, and subordinate clause construction.
 
-Not yet adopted: "but", "however", "although", "because", and "or". These should be assigned historically inspired roots through a separate morphology and etymology review before general-purpose translation expands.
+Not yet adopted: "however", "although", "because", and "if". Candidates include **atoge** (from at + emphatic ge), **jaba** (Proto-Germanic-inspired “if”), and **pro tod** (“for that [reason]”). None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
 
 Neva ke is an independent connective, inspired by PIE enclitic *-kwe (whose reflexes appear throughout early Indo-European languages). The independent position is a deliberate simplification.
 
 See the root NEVA_OVERVIEW.md for the broader morphology.
+
+## Greetings and everyday expressions (provisional)
+
+The phrasebook `scripts/neva_phrases.py` maps a few ordinary conversational expressions without requiring the complete sentence parser:
+
+| English | Neva | Note |
+|---|---|---|
+| Hello! / Hi! | **Vese!** | Conventional greeting adapted from *vese* “well”; a Neva coinage |
+| Good day! | **Vesom deinom!** | *vesom* agrees with neuter *deinom* “day” |
+| How are you? | **Komo es?** | *komo* “how” + second-singular *es* “are” |
+| I am well. | **Em vese.** | First-singular *em* “am” + adverb *vese* |
+
+The phrasebook accepts optional trailing punctuation and case differences. It does **not** auto-detect the source language. To translate English, pass `--from en --to neva`.
+
+### zsh quotation tip
+
+In interactive `zsh`, single quotes are the safest way to pass a literal exclamation mark:
+
+    python3 scripts/neva.py translate --from en --to neva 'Hello!'
+
+A `dquote>` prompt indicates an **unclosed double-quoted string**. A history-expansion complaint involving `!` is separate; single quotes avoid that too. If you see `dquote>`, press Ctrl+C to cancel the incomplete command and re-enter it.
