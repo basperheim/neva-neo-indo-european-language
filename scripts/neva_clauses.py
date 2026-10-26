@@ -76,6 +76,16 @@ def _two_clauses(text: str, source: str) -> str | None:
                         " " + english + " " + _lower_start(_base_translate(b, source)) + punct)
         if re.search(r"\b(jaba|kod)\b", body, flags=re.I):
             raise ValueError("use 'Jaba <condition>, <result>' or '<result> kod <cause>'")
+        match = re.fullmatch(r"(.+?)\s+(ke|ve|at)\s+(.+)", body, flags=re.I)
+        if match:
+            first, conjunction, second = match.groups()
+            try:
+                left = _base_translate(first, source)
+                right = _base_translate(second, source)
+            except ValueError:
+                return None  # e.g. 'pen ke computer' is object coordination
+            word = {"ke": "and", "ve": "or", "at": "but"}[conjunction.lower()]
+            return _upper_start(left) + " " + word + " " + _lower_start(right) + punct
         return None
     else:
         m = re.fullmatch(r"if\s+([^,]+),\s*(.+)", body, flags=re.I)
@@ -102,6 +112,16 @@ def _two_clauses(text: str, source: str) -> str | None:
                         " " + _lower_start(_base_translate(b, source)) + punct)
         if re.search(r"\b(if|because)\b", body, flags=re.I):
             raise ValueError("use 'If <condition>, <result>' or '<result> because <cause>'")
+        match = re.fullmatch(r"(.+?)\s+(and|or|but)\s+(.+)", body, flags=re.I)
+        if match:
+            first, conjunction, second = match.groups()
+            try:
+                left = _base_translate(first, source)
+                right = _base_translate(second, source)
+            except ValueError:
+                return None  # one noun phrase may contain 'and'
+            word = {"and": "ke", "or": "ve", "but": "at"}[conjunction.lower()]
+            return _upper_start(left) + " " + word + " " + _lower_start(right) + punct
         return None
 
 
