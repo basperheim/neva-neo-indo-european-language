@@ -116,6 +116,27 @@ The perfect uses **kapen + invariant verb stem + -oto**: `kapo beroto vodrom` �
 
 Yes/no questions are marked with initial **ka**: `Ka beres vodrom?` — Do you carry water? Wh-words include `kis` who, `kid` what, `ku` where, `koda` when, `komo` how. **ke** means and; **ne** not. Pronouns normally go before the verb when present. Adjectives normally precede nouns. Interrogative pronoun case forms beyond nominative/accusative remain a later extension.
 
+### Function words: which paradigms are settled?
+
+**Defined core forms:** third-person `so / sa / tod` double as distal demonstratives ("that", masc./fem./neut.); interrogatives `kis` (who), `kid` (what), `ku` (where), `koda` (when), `komo` (how); `ka` begins a yes/no question; `ke` means "and"; `ne` negates.
+
+**Not yet fixed:** all case/number forms of demonstratives and interrogatives, a proximal set meaning "this", relative pronouns, and core words for "but", "however", "or", "if", and "because". These should not be silently manufactured by machine translation.
+
+Neva independent `ke` is inspired by PIE enclitic `*-kʷe` (compare Latin `-que` and Vedic Sanskrit `ca`), generalized to an independent connective for predictable word order.
+
+### Experimental offline translation
+
+The CLI now accepts `translate` for a deliberately **small, strict** grammar subset, with `--from neva --to en` as the default direction and optional `--from en --to neva`. For example:
+
+    python3 scripts/neva.py translate "Kapo beroto vodrom."
+    # I have carried water.
+    python3 scripts/neva.py translate "Bero vodrom mathere."
+    # I carry water to the mother.
+    python3 scripts/neva.py translate --from en --to neva "I carry water."
+    # Ego bero vodrom.
+
+This is **not** unrestricted machine translation: the implementation rejects unsupported clauses, ambiguity, and unknown syntax rather than guessing. See [the MVP translator guide](docs/TRANSLATION_MVP.md) for the accepted grammar, article-rendering convention and tests.
+
 ### Word formation, derivation and compounding
 
 The following **productive Neo-IE suffixes are fixed**. Their modern productivity is constructed; they do not imply every derived form existed in PIE:
