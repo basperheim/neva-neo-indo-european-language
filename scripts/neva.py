@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import sys
 from pathlib import Path
 
 LEXICON = Path(__file__).resolve().parents[1] / "data" / "neva_dictionary_v1_1.csv"
@@ -290,6 +291,8 @@ def main() -> None:
     translation.add_argument("text", help="One simple sentence (quote as a single argument)")
     translation.add_argument("--from", dest="source", choices=("neva", "en"), default="neva")
     translation.add_argument("--to", dest="target", choices=("en", "neva"), default="en")
+    translation.add_argument("--strict", action="store_true",
+                             help="Exit 2 on unknown/unsupported input instead of echoing it")
 
     pronunciation = subcommands.add_parser("ipa", help="Pronounce Neva orthography as IPA")
     pronunciation.add_argument("text")
@@ -317,10 +320,15 @@ def main() -> None:
     elif arguments.command == "translate":
         from neva_translate import TranslationError, translate
 
+        if arguments.source == arguments.target:
+            parser.error("source and target languages must differ")
         try:
             print(translate(arguments.text, source=arguments.source, target=arguments.target))
         except TranslationError as exc:
-            parser.exit(2, f"Translation unavailable: {exc}\n")
+            if arguments.strict:
+                parser.exit(2, f"Translation unavailable: {exc}\n")
+            print(arguments.text)
+            print(f"Untranslated (unsupported): {exc}", file=sys.stderr)
     elif arguments.command == "ipa":
         print(transcribe(arguments.text))
 
