@@ -408,7 +408,19 @@ def from_english(text: str) -> str:
         past_negative = False
     perfect = None
     match = None
+    # Recognize "have carried" before treating "have" as the main verb.
+    if len(tokens) > 1 and tokens[0] in {"have", "has", "had"}:
+        following = next(
+            (key for key, value in VERBS.items()
+             if value[3] == tokens[1] and key != "esen"),
+            None,
+        )
+        if following:
+            perfect = following
+            match = ("kapen", "past" if tokens[0] == "had" else "present", 2)
     for infinitive, (base, third, past, pp) in VERBS.items():
+        if match is not None:
+            break
         if infinitive == "esen":
             continue
         for form, tense in ((base, "present"), (third, "present"), (past, "past")):
@@ -417,13 +429,7 @@ def from_english(text: str) -> str:
                 break
         if match:
             break
-        if infinitive == "kapen" and len(tokens) > 1 and tokens[0] in {"have", "has", "had"}:
-            following = next((key for key, value in VERBS.items()
-                              if value[3] == tokens[1] and key != "esen"), None)
-            if following:
-                perfect = following
-                match = ("kapen", "past" if tokens[0] == "had" else "present", 2)
-                break
+
     if match is None:
         raise TranslationError("unsupported English verb or construction")
     infinitive, tense, consumed = match
