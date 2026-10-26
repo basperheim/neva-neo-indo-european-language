@@ -448,8 +448,14 @@ def from_english(text: str) -> str:
 
 
 def translate(text: str, source: str = "neva", target: str = "en") -> str:
+    if (source, target) not in {("neva", "en"), ("en", "neva")}:
+        raise TranslationError("use --from neva --to en, or --from en --to neva")
+
+    from neva_phrases import translate_phrase
+
+    known_phrase = translate_phrase(text, source=source, target=target)
+    if known_phrase is not None:
+        return known_phrase
     if (source, target) == ("neva", "en"):
         return from_neva(text)
-    if (source, target) == ("en", "neva"):
-        return from_english(text)
-    raise TranslationError("use --from neva --to en, or --from en --to neva")
+    return from_english(text)
