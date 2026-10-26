@@ -1,6 +1,6 @@
 # Function words: current status and candidates
 
-**Status: discussion only, 2026-10-26.** Nothing in the "candidates" section is implemented by the translator or added as an official headword until explicitly approved.
+**Status (2026-10-26):** The user approved **at** “but/yet” and **ve** “or” alongside existing **ke** “and”; these are now official dictionary entries. Other words in this document remain candidates, not implemented or automatically supported by sentence translation.
 
 ## Existing Neva core (provisionally established)
 
@@ -19,21 +19,21 @@ PIE *kʷís* / *kʷíd* provides the historical model for "who / what"; PIE *so 
 
 | English | Candidate Neva | Reason | Status |
 |---|---|---|---|
-| **or** | **ve** | Inspired by reconstructed PIE disjunctive *wē* (compare Sanskrit vā, Latin -ve). Neva w > v and vowel length removed. Use as independent word by analogy with ke. | PROPOSED |
-| **but / yet** | **at** | From the PIE *h₂et-* connective family, with Latin at "but, whereas" and related Indo-European particles as examples. Short and phonologically simple. | PROPOSED |
-| **however / nevertheless** | **tamen** | Borrowing-inspired from Latin tamen "nevertheless." Natural spelling/phonotactics; less directly traceable to a single securely reconstructed PIE connective. Could also be formed from at plus an intensifier instead. | PROPOSED |
+| **or** | **ve** | Inspired by PIE disjunctive *wē* (compare Sanskrit vā, Latin -ve). Neva w > v and vowel length removed; independent word. | **ADOPTED / dictionary** |
+| **but / yet** | **at** | From PIE *h₂et-* connective family, compare Latin at "but, whereas" and Sanskrit atha. Short and phonologically simple. | **ADOPTED / dictionary** |
+| **however / nevertheless** | **atoge** | New proposal: **at** “but” + linking **-o-** + **ge** from PIE intensifier *g⁽ʰ⁾e* “indeed, in fact.” Pronounced /a.ˈto.ge/. A Neva compound, not an attested PIE conjunction; avoids Latin/Esperanto *tamen*. | **PROPOSED** |
 | **and** | **ke** | Established: independent analogue of PIE clitic *-kʷe*. | ALREADY CORE |
-| **because** | TBD | Prefer a transparent compound of an explanatory/cause word rather than inventing an unattested direct PIE conjunction. | OPEN |
-| **if** | TBD | Needs conditional clause grammar and a comparative basis; do not coin casually. | OPEN |
+| **because** | **pro tod** (reason phrase) | Candidate “for that [reason], because of that,” with **pro** from PIE *pró* “forward/for” + **tod** “that.” This is **not automatically a clause conjunction** and must not substitute for all uses of “because.” | **PROPOSED** |
+| **if** | **jaba** | Suggested from Proto-Germanic *jabai / *ibai* “if,” associated with *jabą* “condition.” Neva /ˈja.ba/ removes the diphthong; this is a **Germanic-inspired borrowing/adaptation**, not a reconstructed PIE conditional. Conditional-clause syntax still needed. | **PROPOSED** |
 | **although** | TBD | Can be a phrase/compound once concession and contrast morphology is defined. | OPEN |
 
-None of these require additional phonemes. The forms ve, at, tamen avoid diphthongs.
+None of these require additional phonemes. Atoge, jaba, pro and tod are spelled with ordinary Neva vowels and consonants. **pro kid** could literally mean “for what?” or “why?”, but the interrogative “why?” and causal subordinating “because” are not interchangeable.
 
 ## Syntax to approve separately
 
-- Use free, preverbal or interclausal words in SVO order for ke/ve/at, even where reconstructed PIE historically used *postposed clitics*.
-- Decide whether 'however' is a sentence adverb (e.g. tamen + comma + main clause) or a conjunction connecting two clauses; these are not identical uses in English either.
-- Demonstratives currently double as third-person pronouns; define near-vs-far forms ('this/that'), singular/plural and case tables before automated translation of deixis.
+- **Approved usage:** ke, ve and at are independent connectives, despite PIE postposed clitics in part of their historical background. Their use in unrestricted clause coordination still needs full sentence parser rules.
+- Decide whether **atoge** (proposed) functions as a sentence adverb or as an interclausal coordinator. Avoid confusing English “however” meaning “nevertheless” with “however” meaning “in whatever manner.”
+- Demonstratives currently double as third-person pronouns. PIE *g⁽ʰ⁾e* is an **intensifier**, not intrinsically a proximal “this”; candidate Neva **ge** “indeed/the very” might reinforce an existing demonstrative but is not itself a determiner. PIE *ḱe* is a **different, genuinely deictic** “this/here” particle and a stronger starting point for a proximal series. Do not conflate the two roots. Define near/far forms, plural and case agreement first.
 - Relative pronouns ('who/which/that') are distinct from interrogative kis/kid in actual complex clauses; define separately before enabling relative-clause translation.
 
 ## Comparative references
@@ -43,4 +43,4 @@ None of these require additional phonemes. The forms ve, at, tamen avoid diphtho
 - PIE contrast particles: https://en.wiktionary.org/wiki/Reconstruction%3AProto-Indo-European/h%E2%82%82et-
 - Latin at (conjunction): https://en.wiktionary.org/wiki/at#Latin
 
-**No function-word candidates in this document are automatically recognized by scripts/neva_translate.py.** Unknown/connective-heavy sentences return an unsupported-input error for now.
+**Implementation scope:** ke already works for a limited pair of direct objects in the experimental translator. at and ve are accepted **dictionary words**, not yet parsed as general sentence connectives; other candidates remain unrecognized. CLI now preserves unsupported sentences and warns by default, or errors with `--strict`. This avoids pretending full coordination is implemented.
