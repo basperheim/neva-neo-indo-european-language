@@ -8,6 +8,7 @@ from __future__ import annotations
 import neva
 
 DEGREES = ("positive", "comparative", "superlative")
+NON_GRADABLE = frozenset({"solvos", "somos", "kvenos", "alteros", "primos"})
 EXTENSIONS = {"positive": "", "comparative": "oter", "superlative": "ist"}
 
 
@@ -22,6 +23,8 @@ def inflect_adjective(headword: str, degree: str = "positive", *,
                       number: str = "singular") -> str:
     if degree not in DEGREES:
         raise ValueError("degree must be positive, comparative or superlative")
+    if degree != "positive" and headword in NON_GRADABLE:
+        raise ValueError("quantifiers and ordinals are not gradable adjectives")
     if gender not in neva.ENDINGS or number not in {"singular", "plural"}:
         raise ValueError("invalid gender or number")
     endings = neva.ENDINGS[gender][number]
