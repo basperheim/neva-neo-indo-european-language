@@ -64,7 +64,7 @@ Historical use of PIE *g⁽ʰ⁾e* supports intensity, **not** deictic near/far 
 
 This is separate from **independent** interrogative `kis` “who” and `kid` “what”, which the working grammar already uses.
 
-1. **Option W1 (RECOMMENDED)**: agreeing adjectival `kinos` (M), `kina` (F), `kinom` (N), plural `kines / kinas / kina`. A Neva *kʷi-* inspired stem plus **analogical -n-** and regular adjective endings. The *-n-* is invented for clarity/phonotactics, not a claimed PIE suffix. E.g. `Kinos eshvos?` = Which horse? `Kina mathera?` = Which mother? `Kin om genom?` must be written **`Kinom genom?`** = Which child?
+1. **Option W1 (RECOMMENDED)**: agreeing adjectival `kinos` (M), `kina` (F), `kinom` (N), plural `kines / kinas / kina`. A Neva *kʷi-* inspired stem plus **analogical -n-** and regular adjective endings. The *-n-* is invented for clarity/phonotactics, not a claimed PIE suffix. E.g. `Kinos eshvos?` = Which horse? `Kina mathera?` = Which mother? `Kinom genom?` = Which child?
 2. **Option W2**: invariant `ki` before any noun. Very simple, but no agreement: `ki eshvos?`, `ki mathera?`, `ki genom?`.
 3. **Option W3**: `kos / ka / kod` based more transparently on PIE adjectival *kʷo-*. But **`ka` clashes with Neva's yes/no question marker**, leading to avoidable parser ambiguity, so not recommended.
 
@@ -96,7 +96,7 @@ This is separate from **independent** interrogative `kis` “who” and `kid` �
 9. Add offline pronunciation/TTS using eSpeak NG, optionally Piper, with careful phoneme and stress mapping.
 10. Pin a validated dictionary export for the planned lightweight Go/Gin ChapterGuides API and Astro interface; deploy only when user explicitly requests it.
 
-**Explicitly not required:** bringing back all eight PIE noun cases, the dual, productive noun ablaut, historical laryngeal consonants, grammatical grammatical gender exceptions for every new compound, or hosted AI translation. Those would work against Neva's design goals.
+**Explicitly not required:** bringing back all eight PIE noun cases, the dual, productive noun ablaut, historical laryngeal consonants, grammatical gender exceptions for every new compound, or hosted AI translation. Those would work against Neva's design goals.
 
 ## Vote request
 
