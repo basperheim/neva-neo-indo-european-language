@@ -10,9 +10,10 @@
 - **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — the now-approved masculine plural `-es` and feminine dative `-e/-es`, plus still-open reductions to other vowel sequences and documented D5 inherited-noun ablaut.
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — original **D1 `-oes` rejected**; **D1b `-es`**, **D2 `-e/-es`**, and **D3/D4/D5/D6 approved**. Approved rules are reflected in the guide, dictionary and Python tools.
-- **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
-- **[Function-word and conjunction proposals](docs/FUNCTION_WORDS_PROPOSAL.md)** — established demonstratives/interrogatives, and historically motivated candidate words for “or,” “but,” and “however” (not yet adopted).
+- **[Working lexicon — 800 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
+- **[Function-word and conjunction decisions](docs/FUNCTION_WORDS_PROPOSAL.md)** — approved `ke` (and), `ve` (or), `at` (but), and unresolved proposals for `atoge` (however), `jaba` (if), causal connectives, and demonstratives.
 - **[Experimental offline translator](docs/TRANSLATION_MVP.md)** — bounded Neva ↔ English simple clauses and explicit errors for unsupported input.
+- **[PIE laryngeal sound-change proposal](docs/LARYNGEAL_SOUND_RULES.md)** — h₁/h₂/h₃ vowel coloring and candidate `pra` from PIE `*preh₂-` (before).
 - **[Offline speech/TTS roadmap](docs/OFFLINE_TTS_ROADMAP.md)** — how to produce Neva phonemes and run speech locally, without Google APIs.
 
 ## Try the Python tools
@@ -39,10 +40,16 @@ python3 scripts/neva.py translate "Kapo beroto vodrom."
 python3 scripts/neva.py translate "Bero vodrom mathere."
 python3 scripts/neva.py translate --from en --to neva "I carry water."
 python3 scripts/neva.py translate --from en --to neva "I have carried water."
+python3 scripts/neva.py translate --from en --to neva 'Hello!'       # Vese!
+python3 scripts/neva.py translate --from en --to neva 'Good day!'    # Vesom deinom!
+python3 scripts/neva.py translate --from en --to neva 'How are you?' # Komo es?
+python3 scripts/neva.py translate 'Komo es?'                        # How are you?
+python3 scripts/neva.py translate 'Unknown words.'                  # unchanged + stderr warning
+python3 scripts/neva.py translate --strict 'Unknown words.'         # exit 2
 python3 -m unittest discover -s tests -v
 ```
 
-This includes a **strict, experimental translator** for a small subset of simple Neva ↔ English sentences, alongside lookup, inflection, gender suggestions, and IPA. It does *not* claim to translate arbitrary English or Neva. Unsupported syntax is rejected rather than guessed. See [the translator scope and limits](docs/TRANSLATION_MVP.md).
+This includes a **limited experimental translator** with a small bilingual greeting phrasebook, alongside lookup, inflection, gender suggestions, and IPA. It does *not* claim to translate arbitrary English or Neva. **By default, unsupported text is echoed unchanged with a warning**; `--strict` returns exit code 2. Neither mode invents a meaning. See [the translator scope and limits](docs/TRANSLATION_MVP.md).
 
 ## Core design
 
@@ -70,10 +77,13 @@ data/
 docs/
   NOUN_MORPHOLOGY_PROPOSAL.md
   OFFLINE_TTS_ROADMAP.md
+  LARYNGEAL_SOUND_RULES.md
+  FUNCTION_WORDS_PROPOSAL.md
   TRANSLATION_MVP.md
 scripts/
   neva.py
   neva_translate.py
+  neva_phrases.py
 tests/
   test_neva.py
   test_translation.py
@@ -87,4 +97,4 @@ PIE-to-Neva sound changes are **historically inspired tendencies**, not a rule t
 
 For any new inherited-inspired headword, record its *Neva form, English gloss, part of speech, gender, gender basis, gender status, etymological anchor, source, and whether the result is historical or invented*. Do not silently treat coinages or uncertain PIE forms as attested reconstructed words. Prefer adjusting rules and adding tests over hand-fixing a growing list of exceptions.
 
-**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 798 entries include derived words, compounds, and function words—not 798 verified ancient roots.
+**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 800 entries include derived words, compounds, and function words—not 800 verified ancient roots. The filename `neva_dictionary_v1_1.csv` is retained temporarily for compatibility; it now includes later approved additions.
