@@ -52,7 +52,7 @@ Bound query length, response size and requests per IP. Avoid PostgreSQL until th
 
 ## Stages / acceptance
 
-1. **Language stabilization first**: settle masculine plural, feminine dative and noun ablaut; decide vowel sequence constraints.
+1. **Language stabilization**: masculine nominative plural `-es` (D1b), feminine datives `-e/-es` (D2), and a closed irregular noun class (D5) are now approved in Neva v1.2. Remaining work: evaluate *other* diphthongs and validate irregular noun evidence before exporting grammar.
 2. **Lexicon data contract**: schema checks, deterministic export, provenance and source confidence.
 3. **Go library**: no DB or remote dependency, exact fixture parity for declensions, strong verbs and IPA.
 4. **Gin API**: tests for bad inputs, rate limits, cacheability and deploy routing.
