@@ -2,9 +2,10 @@
 """Neva working-language CLI. Python 3.10+, standard library only.
 
 This is a lexical/morphological prototype, NOT a general machine translator.
-D1 rejects masculine plural -oes: existing -oi is retained.
+D1's -oes proposal was rejected; D1b adopts masculine nominative plural -es.
 D3 approves neuter -a plural; D4 approves shared masculine/neuter oblique endings.
-D2 feminine declension remains under discussion; D5 adopts a closed, lexicon-listed set of irregular noun stems.
+D2 adopts feminine datives -e (singular) and -es (plural).
+D5 adopts a closed, lexicon-listed set of irregular noun stems.
 The currently implemented irregular noun is podos (strong pod-, oblique ped-).
 """
 from __future__ import annotations
@@ -19,11 +20,11 @@ LEXICON = Path(__file__).resolve().parents[1] / "data" / "neva_dictionary_v1_1.c
 ENDINGS = {
     "M": {
         "singular": {"nominative": "os", "accusative": "om", "genitive": "osio", "dative": "oi"},
-        "plural": {"nominative": "oi", "accusative": "ons", "genitive": "on", "dative": "ois"},
+        "plural": {"nominative": "es", "accusative": "ons", "genitive": "on", "dative": "ois"},
     },
     "F": {
-        "singular": {"nominative": "a", "accusative": "am", "genitive": "as", "dative": "ai"},
-        "plural": {"nominative": "as", "accusative": "ans", "genitive": "on", "dative": "ais"},
+        "singular": {"nominative": "a", "accusative": "am", "genitive": "as", "dative": "e"},
+        "plural": {"nominative": "as", "accusative": "ans", "genitive": "on", "dative": "es"},
     },
     "N": {
         "singular": {"nominative": "om", "accusative": "om", "genitive": "osio", "dative": "oi"},
@@ -31,9 +32,11 @@ ENDINGS = {
     },
 }
 
-# D3, D4 approved. D1 rejected (-oi masculine nominative plural retained).
-# D2 feminine case endings and D1b diphthong-free plurals remain unresolved.
-# D5: an explicit closed inventory of lexical noun ablaut, never auto-inferred.
+# D1b approved: masculine nominative plural -es (vulkes).
+# D2 approved: feminine datives -e/-es (mathere/matheres).
+# D3/D4 retained: neuter nominative/accusative plural -a, shared M/N obliques.
+# D5: explicit closed inventory of lexical noun ablaut, never auto-inferred.
+# The remaining -oi/-ois endings are subject to a separate future phonology vote.
 DERIVATIONAL_GENDERS: tuple[tuple[str, str], ...] = (
     ("otoros", "M"),
     ("otrom", "N"),
