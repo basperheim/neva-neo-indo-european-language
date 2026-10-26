@@ -1,20 +1,20 @@
 ID,Neva,English,Part of speech,Gender,Category,Formation,Base or parts,PIE reference (anchor),Historical status,Source URL,Notes,Gender basis,Gender status
 NEVA-0001,ad,"to, toward",preposition,,grammar,function,*h₂ed,*h₂ed,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0002,agrinos,related to field,adjective,,places,derived,agrom + -inos,*h₂éǵros,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of agrom; nominative masculine,,
-NEVA-0003,agrogronom,field grain,noun,N,food,compound,agrom + gronom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gronom,rule_based
+NEVA-0003,agrogronom,field grain,noun,N,food,compound,agrom + gronom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gronom,provisional
 NEVA-0004,agrom,field,noun,N,places,base,agr,*h₂éǵros,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0005,agropontos,field road,noun,M,places,compound,agrom + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,rule_based
+NEVA-0005,agropontos,field road,noun,M,places,compound,agrom + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,provisional
 NEVA-0006,agroteros,"field worker, farmer",noun,M,people,derived,agrom,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",derived_analogy_unverified,provisional
 NEVA-0007,akmoninos,related to rain,adjective,,nature,derived,akmonom + -inos,*h₂ekmon,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of akmonom; nominative masculine,,
 NEVA-0008,akmonom,rain,noun,N,nature,base,akmon,*h₂ekmon,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0009,akmonovodrom,rainwater,noun,N,nature,compound,akmonom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,rule_based
+NEVA-0009,akmonovodrom,rainwater,noun,N,nature,compound,akmonom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,provisional
 NEVA-0010,akre,"in a way that is high, elevated",adverb,,qualities,derived,akros + -e,*h₂eḱ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0011,akritia,"quality or state of being high, elevated",noun,F,concepts,derived,akros + -itia,*h₂eḱ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0012,akros,"high, elevated",adjective,,qualities,base,akr,*h₂eḱ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0013,albe,in a way that is white,adverb,,qualities,derived,albos + -e,*h₂elbʰós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0014,albitia,quality or state of being white,noun,F,concepts,derived,albos + -itia,*h₂elbʰós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0015,albos,white,adjective,,qualities,base,alb,*h₂elbʰós,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
-NEVA-0016,alboshermom,white blade,noun,N,objects,compound,albos + shermom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shermom,rule_based
+NEVA-0016,alboshermom,white blade,noun,N,objects,compound,albos + shermom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shermom,provisional
 NEVA-0017,ange,in a way that is narrow,adverb,,qualities,derived,angos + -e,*h₂enǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0018,angitia,quality or state of being narrow,noun,F,concepts,derived,angos + -itia,*h₂enǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0019,angos,narrow,adjective,,qualities,base,ang,*h₂enǵʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
@@ -42,15 +42,15 @@ NEVA-0040,ausom,ear,noun,N,body,base,aus,*h₂ṓws,PIE-inspired adaptation,http
 NEVA-0041,avisa,bird,noun,F,animals,base,avis,*h₂éwis,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0042,avisinos,related to bird,adjective,,animals,derived,avisa + -inos,*h₂éwis,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of avisa,,
 NEVA-0043,avisiska,small bird,noun,F,animals,derived,avisa + -isk-,*h₂éwis,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iska,rule_based
-NEVA-0044,avisopetrom,bird feather,noun,N,body,compound,avisa + petrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:petrom,rule_based
-NEVA-0045,avisosavelom,daylight bird (poetic),noun,N,poetry,compound,avisa + savelom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:savelom,rule_based
+NEVA-0044,avisopetrom,bird feather,noun,N,body,compound,avisa + petrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:petrom,provisional
+NEVA-0045,avisosavelom,daylight bird (poetic),noun,N,poetry,compound,avisa + savelom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:savelom,provisional
 NEVA-0046,beralos,"pertaining to the action: carry, bear",adjective,,qualities,derived,beren + -alos,*bʰer-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0047,beren,"to carry, bear",verb,,actions,base,ber,*bʰer-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,strong; strong past stem bor-,,
 NEVA-0048,berginos,related to mountain,adjective,,nature,derived,bergos + -inos,*bʰerǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of bergos,,
-NEVA-0049,bergoakmonom,mountain rain,noun,N,nature,compound,bergos + akmonom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:akmonom,rule_based
-NEVA-0050,bergopontos,mountain trail,noun,M,places,compound,bergos + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,rule_based
+NEVA-0049,bergoakmonom,mountain rain,noun,N,nature,compound,bergos + akmonom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:akmonom,provisional
+NEVA-0050,bergopontos,mountain trail,noun,M,places,compound,bergos + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,provisional
 NEVA-0051,bergos,mountain,noun,M,nature,base,berg,*bʰerǵʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0052,bergosnoigom,mountain snow,noun,N,nature,compound,bergos + snoigom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:snoigom,rule_based
+NEVA-0052,bergosnoigom,mountain snow,noun,N,nature,compound,bergos + snoigom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:snoigom,provisional
 NEVA-0053,berinos,related to load,adjective,,objects,derived,berom + -inos,*bʰer-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of berom; nominative masculine,,
 NEVA-0054,beriskom,small load,noun,N,objects,derived,berom + -isk-,*bʰer-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0055,berom,"load, burden",noun,N,objects,base,ber,*bʰer-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -66,7 +66,7 @@ NEVA-0064,blomom,flower,noun,N,nature,base,blom,*bʰleh₃-,PIE-inspired adaptat
 NEVA-0065,blomotia,action or process: bloom,noun,F,actions,derived,blomen + -otia,*bʰleh₃-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0066,blomotoros,agent or practitioner of: bloom,noun,M,people,derived,blomen + -otoros,*bʰleh₃-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0067,bratherinos,brotherly,adjective,,people,derived,bratheros,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0068,bratherodomom,brother's household,noun,N,people,compound,bratheros + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0068,bratherodomom,brother's household,noun,N,people,compound,bratheros + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0069,bratheros,brother,noun,M,people,base,brather,*bʰréh₂tēr,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0070,deinom,day,noun,N,time,base,dein,*dei-n-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0071,denegva,tongue,noun,F,body,base,denegv,*dn̥ǵʰwéh₂s,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -126,12 +126,12 @@ NEVA-0124,dolotia,action or process: count,noun,F,actions,derived,dolen + -otia,
 NEVA-0125,dolotoros,agent or practitioner of: count,noun,M,people,derived,dolen + -otoros,*dol-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0126,dolotrom,tool/device for: count,noun,N,technology,derived,dolen + -otrom,*dol-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otrom,rule_based
 NEVA-0127,dominos,related to home,adjective,,places,derived,domom + -inos,*dem-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of domom; nominative masculine,,
-NEVA-0128,domodhverom,house door,noun,N,objects,compound,domom + dhverom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhverom,rule_based
-NEVA-0129,domolevkom,house light,noun,N,objects,compound,domom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,rule_based
+NEVA-0128,domodhverom,house door,noun,N,objects,compound,domom + dhverom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhverom,provisional
+NEVA-0129,domolevkom,house light,noun,N,objects,compound,domom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,provisional
 NEVA-0130,domom,"home, house",noun,N,places,base,dom,*dem-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0131,domopokom,house hearth,noun,N,objects,compound,domom + pokom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pokom,rule_based
-NEVA-0132,domopontos,road to a home,noun,M,places,compound,domom + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,rule_based
-NEVA-0133,domoshelom,house shelter,noun,N,places,compound,domom + selom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:selom,rule_based
+NEVA-0131,domopokom,house hearth,noun,N,objects,compound,domom + pokom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pokom,provisional
+NEVA-0132,domopontos,road to a home,noun,M,places,compound,domom + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,provisional
+NEVA-0133,domoshelom,house shelter,noun,N,places,compound,domom + selom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:selom,provisional
 NEVA-0134,dontinos,related to tooth,adjective,,body,derived,dontom + -inos,*h₃dónts,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of dontom; nominative masculine,,
 NEVA-0135,dontiskom,small tooth,noun,N,body,derived,dontom + -isk-,*h₃dónts,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0136,dontom,tooth,noun,N,body,base,dont,*h₃dónts,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -140,14 +140,14 @@ NEVA-0138,dootoros,agent or practitioner of: give,noun,M,people,derived,doen + -
 NEVA-0139,dootrom,tool/device for: give,noun,N,technology,derived,doen + -otrom,*deh₃-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otrom,rule_based
 NEVA-0140,dorinos,related to tree,adjective,,nature,derived,dorom + -inos,*dóru,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of dorom; nominative masculine,,
 NEVA-0141,doriskom,small tree,noun,N,nature,derived,dorom + -isk-,*dóru,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive,derivational:-iskom,rule_based
-NEVA-0142,doroblomom,"tree flower, blossom",noun,N,nature,compound,dorom + blomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:blomom,rule_based
+NEVA-0142,doroblomom,"tree flower, blossom",noun,N,nature,compound,dorom + blomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:blomom,provisional
 NEVA-0143,dorogerbotrom,wooden stylus,noun,N,objects,compound,dorom + gerbotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotrom,rule_based
-NEVA-0144,dorokoinom,woodland grass,noun,N,nature,compound,dorom + koinom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:koinom,rule_based
-NEVA-0145,dorolubom,tree leaf,noun,N,nature,compound,dorom + lubom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:lubom,rule_based
+NEVA-0144,dorokoinom,woodland grass,noun,N,nature,compound,dorom + koinom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:koinom,provisional
+NEVA-0145,dorolubom,tree leaf,noun,N,nature,compound,dorom + lubom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:lubom,provisional
 NEVA-0146,dorom,tree,noun,N,nature,base,dor,*dóru,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0147,doroshermom,wooden blade,noun,N,objects,compound,dorom + shermom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shermom,rule_based
+NEVA-0147,doroshermom,wooden blade,noun,N,objects,compound,dorom + shermom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shermom,provisional
 NEVA-0148,doroteros,"tree keeper, forester",noun,M,people,derived,dorom,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",derived_analogy_unverified,provisional
-NEVA-0149,dorovradom,tree root,noun,N,nature,compound,dorom + vradom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vradom,rule_based
+NEVA-0149,dorovradom,tree root,noun,N,nature,compound,dorom + vradom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vradom,provisional
 NEVA-0150,dumbinos,related to tail,adjective,,body,derived,dumbom + -inos,*dewmbʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of dumbom; nominative masculine,,
 NEVA-0151,dumbiskom,small tail,noun,N,body,derived,dumbom + -isk-,*dewmbʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0152,dumbom,tail,noun,N,body,base,dumb,*dewmbʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -165,7 +165,7 @@ NEVA-0163,en,"in, inside",preposition,,grammar,function,*h₁en,*h₁en,PIE-insp
 NEVA-0164,esen,to be,verb,,actions,base,es,*h₁es-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,suppletive; strong past stem ves-,,
 NEVA-0165,eshvinos,related to horse,adjective,,animals,derived,eshvos + -inos,*h₁éḱwos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of eshvos,,
 NEVA-0166,eshviskos,small horse,noun,M,animals,derived,eshvos + -isk-,*h₁éḱwos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskos,rule_based
-NEVA-0167,eshvopedos,"horse's foot, hoof",noun,M,body,compound,eshvos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,rule_based
+NEVA-0167,eshvopedos,"horse's foot, hoof",noun,M,body,compound,eshvos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,provisional
 NEVA-0168,eshvos,horse,noun,M,animals,base,eshv,*h₁éḱwos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0169,eshvoteros,horse-keeper,noun,M,people,derived,eshvos,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",derived_analogy_unverified,provisional
 NEVA-0170,eterinos,related to intestine,adjective,,body,derived,eterom + -inos,*eh₁ter-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of eterom; nominative masculine,,
@@ -188,7 +188,7 @@ NEVA-0186,gemen,to come,verb,,actions,base,gem,*gʷem-,PIE-inspired adaptation,h
 NEVA-0187,gemotia,action or process: come,noun,F,actions,derived,gemen + -otia,*gʷem-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0188,gena,woman,noun,F,people,base,gen,*gʷḗn,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0189,geninos,childlike,adjective,,people,derived,genom,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0190,genokaputom,child's head,noun,N,body,compound,genom + kaputom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kaputom,rule_based
+NEVA-0190,genokaputom,child's head,noun,N,body,compound,genom + kaputom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kaputom,provisional
 NEVA-0191,genom,child,noun,N,people,base,gen,*ǵénh₁mn̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0192,gerbalos,"pertaining to the action: scratch, write",adjective,,qualities,derived,gerben + -alos,*gerbʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0193,gerben,"to scratch, write",verb,,actions,base,gerb,*gerbʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,strong; strong past stem gorb-,,
@@ -223,7 +223,7 @@ NEVA-0221,grevitia,quality or state of being heavy,noun,F,concepts,derived,grevo
 NEVA-0222,grevos,heavy,adjective,,qualities,base,grev,*gʷréh₂us,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0223,groninos,related to grain,adjective,,food,derived,gronom + -inos,*ǵr̥h₂nóm,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of gronom; nominative masculine,,
 NEVA-0224,groniskom,small grain,noun,N,food,derived,gronom + -isk-,*ǵr̥h₂nóm,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
-NEVA-0225,gronodomom,grain storehouse,noun,N,places,compound,gronom + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0225,gronodomom,grain storehouse,noun,N,places,compound,gronom + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0226,gronom,grain,noun,N,food,base,gron,*ǵr̥h₂nóm,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0227,gronopekotrom,grain-cooking device,noun,N,technology,compound,gronom + pekotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pekotrom,rule_based
 NEVA-0228,ialos,pertaining to the action: go,adjective,,qualities,derived,ien + -alos,*h₁ey-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
@@ -233,7 +233,7 @@ NEVA-0231,ja,yes (affirmation),particle,,grammar,function,*yeh₂- (working),*ye
 NEVA-0232,jeginos,related to ice,adjective,,nature,derived,jegom + -inos,*yeǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of jegom; nominative masculine,,
 NEVA-0233,jegiskom,small ice,noun,N,nature,derived,jegom + -isk-,*yeǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive,derivational:-iskom,rule_based
 NEVA-0234,jegom,ice,noun,N,nature,base,jeg,*yeǵ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0235,jegovodrom,ice water,noun,N,nature,compound,jegom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,rule_based
+NEVA-0235,jegovodrom,ice water,noun,N,nature,compound,jegom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,provisional
 NEVA-0236,jekvinos,related to liver,adjective,,body,derived,jekvom + -inos,*Hyékʷr̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of jekvom; nominative masculine,,
 NEVA-0237,jekviskom,small liver,noun,N,body,derived,jekvom + -isk-,*Hyékʷr̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0238,jekvom,liver,noun,N,body,base,jekv,*Hyékʷr̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -311,11 +311,11 @@ NEVA-0309,maninos,"human, of people",adjective,,people,derived,manos,,Neva coina
 NEVA-0310,manos,human being,noun,M,people,base,man,*mon-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0311,mathera,mother,noun,F,people,base,mather,*méh₂tēr,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0312,matherinos,maternal,adjective,,people,derived,mathera,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0313,matherodomom,mother's household,noun,N,people,compound,mathera + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0313,matherodomom,mother's household,noun,N,people,compound,mathera + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0314,me,me,pronoun,,grammar,function,*me,*me,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0315,meie,in a way that is small,adverb,,qualities,derived,meios + -e,*mey-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0316,meiitia,quality or state of being small,noun,F,concepts,derived,meios + -itia,*mey-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0317,meiodomom,small house,noun,N,places,compound,meios + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0317,meiodomom,small house,noun,N,places,compound,meios + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0318,meios,small,adjective,,qualities,base,mei,*mey-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0319,meis,"my, mine",determiner,,grammar,function,*me-,*me-,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0320,melalos,pertaining to the action: grind,adjective,,qualities,derived,melen + -alos,*melh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
@@ -332,7 +332,7 @@ NEVA-0330,menos,moon,noun,M,nature,base,men,*mḗh₁n̥s,PIE-inspired adaptatio
 NEVA-0331,menotia,action or process: think,noun,F,actions,derived,menen + -otia,*men-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0332,menotoros,agent or practitioner of: think,noun,M,people,derived,menen + -otoros,*men-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0333,menotrom,computer,noun,N,technology,derived,menen + -otrom,*men-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,Established meaning: computer; literally thinking instrument.,derivational:-otrom,rule_based
-NEVA-0334,menotromovebom,computer network,noun,N,technology,compound,menotrom + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,rule_based
+NEVA-0334,menotromovebom,computer network,noun,N,technology,compound,menotrom + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,provisional
 NEVA-0335,meren,to die,verb,,actions,base,mer,*mer-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
 NEVA-0336,merinos,related to death,adjective,,concepts,derived,merom + -inos,*mer-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of merom; nominative masculine,,
 NEVA-0337,merom,death,noun,N,concepts,base,mer,*mer-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -342,13 +342,13 @@ NEVA-0340,mertitia,quality or state of being dead,noun,F,concepts,derived,mertos
 NEVA-0341,mertos,dead,adjective,,qualities,base,mert,*mer-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0342,meze,"in a way that is large, great",adverb,,qualities,derived,mezos + -e,*méǵh₂s,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0343,mezitia,"quality or state of being large, great",noun,F,concepts,derived,mezos + -itia,*méǵh₂s,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0344,mezodomom,large house,noun,N,places,compound,mezos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0344,mezodomom,large house,noun,N,places,compound,mezos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0345,mezos,"large, great",adjective,,qualities,base,mez,*méǵh₂s,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0346,morinos,related to sea,adjective,,nature,derived,morom + -inos,*móri,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of morom; nominative masculine,,
 NEVA-0347,morom,sea,noun,N,nature,base,mor,*móri,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0348,moropeiskom,sea fish,noun,N,animals,compound,morom + peiskom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:peiskom,rule_based
-NEVA-0349,morosalom,sea salt,noun,N,food,compound,morom + salom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:salom,rule_based
-NEVA-0350,morovodrom,seawater,noun,N,nature,compound,morom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,rule_based
+NEVA-0348,moropeiskom,sea fish,noun,N,animals,compound,morom + peiskom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:peiskom,provisional
+NEVA-0349,morosalom,sea salt,noun,N,food,compound,morom + salom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:salom,provisional
+NEVA-0350,morovodrom,seawater,noun,N,nature,compound,morom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,provisional
 NEVA-0351,moshalos,"pertaining to the action: wash away, rinse",adjective,,qualities,derived,moshen + -alos,*meyǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0352,moshen,"to wash away, rinse",verb,,actions,base,mosh,*meyǵʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
 NEVA-0353,moshotia,"action or process: wash away, rinse",noun,F,actions,derived,moshen + -otia,*meyǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
@@ -366,14 +366,14 @@ NEVA-0364,nebom,cloud,noun,N,nature,base,neb,*nébʰos,PIE-inspired adaptation,h
 NEVA-0365,neve,in a way that is new,adverb,,qualities,derived,nevos + -e,*néwos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0366,neven,nine,numeral,,numbers,base,*h₁néwn̥,*h₁néwn̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0367,nevitia,quality or state of being new,noun,F,concepts,derived,nevos + -itia,*néwos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0368,nevodomom,new house,noun,N,places,compound,nevos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0368,nevodomom,new house,noun,N,places,compound,nevos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0369,nevos,new,adjective,,qualities,base,nev,*néwos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0370,nokta,night,noun,F,time,base,nokt,*nókʷts,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0371,nokte,"in a way that is dark, nightly",adverb,,qualities,derived,noktos + -e,*nókʷts,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0372,noktitia,"quality or state of being dark, nightly",noun,F,concepts,derived,noktos + -itia,*nókʷts,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0373,noktolevkom,nightlight,noun,N,objects,compound,nokta + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,rule_based
+NEVA-0373,noktolevkom,nightlight,noun,N,objects,compound,nokta + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,provisional
 NEVA-0374,noktos,"dark, nightly",adjective,,qualities,base,nokt,*nókʷts,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
-NEVA-0375,noktosnovom,night dream,noun,N,concepts,compound,nokta + snovom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:snovom,rule_based
+NEVA-0375,noktosnovom,night dream,noun,N,concepts,compound,nokta + snovom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:snovom,provisional
 NEVA-0376,nominos,related to name,adjective,,society,derived,nomom + -inos,*h₁nómn̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of nomom; nominative masculine,,
 NEVA-0377,nomogerbotia,"name writing, labeling",noun,F,actions,compound,nomom + gerbotia,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotia,rule_based
 NEVA-0378,nomogerbotrom,"naming pen, labeling tool",noun,N,objects,compound,nomom + gerbotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotrom,rule_based
@@ -396,7 +396,7 @@ NEVA-0394,oviinos,related to egg,adjective,,food,derived,oviom + -inos,*h₂ōwy
 NEVA-0395,oviiskom,small egg,noun,N,food,derived,oviom + -isk-,*h₂ōwyóm,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0396,oviom,egg,noun,N,food,base,ovi,*h₂ōwyóm,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0397,patherinos,paternal,adjective,,people,derived,patheros,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0398,patherodomom,father's household,noun,N,people,compound,patheros + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0398,patherodomom,father's household,noun,N,people,compound,patheros + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0399,patheros,father,noun,M,people,base,pather,*ph₂tḗr,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0400,pedinos,related to foot,adjective,,body,derived,pedos + -inos,*pṓds,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of pedos,,
 NEVA-0401,pediskos,small foot,noun,M,body,derived,pedos + -isk-,*pṓds,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskos,rule_based
@@ -465,25 +465,25 @@ NEVA-0463,pulinos,related to hair,adjective,,body,derived,pulom + -inos,*pulh₂
 NEVA-0464,puliskom,small hair,noun,N,body,derived,pulom + -isk-,*pulh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0465,pulom,hair,noun,N,body,base,pul,*pulh₂-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0466,purinos,related to fire,adjective,,nature,derived,purom + -inos,*péh₂wr̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of purom; nominative masculine,,
-NEVA-0467,purodhumos,fire smoke,noun,M,nature,compound,purom + dhumos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhumos,rule_based
+NEVA-0467,purodhumos,fire smoke,noun,M,nature,compound,purom + dhumos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhumos,provisional
 NEVA-0468,purogerbotia,"fire writing, pyrography",noun,F,arts,compound,purom + gerbotia,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotia,rule_based
-NEVA-0469,purolevkom,firelight,noun,N,nature,compound,purom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,rule_based
+NEVA-0469,purolevkom,firelight,noun,N,nature,compound,purom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,provisional
 NEVA-0470,purom,fire,noun,N,nature,base,pur,*péh₂wr̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0471,puropekotrom,"stove, cooking apparatus",noun,N,technology,compound,purom + pekotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pekotrom,rule_based
-NEVA-0472,puropokom,hearth fire,noun,N,nature,compound,purom + pokom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pokom,rule_based
+NEVA-0472,puropokom,hearth fire,noun,N,nature,compound,purom + pokom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pokom,provisional
 NEVA-0473,puropotos,fire keeper,noun,M,people,derived,purom,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",derived_analogy_unverified,provisional
 NEVA-0474,regotos,"governing, ruling",adjective,,qualities,derived,rezen,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
 NEVA-0475,rezalos,"pertaining to the action: govern, lead",adjective,,qualities,derived,rezen + -alos,*h₃reǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0476,rezen,"to govern, lead",verb,,actions,base,rez,*h₃reǵ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
 NEVA-0477,rezinos,related to rule,adjective,,society,derived,rezom + -inos,*h₃reǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of rezom; nominative masculine,,
-NEVA-0478,rezodomom,ruler's house,noun,N,society,compound,rezos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0478,rezodomom,ruler's house,noun,N,society,compound,rezos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0479,rezogerbotia,official writing,noun,F,society,compound,rezos + gerbotia,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotia,rule_based
 NEVA-0480,rezom,"rule, governance",noun,N,society,base,rez,*h₃reǵ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0481,rezopontos,government road,noun,M,society,compound,rezos + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,rule_based
+NEVA-0481,rezopontos,government road,noun,M,society,compound,rezos + pontos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pontos,provisional
 NEVA-0482,rezos,"ruler, chief",noun,M,people,base,rez,*h₃reǵ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0483,rezotia,"action or process: govern, lead",noun,F,actions,derived,rezen + -otia,*h₃reǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0484,rezotoros,"agent or practitioner of: govern, lead",noun,M,people,derived,rezen + -otoros,*h₃reǵ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
-NEVA-0485,rezoverdom,"order, command (literally ruler's word)",noun,N,society,compound,rezos + verdom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:verdom,rule_based
+NEVA-0485,rezoverdom,"order, command (literally ruler's word)",noun,N,society,compound,rezos + verdom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:verdom,provisional
 NEVA-0486,rezte,in a way that is straight,adverb,,qualities,derived,reztos + -e,*h₃reǵtós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0487,reztitia,quality or state of being straight,noun,F,concepts,derived,reztos + -itia,*h₃reǵtós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0488,reztos,straight,adjective,,qualities,base,rezt,*h₃reǵtós,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
@@ -494,18 +494,18 @@ NEVA-0492,rudhalos,"pertaining to the action: redden, make red",adjective,,quali
 NEVA-0493,rudhe,in a way that is red,adverb,,qualities,derived,rudhos + -e,*h₁rewdʰós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0494,rudhen,"to redden, make red",verb,,actions,base,rudh,*h₁rewdʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
 NEVA-0495,rudhitia,quality or state of being red,noun,F,concepts,derived,rudhos + -itia,*h₁rewdʰós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0496,rudhokruvom,red blood,noun,N,body,compound,rudhos + kruvom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kruvom,rule_based
+NEVA-0496,rudhokruvom,red blood,noun,N,body,compound,rudhos + kruvom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kruvom,provisional
 NEVA-0497,rudhos,red,adjective,,qualities,base,rudh,*h₁rewdʰós,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0498,rudhotia,"action or process: redden, make red",noun,F,actions,derived,rudhen + -otia,*h₁rewdʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0499,rudhotoros,"agent or practitioner of: redden, make red",noun,M,people,derived,rudhen + -otoros,*h₁rewdʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0500,sa,she; that (feminine),pronoun,,grammar,function,*séh₂,*séh₂,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0501,salinos,related to salt,adjective,,nature,derived,salom + -inos,*séh₂l,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of salom; nominative masculine,,
 NEVA-0502,salom,salt,noun,N,nature,base,sal,*séh₂l,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0503,salovodrom,saltwater,noun,N,nature,compound,salom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,rule_based
+NEVA-0503,salovodrom,saltwater,noun,N,nature,compound,salom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,provisional
 NEVA-0504,sam,her (object),pronoun,,grammar,function,*séh₂-,*séh₂-,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0505,save,in a way that is sunny,adverb,,qualities,derived,savos + -e,*sóh₂wl̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0506,savelinos,related to sun,adjective,,nature,derived,savelom + -inos,*sóh₂wl̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of savelom; nominative masculine,,
-NEVA-0507,savelolevkom,sunlight,noun,N,nature,compound,savelom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,rule_based
+NEVA-0507,savelolevkom,sunlight,noun,N,nature,compound,savelom + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,provisional
 NEVA-0508,savelom,sun,noun,N,nature,base,savel,*sóh₂wl̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0509,savelotepom,solar heat,noun,N,nature,compound,savelom + tep- (warmth),,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head_unverified:tep- (warmth),provisional
 NEVA-0510,savitia,quality or state of being sunny,noun,F,concepts,derived,savos + -itia,*sóh₂wl̥,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
@@ -538,7 +538,7 @@ NEVA-0536,semnom,seed,noun,N,nature,base,semn,*séh₁mn̥,PIE-inspired adaptati
 NEVA-0537,semos,"one, unified",adjective,,qualities,base,sem,*sem-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0538,sene,in a way that is old,adverb,,qualities,derived,senos + -e,*sénos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0539,senitia,quality or state of being old,noun,F,concepts,derived,senos + -itia,*sénos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0540,senodomom,old house,noun,N,places,compound,senos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0540,senodomom,old house,noun,N,places,compound,senos + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0541,senos,old,adjective,,qualities,base,sen,*sénos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0542,septem,seven,numeral,,numbers,base,*septm̥,*septm̥,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0543,shadalos,pertaining to the action: fall,adjective,,qualities,derived,shaden + -alos,*ḱh₂d-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
@@ -547,12 +547,12 @@ NEVA-0545,shadotia,action or process: fall,noun,F,actions,derived,shaden + -otia
 NEVA-0546,shelom,"shelter, dwelling",noun,N,places,compound,selom (lexical alternate),,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head_unverified:selom (lexical alternate),provisional
 NEVA-0547,sheminos,related to assembly,adjective,,society,derived,shemom + -inos,*ḱem-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of shemom; nominative masculine,,
 NEVA-0548,shemom,"assembly, gathering",noun,N,society,base,shem,*ḱem-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0549,shemoverdom,"assembled words, text",noun,N,society,compound,shemom + verdom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:verdom,rule_based
+NEVA-0549,shemoverdom,"assembled words, text",noun,N,society,compound,shemom + verdom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:verdom,provisional
 NEVA-0550,shentom,hundred,numeral,,numbers,base,*ḱm̥tóm,*ḱm̥tóm,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0551,sherdinos,related to heart,adjective,,body,derived,sherdom + -inos,*ḱr̥d-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of sherdom; nominative masculine,,
 NEVA-0552,sherdiskom,small heart,noun,N,body,derived,sherdom + -isk-,*ḱr̥d-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0553,sherdom,heart,noun,N,body,base,sherd,*ḱr̥d-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0554,sherdosvedom,"heart's sweetness, affection (poetic)",noun,N,poetry,compound,sherdom + svedom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:svedom,rule_based
+NEVA-0554,sherdosvedom,"heart's sweetness, affection (poetic)",noun,N,poetry,compound,sherdom + svedom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:svedom,provisional
 NEVA-0555,shere,in a way that is separate,adverb,,qualities,derived,sheros + -e,*(s)ker-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0556,sherinos,related to horn,adjective,,body,derived,sherom + -inos,*ḱerh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of sherom; nominative masculine,,
 NEVA-0557,sheriskom,small horn,noun,N,body,derived,sherom + -isk-,*ḱerh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
@@ -574,11 +574,11 @@ NEVA-0572,shlevomenotrom,listening computer,noun,N,technology,compound,shleven +
 NEVA-0573,shlevotia,action or process: hear,noun,F,actions,derived,shleven + -otia,*ḱlew-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0574,shlevotoros,agent or practitioner of: hear,noun,M,people,derived,shleven + -otoros,*ḱlew-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0575,shlevotrom,"audio receiver, hearing device",noun,N,technology,derived,shleven + -otrom,*ḱlew-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,Instrument for hearing/receiving sound.,derivational:-otrom,rule_based
-NEVA-0576,shlevovebom,"sound network, audio network",noun,N,technology,compound,shleven + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,rule_based
+NEVA-0576,shlevovebom,"sound network, audio network",noun,N,technology,compound,shleven + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,provisional
 NEVA-0577,shvoninos,related to dog,adjective,,animals,derived,shvonos + -inos,*ḱwṓ,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of shvonos,,
 NEVA-0578,shvoniskos,small dog,noun,M,animals,derived,shvonos + -isk-,*ḱwṓ,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskos,rule_based
 NEVA-0579,shvonom,"dog-like thing, canine object",noun,N,animals,compound,shvonos + -om,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head_unverified:-om,provisional
-NEVA-0580,shvonopedos,"dog's foot, paw",noun,M,body,compound,shvonos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,rule_based
+NEVA-0580,shvonopedos,"dog's foot, paw",noun,M,body,compound,shvonos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,provisional
 NEVA-0581,shvonos,dog,noun,M,animals,base,shvon,*ḱwṓ,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0582,sivalos,pertaining to the action: sew,adjective,,qualities,derived,siven + -alos,*syewH-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0583,siven,to sew,verb,,actions,base,siv,*syewH-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
@@ -600,7 +600,7 @@ NEVA-0598,snen,to swim,verb,,actions,base,sn,*(s)neh₂-,PIE-inspired adaptation
 NEVA-0599,snitia,quality or state of being sleepy,noun,F,concepts,derived,snos + -itia,*swep-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0600,snoiginos,related to snow,adjective,,nature,derived,snoigom + -inos,*snóygʷʰos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of snoigom; nominative masculine,,
 NEVA-0601,snoigom,snow,noun,N,nature,base,snoig,*snóygʷʰos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0602,snoigovodrom,snowmelt water,noun,N,nature,compound,snoigom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,rule_based
+NEVA-0602,snoigovodrom,snowmelt water,noun,N,nature,compound,snoigom + vodrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vodrom,provisional
 NEVA-0603,snos,sleepy,adjective,,qualities,base,sn,*swep-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0604,snotia,action or process: swim,noun,F,actions,derived,snen + -otia,*(s)neh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0605,snotoros,agent or practitioner of: swim,noun,M,people,derived,snen + -otoros,*(s)neh₂-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
@@ -634,7 +634,7 @@ NEVA-0632,svede,in a way that is sweet,adverb,,qualities,derived,svedos + -e,*sw
 NEVA-0633,svedinos,related to sweetness,adjective,,food,derived,svedom + -inos,*swéh₂dus,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of svedom; nominative masculine,,
 NEVA-0634,svediskom,small sweetness,noun,N,food,derived,svedom + -isk-,*swéh₂dus,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskom,rule_based
 NEVA-0635,sveditia,quality or state of being sweet,noun,F,concepts,derived,svedos + -itia,*swéh₂dus,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0636,svedodhumos,sweet smoke (poetic),noun,M,poetry,compound,svedos + dhumos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhumos,rule_based
+NEVA-0636,svedodhumos,sweet smoke (poetic),noun,M,poetry,compound,svedos + dhumos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:dhumos,provisional
 NEVA-0637,svedom,"sweetness, sweet substance",noun,N,food,base,sved,*swéh₂dus,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0638,svedos,sweet,adjective,,qualities,base,sved,*swéh₂dus,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0639,svepalos,pertaining to the action: sleep,adjective,,qualities,derived,svepen + -alos,*swep-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
@@ -646,13 +646,13 @@ NEVA-0644,sverdos,dirty,adjective,,qualities,base,sverd,*swerd-,PIE-inspired ada
 NEVA-0645,svesh,six,numeral,,numbers,base,*swéḱs,*swéḱs,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0646,svesora,sister,noun,F,people,base,svesor,*swésōr,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0647,svesorinos,sisterly,adjective,,people,derived,svesora,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0648,svesorodomom,sister's household,noun,N,people,compound,svesora + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0648,svesorodomom,sister's household,noun,N,people,compound,svesora + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0649,svorde,in a way that is black,adverb,,qualities,derived,svordos + -e,*swordós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0650,svorditia,quality or state of being black,noun,F,concepts,derived,svordos + -itia,*swordós,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
-NEVA-0651,svordokruvom,dark blood,noun,N,body,compound,svordos + kruvom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kruvom,rule_based
+NEVA-0651,svordokruvom,dark blood,noun,N,body,compound,svordos + kruvom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:kruvom,provisional
 NEVA-0652,svordos,black,adjective,,qualities,base,svord,*swordós,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0653,syninos,"filial, of a son",adjective,,people,derived,synos,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",,
-NEVA-0654,synonomom,son's name,noun,N,society,compound,synos + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,rule_based
+NEVA-0654,synonomom,son's name,noun,N,society,compound,synos + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,provisional
 NEVA-0655,synos,son,noun,M,people,base,syn,*suHnús,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0656,ta,they (neuter),pronoun,,grammar,function,*to-,*to-,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0657,tai,they (feminine),pronoun,,grammar,function,*to-,*to-,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
@@ -716,7 +716,7 @@ NEVA-0714,vede,in a way that is wet,adverb,,qualities,derived,vedos + -e,*wed-,N
 NEVA-0715,veditia,quality or state of being wet,noun,F,concepts,derived,vedos + -itia,*wed-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,derivational:-itia,rule_based
 NEVA-0716,vedos,wet,adjective,,qualities,base,ved,*wed-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0717,vedrinos,related to weather,adjective,,nature,derived,vedrom + -inos,*wed-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of vedrom; nominative masculine,,
-NEVA-0718,vedrodomom,weather shelter,noun,N,places,compound,vedrom + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,rule_based
+NEVA-0718,vedrodomom,weather shelter,noun,N,places,compound,vedrom + domom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:domom,provisional
 NEVA-0719,vedrom,"weather, wet conditions",noun,N,nature,base,vedr,*wed-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0720,vegalos,"pertaining to the action: convey, transport",adjective,,qualities,derived,vegen + -alos,*weǵʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0721,vegen,"to convey, transport",verb,,actions,base,veg,*weǵʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,strong; strong past stem vog-,,
@@ -731,7 +731,7 @@ NEVA-0729,vekom,"speech, utterance",noun,N,society,base,vek,*wekʷ-,PIE-inspired
 NEVA-0730,vekomenotrom,speaking computer,noun,N,technology,compound,veken + menotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:menotrom,rule_based
 NEVA-0731,vekotia,action or process: speak,noun,F,actions,derived,veken + -otia,*wekʷ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0732,vekotoros,agent or practitioner of: speak,noun,M,people,derived,veken + -otoros,*wekʷ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
-NEVA-0733,vekovebom,speech network,noun,N,technology,compound,veken + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,rule_based
+NEVA-0733,vekovebom,speech network,noun,N,technology,compound,veken + vebom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:vebom,provisional
 NEVA-0734,vel,will (future particle),particle,,grammar,function,*welh₁-,*welh₁-,PIE-inspired function word,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,,
 NEVA-0735,velalos,"pertaining to the action: wish, want",adjective,,qualities,derived,velen + -alos,*welh₁-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0736,velen,"to wish, want",verb,,actions,base,vel,*welh₁-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,regular,,
@@ -745,7 +745,7 @@ NEVA-0743,ventos,wind,noun,M,nature,base,vent,*h₂wéh₁n̥ts,PIE-inspired ada
 NEVA-0744,verdinos,related to word,adjective,,society,derived,verdom + -inos,*werdʰ-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of verdom; nominative masculine,,
 NEVA-0745,verdogerbotia,"word writing, written composition",noun,F,actions,compound,verdom + gerbotia,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:gerbotia,rule_based
 NEVA-0746,verdom,word,noun,N,society,base,verd,*werdʰ-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
-NEVA-0747,verdoshemom,"word collection, anthology",noun,N,society,compound,verdom + shemom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shemom,rule_based
+NEVA-0747,verdoshemom,"word collection, anthology",noun,N,society,compound,verdom + shemom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:shemom,provisional
 NEVA-0748,verminos,related to worm,adjective,,animals,derived,vermos + -inos,*wr̥mis,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of vermos,,
 NEVA-0749,vermiskos,small worm,noun,M,animals,derived,vermos + -isk-,*wr̥mis,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskos,rule_based
 NEVA-0750,vermos,worm,noun,M,animals,base,verm,*wr̥mis,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
@@ -764,9 +764,9 @@ NEVA-0762,vesos,good,adjective,,qualities,base,ves,*h₁wésus,PIE-inspired adap
 NEVA-0763,vetom,year,noun,N,time,base,vet,*wétos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0764,vidalos,pertaining to the action: see,adjective,,qualities,derived,viden + -alos,*weyd-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
 NEVA-0765,viden,to see,verb,,actions,base,vid,*weyd-,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,strong; strong past stem void-,,
-NEVA-0766,vidolevkom,visible light,noun,N,nature,compound,viden + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,rule_based
+NEVA-0766,vidolevkom,visible light,noun,N,nature,compound,viden + levkom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:levkom,provisional
 NEVA-0767,vidomenotrom,display computer,noun,N,technology,compound,viden + menotrom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:menotrom,rule_based
-NEVA-0768,vidonomom,"visible name, written identifier",noun,N,society,compound,viden + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,rule_based
+NEVA-0768,vidonomom,"visible name, written identifier",noun,N,society,compound,viden + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,provisional
 NEVA-0769,vidotia,action or process: see,noun,F,actions,derived,viden + -otia,*weyd-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otia,rule_based
 NEVA-0770,vidotoros,agent or practitioner of: see,noun,M,people,derived,viden + -otoros,*weyd-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,derivational:-otoros,rule_based
 NEVA-0771,vidotrom,viewing device,noun,N,technology,derived,viden + -otrom,*weyd-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,"General display/optical instrument, not necessarily a television.",derivational:-otrom,rule_based
@@ -786,8 +786,8 @@ NEVA-0784,vradinos,related to plant root,adjective,,nature,derived,vradom + -ino
 NEVA-0785,vradom,plant root,noun,N,nature,base,vrad,*wréh₂ds,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0786,vulkinos,related to wolf,adjective,,animals,derived,vulkos + -inos,*wĺ̥kʷos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,relational adjective of vulkos,,
 NEVA-0787,vulkiskos,small wolf,noun,M,animals,derived,vulkos + -isk-,*wĺ̥kʷos,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,diminutive; productive suffix -isk-,derivational:-iskos,rule_based
-NEVA-0788,vulkonomom,wolf's name,noun,N,society,compound,vulkos + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,rule_based
-NEVA-0789,vulkopedos,"wolf's foot, paw",noun,M,body,compound,vulkos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,rule_based
+NEVA-0788,vulkonomom,wolf's name,noun,N,society,compound,vulkos + nomom,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:nomom,provisional
+NEVA-0789,vulkopedos,"wolf's foot, paw",noun,M,body,compound,vulkos + pedos,,Neva coinage,,transparent Neo-IE compound; meaning is provisional until lexicalized,compound_head:pedos,provisional
 NEVA-0790,vulkos,wolf,noun,M,animals,base,vulk,*wĺ̥kʷos,PIE-inspired adaptation,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_Swadesh_list,,inherited_candidate,provisional
 NEVA-0791,vulkoteros,wolf-keeper,noun,M,people,derived,vulkos,,Neva coinage,,"lexicalized Neva derivation, productive/analogy",derived_analogy_unverified,provisional
 NEVA-0792,zenalos,"pertaining to the action: recognize, know",adjective,,qualities,derived,zenen + -alos,*ǵneh₃-,Neva coinage,https://en.wiktionary.org/wiki/Appendix:Proto-Indo-European_verbs,,,
