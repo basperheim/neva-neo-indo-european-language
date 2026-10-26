@@ -14,7 +14,7 @@ class NevaTests(unittest.TestCase):
     def test_dictionary_has_800_distinct_entries(self):
         entries = neva.load_lexicon()
         self.assertEqual(len(entries), 800)
-        self.assertEqual(len({entry["Neva"] for entry in entries}), 798)
+        self.assertEqual(len({entry["Neva"] for entry in entries}), 800)
 
     def test_new_conjunctions_are_registered(self):
         words = {row["Neva"]: row for row in neva.load_lexicon()}
