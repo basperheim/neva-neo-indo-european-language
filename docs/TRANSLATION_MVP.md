@@ -154,3 +154,24 @@ python3 scripts/neva.py translate --file examples/wolf_and_horse.neva --strict
 ```
 
 `--file` accepts UTF-8 text with **one sentence per line**. Each line uses the same bounded parser as the interactive command. In default mode unsupported lines pass through with a warning giving the line number. Under `--strict` translation stops with exit code 2 and the source line number. A multiline paragraph or nested story is **not** understood as a whole.
+
+## Exact standalone headwords (new)
+
+A single known English or Neva dictionary headword now translates directly **without** requiring a full finite-verb sentence:
+
+```bash
+python3 scripts/neva.py translate --from en --to neva language  # denegva
+python3 scripts/neva.py translate denegva                      # tongue / language
+python3 scripts/neva.py translate --from en --to neva cup      # piotrom
+```
+
+This only matches **unambiguous individual lexical headwords** and comma-separated dictionary meanings, not English sentence word forms. For example, *bear* could be a noun or a verb, and the command deliberately flags ambiguous meanings. English articles such as *the* remain untranslatable **by design**: Neva has no obligatory article.
+
+For a complete honest check of all 100 words in the Wikipedia/Oxford frequency list, use:
+
+```bash
+python3 scripts/neva.py coverage --limit 100
+python3 scripts/neva.py coverage --status gap
+```
+
+See [vocabulary notes](VOCABULARY_EXPANSION.md) and the [ranked audit](../data/english_top100_coverage.tsv).
