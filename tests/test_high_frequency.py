@@ -88,6 +88,18 @@ class FrequencyGapTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             inflect_adjective("primos", "comparative")
 
+    def test_no_unaddressed_top100_rows_cli(self):
+        script = ROOT / "scripts" / "neva.py"
+        completed = subprocess.run(
+            [sys.executable, str(script), "coverage", "--status", "gap"],
+            capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertEqual(
+            completed.stdout.strip(),
+            "No coverage entries with status 'gap'.",
+        )
+
     def test_cli_reports_partial_senses_and_headwords(self):
         script = ROOT / "scripts" / "neva.py"
         runs = [
