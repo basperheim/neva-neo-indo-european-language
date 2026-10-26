@@ -145,3 +145,12 @@ python3 scripts/neva.py examples --category Story
 ```
 
 `data/sentence_corpus.tsv` is a small, curated bilingual corpus; the test suite verifies every Neva → English row, including short story sentences and direction idioms. The `examples` command prints pairs without requiring any models or web connection. This corpus documents a *tested subset*, not the full space of possible Neva sentences.
+
+## Translate a little story from a file
+
+```bash
+python3 scripts/neva.py translate --file examples/wolf_and_horse.neva
+python3 scripts/neva.py translate --file examples/wolf_and_horse.neva --strict
+```
+
+`--file` accepts UTF-8 text with **one sentence per line**. Each line uses the same bounded parser as the interactive command. In default mode unsupported lines pass through with a warning giving the line number. Under `--strict` translation stops with exit code 2 and the source line number. A multiline paragraph or nested story is **not** understood as a whole.
