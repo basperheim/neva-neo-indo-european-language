@@ -1,7 +1,7 @@
 # Neva (Neo-Indo-European) — Core Reference v1.2
 
 **Status:** Working specification v1.2 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
-**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (798 candidate headwords).  
+**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (800 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
@@ -118,9 +118,9 @@ Yes/no questions are marked with initial **ka**: `Ka beres vodrom?` — Do you c
 
 ### Function words: which paradigms are settled?
 
-**Defined core forms:** third-person `so / sa / tod` double as distal demonstratives ("that", masc./fem./neut.); interrogatives `kis` (who), `kid` (what), `ku` (where), `koda` (when), `komo` (how); `ka` begins a yes/no question; `ke` means "and"; `ne` negates.
+**Defined core forms:** third-person `so / sa / tod` double as distal demonstratives ("that", masc./fem./neut.); interrogatives `kis` (who), `kid` (what), `ku` (where), `koda` (when), `komo` (how); `ka` begins a yes/no question; **`ke` means “and”, `ve` means “or”, `at` means “but/yet”**; `ne` negates. The translator currently only handles `ke` in a restricted direct-object pattern.
 
-**Not yet fixed:** all case/number forms of demonstratives and interrogatives, a proximal set meaning "this", relative pronouns, and core words for "but", "however", "or", "if", and "because". These should not be silently manufactured by machine translation.
+**Not yet fixed:** all case/number forms of demonstratives and interrogatives, a proximal set meaning "this", relative pronouns, and core words for "however", "if", and "because". Candidates are `atoge` (however, at + linking vowel + PIE-derived intensifier `ge`), `jaba` (if, Germanic-inspired) and `pro tod` (because of that). PIE *g⁽ʰ⁾e* is historically emphatic, not directly a fully inflected proximal demonstrative; see [function-word discussion](docs/FUNCTION_WORDS_PROPOSAL.md). These should not be silently manufactured by machine translation.
 
 Neva independent `ke` is inspired by PIE enclitic `*-kʷe` (compare Latin `-que` and Vedic Sanskrit `ca`), generalized to an independent connective for predictable word order.
 
@@ -135,7 +135,7 @@ The CLI now accepts `translate` for a deliberately **small, strict** grammar sub
     python3 scripts/neva.py translate --from en --to neva "I carry water."
     # Ego bero vodrom.
 
-This is **not** unrestricted machine translation: the implementation rejects unsupported clauses, ambiguity, and unknown syntax rather than guessing. See [the MVP translator guide](docs/TRANSLATION_MVP.md) for the accepted grammar, article-rendering convention and tests.
+This is **not** unrestricted machine translation: unsupported clauses and unknown syntax are **returned unchanged with a warning by default**, while `--strict` restores nonzero errors. It never invents meaning for unknown constructions. A provisional phrasebook maps `Vese!` ↔ “Hello!”, `Vesom deinom!` ↔ “Good day!”, and `Komo es?` ↔ “How are you?”. The default direction is Neva → English; English → Neva requires `--from en --to neva`. See [the MVP guide](docs/TRANSLATION_MVP.md) for tests and limitations.
 
 ### Word formation, derivation and compounding
 
@@ -191,6 +191,10 @@ A compound takes the gender, case, and number of the final head. Example `menotr
 ## Pronunciation with Google Translate
 
 Google Translate can read arbitrary pseudo-Latin inputs when the language's Listen control is available. **Latin** is a good stylistic approximation, but not accurate Neva TTS. Classical Latin stresses a heavy penultimate syllable; otherwise it stresses the antepenult in words of 3+ syllables, whereas Neva always stresses the penult. A Latin voice also usually interprets `th/dh/sh` and `y` differently. **Italian** is worth A/B testing for flowing cadence, but its rules are also not exact. **Polish** has predominantly penultimate stress, but its spelling conventions, vowel quality and dental fricatives are a poor match. **Icelandic** distinguishes /θ/ and /ð/ using `þ` and `ð` but has initial stress and its letter y no longer indicates /y/. For exact Neva pronunciation, use phoneme/IPA-controlled speech synthesis, not a mismatched natural-language voice.
+
+## PIE laryngeals (h₁, h₂, h₃) and new prepositions
+
+We propose preserving PIE laryngeal **vowel-coloring effects** while removing laryngeal consonants and vowel-length contrasts: *h₁* leaves nearby *e* uncolored, *h₂* tends toward **a**, and *h₃* toward **o**. This is **not** a naive letter replacement for all environments; zero-grade and consonant clusters need context-sensitive treatment. Proposed `pra` “before/in front of” follows PIE *preh₂-* after *a*-coloring and loss of vowel length. It is **not yet an approved dictionary entry**. Existing prepositions `en/ad/apo/kom/per/uper` remain in the grammar, normally governing the accusative, while dative alone can mark recipients. See [the laryngeal sound rule proposal](docs/LARYNGEAL_SOUND_RULES.md).
 
 ## Open problems for a later edition
 
