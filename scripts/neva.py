@@ -76,7 +76,9 @@ def conjugate(infinitive: str, tense: str = "present") -> list[str]:
     if infinitive == "esen":
         if tense == "present":
             return list(COPULA_PRESENT)
-        stem = "ves" if tense == "past" else "es"
+        if tense == "future":
+            return ["vel " + form for form in COPULA_PRESENT]
+        stem = "ves"
     else:
         stem = infinitive[:-2]
         if tense == "past":
