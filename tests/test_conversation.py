@@ -38,8 +38,8 @@ class NewGrammarTests(unittest.TestCase):
 
     def test_grammar_headwords_registered(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 812)
-        self.assertEqual(len({row["Neva"] for row in entries}), 812)
+        self.assertEqual(len(entries), 828)
+        self.assertEqual(len({row["Neva"] for row in entries}), 828)
         items = {row["Neva"]: row for row in entries}
         for word in ("jos", "josa", "jod"):
             self.assertEqual(items[word]["Part of speech"], "relative pronoun")
