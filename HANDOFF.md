@@ -3,7 +3,7 @@
 **Updated:** October 26, 2026  
 **Repository:** https://github.com/basperheim/neva-neo-indo-european-language  
 **Default branch:** `master`  
-**Current working specification:** Neva **v1.4**, subsequently expanded with a ranked top-100 English function-word pass (the version label has not yet been bumped again).  
+**Current working specification:** Neva **v1.5**, including the ranked top-100 English function-word and modal syntax decisions (2026-10-26).  
 **Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **851 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
 **High-frequency English audit:** `data/english_top100_coverage.tsv` — **57 direct lemmas, 25 grammatical treatments, 18 partial senses, zero wholly unaddressed audit rows**. This is **not** 100% executable translator coverage.  
 **Tests:** `python3 -m unittest discover -s tests -v`; automated GitHub Actions runs on commits.
