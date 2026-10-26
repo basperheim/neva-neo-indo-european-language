@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import csv
 import re
 import sys
 from pathlib import Path
@@ -332,6 +333,20 @@ def main() -> None:
     translation.add_argument("--strict", action="store_true",
                              help="Exit 2 on unknown/unsupported input instead of echoing it")
 
+    examples = subcommands.add_parser(
+        "examples", help="Show curated bilingual conversation, directions and story examples"
+    )
+    examples.add_argument(
+        "--category", choices=(
+            "Greeting", "Directions", "Statement", "Relative", "Conditional",
+            "Causal", "Comparison", "Story",
+        ),
+        help="Show only one type of example",
+    )
+    examples.add_argument("--limit", type=int, default=20)
+    examples.add_argument("--reverse", action="store_true",
+                          help="Show English before Neva")
+
     pronunciation = subcommands.add_parser("ipa", help="Pronounce Neva orthography as IPA")
     pronunciation.add_argument("text")
 
@@ -395,6 +410,19 @@ def main() -> None:
                 parser.exit(2, f"Translation unavailable: {exc}\n")
             print(arguments.text)
             print(f"Untranslated (unsupported): {exc}", file=sys.stderr)
+    elif arguments.command == "examples":
+        if arguments.limit < 1 or arguments.limit > 1000:
+            parser.error("--limit must be between 1 and 1000")
+        corpus = Path(__file__).resolve().parents[1] / "data" / "sentence_corpus.tsv"
+        with corpus.open(encoding="utf-8", newline="") as handle:
+            rows = csv.DictReader(handle, delimiter="\t")
+            matches = [row for row in rows
+                       if not arguments.category or row["Category"] == arguments.category]
+        if not matches:
+            print("No examples found")
+        for row in matches[:arguments.limit]:
+            first, second = (("English", "Neva") if arguments.reverse else ("Neva", "English"))
+            print(f"[{row['Category']}] {row[first]}  —  {row[second]}")
     elif arguments.command == "ipa":
         print(transcribe(arguments.text))
 
