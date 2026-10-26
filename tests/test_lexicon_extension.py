@@ -20,7 +20,7 @@ class VocabularyExpansionTests(unittest.TestCase):
         self.assertEqual(by_word["denegva"]["English"], "tongue, language")
         self.assertEqual(by_word["menos"]["Gender"], "M")
         self.assertIn("month", by_word["menos"]["English"])
-        self.assertEqual(neva.decline("denegva", "F", "dative"), "denegve")
+        self.assertEqual(neva.decline("denegva", "F", "dative", "singular"), "denegve")
         self.assertEqual(neva.decline("ovisa", "F", "accusative"), "ovisam")
         self.assertEqual(neva.decline("sedotrom", "N", "nominative", "plural"),
                          "sedotra")
