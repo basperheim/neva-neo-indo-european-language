@@ -1,14 +1,14 @@
-# Neva (Neo-Indo-European) — Core Reference v1.1
+# Neva (Neo-Indo-European) — Core Reference v1.2
 
-**Status:** Working specification v1.1 (decision update 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D3 neuter plural, D4 shared masculine/neuter obliques, D6 gender assignment, and D5's *small, closed inventory* of explicitly listed inherited-inspired irregular nouns. **Rejected:** D1's `-oes` proposal. **Under discussion:** D1b replaces current `-oi` with a simpler plural ending, and D2 feminine case endings. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
+**Status:** Working specification v1.2 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
 **Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (798 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
 
-**Established in v1.1:** phonemic spelling, pronunciation, penultimate stress, verbal personal endings, infinitive, regular past, strong past convention, imperative, perfect, compounding, negation, and questions. **Now approved:** neuter nominative/accusative plural `-a`, shared M/N oblique forms, and the evidence-first gender policy. **D1 rejected:** keep masculine nominative plural `-oi`. **Not yet settled:** masculine plural vowel simplification (D1b) and feminine dative endings (D2). **D5 approved:** ordinary nouns have stable stems, while a closed list of historically motivated exceptions is stored explicitly in the lexicon. The first is `podos` (foot), with `pod-` for nominative/accusative and `ped-` for genitive/dative. Other nouns never alternate automatically.
+**Established in v1.2:** phonemic spelling, pronunciation, penultimate stress, verbal personal endings, infinitive, regular past, strong past convention, imperative, perfect, compounding, negation, and questions. **Newly approved:** D1b `vulkos → vulkes` (masculine nominative plural `-es`) and D2 `mathera → mathere/matheres` (feminine dative singular/plural `-e/-es`). D3 retains neuter nominative/accusative plural `-a`. D4 retains M/N shared oblique endings. **D5 approved:** ordinary nouns have stable stems, while a closed list of historically motivated exceptions is stored explicitly in the lexicon. The first is `podos` (foot), with `pod-` for nominative/accusative and `ped-` for genitive/dative. Other nouns never alternate automatically.
 
-**Still provisional:** which reconstructed PIE input should be selected for each concept; the complete chain of historical sound changes; semantic naturalness and adoption of candidate compound words. Forms in the dictionary are Neva adaptations, not guaranteed mechanically regular derivations from their listed PIE anchors. In particular, intervocalic `t > th` should be treated as a *historically inspired lexical adaptation in inherited words*, NOT as an automatic sound change applied to new Neva suffixes or compounds. This corrects a conflict in the earlier draft (`patheros` but `gerbotrom`, `beroto`).
+**Still provisional:** which reconstructed PIE input should be selected for each concept; the complete chain of historical sound changes; semantic naturalness and adoption of candidate compound words. Forms in the dictionary are Neva adaptations, not guaranteed mechanically regular derivations from their listed PIE anchors. **Etymological adaptations are guidelines, not unbreakable spelling laws:** a limited, explicitly documented exception is acceptable when a form is easier to pronounce, more recognizable, or preferred for Neva. For example, `genom` (child) intentionally keeps initial `g` although a tentative PIE `ǵ → z` tendency might predict `z`; the lexicon records the deviation and its reason. In particular, intervocalic `t > th` should be treated as a *historically inspired lexical adaptation in inherited words*, NOT as an automatic sound change applied to new Neva suffixes or compounds. This corrects a conflict in the earlier draft (`patheros` but `gerbotrom`, `beroto`).
 
 ## Phonology: how words are pronounced
 
@@ -26,16 +26,16 @@ Examples of stress: `KA-po be-RO-to VO-drom`, `pa-THE-ros`, `ma-THE-ra`, `me-NO-
 
 ### Nouns and adjectives
 
-Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/number paradigm, although historically appropriate M/N oblique endings coincide. Within each declension class, noun stems normally remain stable. **D5 accepted:** a *closed, listed* set of archaic noun stem alternations is permitted; the only current entry is `podos` (foot), with strong stem `pod-` and oblique stem `ped-`. No newly coined noun automatically undergoes ablaut. Adjectives agree with nouns in gender, number and case. D2 feminine endings remain provisional pending discussion. Gender is lexical; a neuter diminutive stays neuter.
+Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/number paradigm, although historically appropriate M/N oblique endings coincide. Within each declension class, noun stems normally remain stable. **D5 accepted:** a *closed, listed* set of archaic noun stem alternations is permitted; the only current entry is `podos` (foot), with strong stem `pod-` and oblique stem `ped-`. No newly coined noun automatically undergoes ablaut. Adjectives agree with nouns in gender, number and case. D2 feminine dative endings `-e/-es` are now approved. Gender is lexical; a neuter diminutive stays neuter.
 
 | Case | Masc. sg. *vulk-* | Fem. sg. *mather-* | Neut. sg. *vodr-* | Masc. pl. | Fem. pl. | Neut. pl. |
 |---|---|---|---|---|---|---|
-| Nominative | vulkos | mathera | vodrom | vulkoi | matheras | vodra |
+| Nominative | vulkos | mathera | vodrom | vulkes | matheras | vodra |
 | Accusative | vulkom | matheram | vodrom | vulkons | matherans | vodra |
 | Genitive | vulkosio | matheras | vodrosio | vulkon | matheron | vodron |
-| Dative | vulkoi | matherai | vodroi | vulkois | matherais | vodrois |
+| Dative | vulkoi | mathere | vodroi | vulkois | matheres | vodrois |
 
-**Decisions applied:** D1 **rejected**, so the masculine nominative plural stays `vulkoi`, not `vulkoes`. D3 **approved**: `vodrom → vodra` for both neuter nominative and accusative plural, with normal **plural verb agreement**. D4 **approved**: masculine and neuter share thematic genitive/dative endings (`-osio`, `-oi`, `-on`, `-ois`). These are not additional noun classes. D2 (feminine) remains unapproved; D5 is approved for a small, closed, explicit irregular-noun set. The existing `-oi` masculine nominative plural is only a **working form** while simpler alternatives are discussed under D1b.
+**Decisions applied:** D1's proposed `-oes` was rejected; the newly approved **D1b** replaces the temporary masculine nominative plural `-oi` with **`-es`** (`vulkes`). This adapts PIE's athematic `*-es` ending to Neva masculine thematic nouns for a simple one-vowel suffix; it is a Neva generalization, not direct PIE thematic morphology. **D2 approved:** feminine singular/plural dative `-e/-es` (`mathere`, `matheres`) replaces `-ai/-ais`; remaining feminine endings stay unchanged. This is modeled loosely on Greek monophthongization `ai > e`, not reconstructed PIE pronunciation. **D3 approved:** `vodrom → vodra` for neuter nominative/accusative plural, with ordinary plural verb agreement. **D4 approved:** masculine and neuter share genitive/dative endings (`-osio`, `-oi`, `-on`, `-ois`). **D5 approved:** explicit closed irregular noun stems. **Unresolved:** further reduction of remaining diphthongs in other case endings and lexical roots; D4's shared behavior remains binding even if their future spelling changes.
 
 **Gender assignment — D6 approved:**
 
@@ -52,7 +52,7 @@ The dictionary now has `Gender basis` and `Gender status` columns for 436 nouns.
 
 | Case | Singular | Plural |
 |---|---|---|
-| Nominative | podos | podoi |
+| Nominative | podos | podes |
 | Accusative | podom | podons |
 | Genitive | pedosio | pedon |
 | Dative | pedoi | pedois |
@@ -173,7 +173,7 @@ Google Translate can read arbitrary pseudo-Latin inputs when the language's List
 
 ## Open problems for a later edition
 
-1. **D2 (still under discussion):** determine the final feminine singular/plural case endings before updating feminine nouns/adjectives.
+1. **Vowel-simplification follow-up:** review other inflection endings containing `oi`, `ai`, or adjacent vowels without retroactively treating all vowel combinations as prohibited. D1b and D2 are implemented; further changes require a separate decision.
 2. **D5 (accepted, narrow scope):** review evidence before proposing additional irregular nouns for the *closed list*. The current exceptional noun is `podos`; no irregular declension is allowed without explicit stem data, a motivation, and tests.
 3. Verify each inherited stem **and historical gender** against full PIE root and inflection sources, documenting source confidence and any remodeling exceptions.
 4. Finalize demonstrative and interrogative declensions and a system for relative clauses.
