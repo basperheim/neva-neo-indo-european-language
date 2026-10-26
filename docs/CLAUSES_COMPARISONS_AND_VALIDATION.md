@@ -104,7 +104,7 @@ Store the reason/source for each exception rather than forcing a complicated rul
 
 ## 6. Vocabulary validation: what it means in practice
 
-**The working dictionary has 812 entries, not 812 peer-reviewed PIE etymologies**; many are productive compound words. Validation means a repeatable lexical review, not another grammar feature.
+**The working dictionary has 828 entries, not 812 peer-reviewed PIE etymologies**; many are productive compound words. Validation means a repeatable lexical review, not another grammar feature.
 
 For each entry:
 1. **Etymology:** check that the quoted PIE root/form is supportable in comparative dictionaries; distinguish “directly inherited-inspired” vs deliberately derived/borrowed Neva forms. Record actual source URL and any controversial reconstruction.
