@@ -4,7 +4,8 @@
 This is a lexical/morphological prototype, NOT a general machine translator.
 D1 rejects masculine plural -oes: existing -oi is retained.
 D3 approves neuter -a plural; D4 approves shared masculine/neuter oblique endings.
-D2 feminine declension and D5 noun ablaut remain under discussion.
+D2 feminine declension remains under discussion; D5 adopts a closed, lexicon-listed set of irregular noun stems.
+The currently implemented irregular noun is podos (strong pod-, oblique ped-).
 """
 from __future__ import annotations
 
@@ -31,7 +32,8 @@ ENDINGS = {
 }
 
 # D3, D4 approved. D1 rejected (-oi masculine nominative plural retained).
-# D2 and D5 unresolved: do not silently revise feminine endings or ablaut.
+# D2 feminine case endings and D1b diphthong-free plurals remain unresolved.
+# D5: an explicit closed inventory of lexical noun ablaut, never auto-inferred.
 DERIVATIONAL_GENDERS: tuple[tuple[str, str], ...] = (
     ("otoros", "M"),
     ("otrom", "N"),
@@ -146,9 +148,27 @@ def noun_stem(headword: str, gender: str) -> str:
 
 
 def decline(noun: str, gender: str, grammatical_case: str, number: str) -> str:
+    """Inflect a Neva noun, respecting only explicitly recorded stem alternations.
+
+    In the small, closed D5 ablaut class, nominative/accusative use the
+    strong stem; genitive/dative use the oblique stem. New nouns are regular.
+    """
     if gender not in ENDINGS:
         raise ValueError("gender must be M, F, or N")
-    return noun_stem(noun, gender) + ENDINGS[gender][number][grammatical_case]
+    regular_stem = noun_stem(noun, gender)
+    stem = regular_stem
+    for entry in load_lexicon():
+        if entry["Neva"] != noun or entry["Part of speech"] != "noun":
+            continue
+        if entry["Gender"] != gender:
+            raise ValueError(f"{noun!r} has gender {entry['Gender']}, not {gender}")
+        if entry.get("Noun class", "regular") == "ablaut":
+            key = "Strong stem" if grammatical_case in ("nominative", "accusative") else "Oblique stem"
+            stem = entry.get(key) or ""
+            if not stem:
+                raise ValueError(f"{noun!r} is missing its {key.lower()} in the dictionary")
+        break
+    return stem + ENDINGS[gender][number][grammatical_case]
 
 
 def conjugate(infinitive: str, tense: str = "present") -> list[str]:
