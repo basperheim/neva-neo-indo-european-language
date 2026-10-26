@@ -2,7 +2,7 @@
 
 *An imagined modern descendant of Proto-Indo-European with simplified grammar, regular pronunciation, and a productive PIE-rooted vocabulary.*
 
-**Status:** collaborative constructed-language project, **working draft v1.2**. This is **not** an academically reconstructed PIE language. Its etymological source forms, sound-change details, many historical gender assignments, and idiomatic lexicon remain subject to review. The **D6 gender assignment procedure** is now adopted, but that does not automatically verify every inherited noun's gender.
+**Status:** collaborative constructed-language project, **working draft v1.3**. This is **not** an academically reconstructed PIE language. Its etymological source forms, sound-change details, many historical gender assignments, and idiomatic lexicon remain subject to review. The **D6 gender assignment procedure** is now adopted, but that does not automatically verify every inherited noun's gender.
 
 ## Start here
 
@@ -10,8 +10,9 @@
 - **[Open vowel and noun-ablaut alternatives](docs/VOWELS_AND_NOUNS_DISCUSSION.md)** — the now-approved masculine plural `-es` and feminine dative `-e/-es`, plus still-open reductions to other vowel sequences and documented D5 inherited-noun ablaut.
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — original **D1 `-oes` rejected**; **D1b `-es`**, **D2 `-e/-es`**, and **D3/D4/D5/D6 approved**. Approved rules are reflected in the guide, dictionary and Python tools.
-- **[Working lexicon — 801 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
-- **[Demonstratives, interrogatives & prioritized roadmap](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md)** — three proposed “this” systems, options for “which”, and the core-language decisions still outstanding. **Not yet adopted.**
+- **[Working lexicon — 808 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
+- **[Adopted demonstrative and interrogative paradigms](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md)** — Option A `shos/sha/shod` and W1 `kinos/kina/kinom`, with case/number tables. Alternatives are retained for design history.
+- **[Next grammar proposals and plain-English explanations](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md)** — relative clauses, `kod` for “because”, comparative/superlative endings, laryngeals, compound stress, and vocabulary validation.
 - **[Function-word and conjunction decisions](docs/FUNCTION_WORDS_PROPOSAL.md)** — approved `ke` (and), `ve` (or), `at` (but), and preposition `pro` (for), and unresolved proposals for `atoge` (however), `jaba` (if), causal connectives, and demonstratives.
 - **[Experimental offline translator](docs/TRANSLATION_MVP.md)** — bounded Neva ↔ English simple clauses and explicit errors for unsupported input.
 - **[PIE laryngeal sound-change proposal](docs/LARYNGEAL_SOUND_RULES.md)** — h₁/h₂/h₃ vowel coloring and candidate `pra` from PIE `*preh₂-` (before).
@@ -30,6 +31,9 @@ python3 scripts/neva.py decline mathera F --case dative --number singular  # mat
 python3 scripts/neva.py decline mathera F --case dative --number plural    # matheres
 python3 scripts/neva.py decline mathera F --case genitive
 python3 scripts/neva.py decline podos M --case genitive
+python3 scripts/neva.py decline-determiner shos --case accusative  # shom
+python3 scripts/neva.py decline-determiner kina --case dative     # kine
+python3 scripts/neva.py decline-determiner shod --number plural   # sha
 python3 scripts/neva.py gender patheros
 python3 scripts/neva.py gender berotrom
 python3 scripts/neva.py gender unknownobject --inanimate
@@ -39,6 +43,8 @@ python3 scripts/neva.py conjugate kapen --tense future
 python3 scripts/neva.py ipa "Kapo beroto vodrom."
 python3 scripts/neva.py translate "Kapo beroto vodrom."
 python3 scripts/neva.py translate "Bero vodrom mathere."
+python3 scripts/neva.py translate "Vido shom vulkom."               # I see this wolf.
+python3 scripts/neva.py translate --from en --to neva "I see this wolf."
 python3 scripts/neva.py translate --from en --to neva "I carry water."
 python3 scripts/neva.py translate --from en --to neva "I have carried water."
 python3 scripts/neva.py translate --from en --to neva 'Hello!'       # Vese!
@@ -65,6 +71,8 @@ This includes a **limited experimental translator** with a small bilingual greet
 | Cases | Nominative, accusative, genitive, dative; M/N thematic genitive/dative sharing approved (D4); feminine datives `-e/-es` approved (D2) |
 | Numbers | Singular/plural; no dual. Masc. nominative plural **-es** approved (D1b; original `-oes` rejected, interim `-oi` superseded), neuter nominative/accusative plural **-a** approved (D3) |
 | Subjects | Optional (pro-drop), explicit for emphasis/clarity |
+| Demonstratives/interrogatives | `shos/sha/shod` this; `so/sa/tod` that; `kinos/kina/kinom` which; `kis/kid` who/what |
+| Conditions | `jaba` “if”; clause parsing not yet implemented |
 | Verbs | One ending set; small closed set of strong past stems, one suppletive copula |
 | Word formation | Regular suffixes and head-final compounds; D5 approves a closed set of inherited-inspired noun ablaut exceptions, starting with `podos → pedosio` |
 
@@ -80,14 +88,18 @@ docs/
   OFFLINE_TTS_ROADMAP.md
   LARYNGEAL_SOUND_RULES.md
   FUNCTION_WORDS_PROPOSAL.md
+  CLAUSES_COMPARISONS_AND_VALIDATION.md
+  DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md
   TRANSLATION_MVP.md
 scripts/
   neva.py
   neva_translate.py
+  neva_determiners.py
   neva_phrases.py
 tests/
   test_neva.py
   test_translation.py
+  test_determiners.py
 ```
 
 ## Pronunciation and lexical adaptation
@@ -98,4 +110,4 @@ PIE-to-Neva sound changes are **historically inspired tendencies**, not a rule t
 
 For any new inherited-inspired headword, record its *Neva form, English gloss, part of speech, gender, gender basis, gender status, etymological anchor, source, and whether the result is historical or invented*. Do not silently treat coinages or uncertain PIE forms as attested reconstructed words. Prefer adjusting rules and adding tests over hand-fixing a growing list of exceptions.
 
-**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 801 entries include derived words, compounds, and function words—not 801 verified ancient roots. The filename `neva_dictionary_v1_1.csv` is retained temporarily for compatibility; it now includes later approved additions.
+**Repository vocabulary is a working candidate lexicon, not a peer-reviewed PIE dictionary.** Its 808 entries include derived words, compounds, and function words—not 808 verified ancient roots. The filename `neva_dictionary_v1_1.csv` is retained temporarily for compatibility; it now includes later approved additions.
