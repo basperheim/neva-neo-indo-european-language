@@ -1,29 +1,29 @@
 # Neva morphology follow-up: vowel simplicity and noun ablaut
 
-Status (2026-10-26): D5's *closed list of historically motivated noun irregulars* is now **approved and implemented**, starting with `podos` (foot). D1b masculine plural, D2 feminine dative and the overall no-diphthong policy remain **under discussion**. No other noun changes have been approved.
+**Current status (2026-10-26):** **D1b approved**: masculine nominative plural `-es` (*vulkes*); **D2 approved**: feminine datives `-e/-es` (*mathere/matheres*). D5's *closed list of motivated irregular nouns* is also adopted, starting with *podos* (foot). An overall ban on diphthongs and changes to **other** M/N case endings are **not approved**. Remaining material below records previously considered alternatives.
 
-## D1b: replace diphthongal masculine nominative plural?
+## D1b: masculine nominative plural — adopted
 
-Original -oes proposal was rejected. Current -oi (vulkoi) has now been questioned too because of /oi/.
+Original `-oes` proposal was rejected; the interim `-oi` has now been **superseded by `-es`** to avoid /oi/ in masculine nominative plurals.
 
-- A (recommended for discussion): **-es** -> vulkes. PIE had athematic animate nominative plural *-es; borrowing it for Neva thematic nouns would be analogical regularization.
+- A (**ADOPTED**): **-es** -> vulkes. PIE had athematic animate nominative plural *-es; borrowing it for Neva thematic nouns would be analogical regularization.
 - B: **-i** -> vulki. Compare later Greek monophthongization of oi > /i/.
 - C: retain **-os** -> vulkos singular and plural. Simple, but removes visible number distinction.
 
-No change to -oi unless approved.
+**Approved change applied:** masculine nominative plural is now `-es`; this does *not* change M/N dative `-oi` or other `-oi/-ois` endings.
 
-## D2: feminine noun declension
+## D2: feminine noun declension — adopted
 
-Recommendation: keep the existing paradigm except simplify dative -ai > -e and -ais > -es. This is historically inspired by Greek ai > /e/, and makes the spelling fully phonetic.
+**Approved:** keep the existing feminine paradigm except dative `-ai → -e` and `-ais → -es`. This is loosely inspired by Greek `ai > /e/` and maintains one-vowel dative endings.
 
-| Case | Singular candidate | Plural candidate |
+| Case | Adopted singular | Adopted plural |
 |---|---|---|
 | Nominative | mathera | matheras |
 | Accusative | matheram | matherans |
 | Genitive | matheras | matheron |
 | Dative | **mathere** | **matheres** |
 
-Current forms remain matherai and matherais. Alternative: dative matheri/matheris from an ai > i simplification. Do not merely pronounce written -ai as /e/: that would violate Neva spelling conventions.
+Previous `matherai` and `matherais` are superseded. The rejected alternative was dative `matheri/matheris`. We change the **written endings**, rather than treating written `ai` as a silent or nonphonemic vowel.
 
 ## M/N shared cases (D4 approved)
 
@@ -58,8 +58,8 @@ The user's preference appears closest to option 3, but is not yet ratified. **y 
 
 ## Votes
 
-D1 -oes: rejected. D1b: pending.
-D2: pending. D3 neuter -a: approved. D4 shared M/N obliques: approved.
+D1 -oes: rejected. D1b -es: **approved**.
+D2 -e/-es: **approved**. D3 neuter -a: approved. D4 shared M/N obliques: approved.
 D5 closed inherited-inspired irregular set: **approved** (first entry `podos`). D6 evidence-first gender: approved.
 
 ## References
