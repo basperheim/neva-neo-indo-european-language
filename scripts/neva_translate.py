@@ -555,11 +555,18 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
         raise TranslationError("use --from neva --to en, or --from en --to neva")
 
     from neva_phrases import translate_phrase
+    from neva_words import translate_headword
     from neva_clauses import translate_complex
 
     known_phrase = translate_phrase(text, source=source, target=target)
     if known_phrase is not None:
         return known_phrase
+    try:
+        known_word = translate_headword(text, source=source, target=target)
+    except ValueError as exc:
+        raise TranslationError(str(exc)) from exc
+    if known_word is not None:
+        return known_word
     complex_clause = translate_complex(text, source=source, target=target)
     if complex_clause is not None:
         return complex_clause
