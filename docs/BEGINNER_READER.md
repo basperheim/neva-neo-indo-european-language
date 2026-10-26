@@ -12,12 +12,15 @@ python3 scripts/neva.py examples --limit 10
 python3 scripts/neva.py examples --category Greeting
 python3 scripts/neva.py examples --category Directions
 python3 scripts/neva.py examples --category Story
+python3 scripts/neva.py translate --file examples/wolf_and_horse.neva --strict
 python3 scripts/neva.py translate 'Jaba beres vodrom, vel kapo vodrom.'
 python3 scripts/neva.py translate --from en --to neva 'I see a mother who carries water.'
 python3 scripts/neva.py compare mezos --degree superlative --gender F
 python3 scripts/neva.py decline-relative josa --case accusative
 python3 -m unittest discover -s tests -v
 ```
+
+The file `examples/wolf_and_horse.neva` is a ready-made five-line mini-story. `translate --file` processes **one independent sentence per line**, preserving empty lines; it does not analyze paragraphs as a unified discourse.
 
 By default `translate` means Neva → English. For English → Neva, specify `--from en --to neva`. Unknown or unsupported sentences are echoed *unchanged* with a warning; add `--strict` to produce a nonzero error instead. The translator isn't intended to infer unknown grammar or invent words.
 
