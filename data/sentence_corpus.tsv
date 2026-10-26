@@ -1,0 +1,32 @@
+Category	Neva	English
+Greeting	Vese!	Hello!
+Greeting	Vesom deinom!	Good day!
+Greeting	Vesa nokta!	Good night!
+Greeting	Komo es?	How are you?
+Greeting	Em vese.	I am well.
+Greeting	Ja.	Yes.
+Greeting	Ne.	No.
+Directions	Ku est domom?	Where is the house?
+Directions	Ku est dhverom?	Where is the door?
+Directions	Ku est pontos?	Where is the road?
+Directions	Ie ad dhverom!	Go to the door!
+Directions	Ie per dhverom!	Go through the door!
+Directions	Ie ad domom!	Go to the house!
+Directions	Io ad dhverom.	I go toward the door.
+Statement	Bero vodrom.	I carry water.
+Statement	Mathera bereth vodrom.	The mother carries water.
+Statement	Vulkos videth matheram.	The wolf sees a mother.
+Statement	Mathera videth vulkom.	The mother sees a wolf.
+Statement	Vido shom vulkom.	I see this wolf.
+Statement	Menotrom est nevom.	The computer is new.
+Statement	Kapo beroto vodrom.	I have carried water.
+Relative	Vido matheram josa bereth vodrom.	I see a mother who carries water.
+Relative	Vido vulkom jos videth matheram.	I see a wolf that sees a mother.
+Conditional	Jaba beres vodrom, vel kapo vodrom.	If you carry water, I will have water.
+Causal	Bero vodrom kod mathera ne bereth vodrom.	I carry water because the mother does not carry water.
+Comparison	Shos vulkos est mezoteros.	This wolf is bigger.
+Comparison	Shos vulkos est mezoteros apo som vulkom.	This wolf is bigger than that wolf.
+Story	Vulkos videth eshvom.	The wolf sees a horse.
+Story	Eshvos videth vulkom.	The horse sees a wolf.
+Story	Mathera videth eshvom.	The mother sees a horse.
+Story	Vulkos gemeth ad domom.	The wolf comes toward the house.
