@@ -60,6 +60,17 @@ class NevaTests(unittest.TestCase):
         self.assertEqual(neva.assign_gender("berotrom")["gender"], "N")
         self.assertEqual(neva.assign_gender("berotrom")["status"], "rule_based")
 
+    def test_d6_compound_inherits_head_uncertainty(self):
+        rows = {entry["Neva"]: entry for entry in neva.load_lexicon()}
+        self.assertEqual(rows["gronom"]["Gender status"], "provisional")
+        self.assertEqual(rows["agrogronom"]["Gender basis"], "compound_head:gronom")
+        self.assertEqual(rows["agrogronom"]["Gender status"], "provisional")
+        self.assertEqual(neva.assign_gender("agrogronom")["status"], "provisional")
+        self.assertEqual(
+            neva.assign_gender("inventedcompound", head="gronom")["status"],
+            "provisional",
+        )
+
     def test_d6_new_noun_gender_assignment(self):
         self.assertEqual(neva.assign_gender("novotrom")["gender"], "N")
         self.assertEqual(neva.assign_gender("novitia")["gender"], "F")
