@@ -231,7 +231,7 @@ def _render_noun(noun: NounForm, modifier: str | None, role: str) -> str:
         english = _english_plural(english)
     if modifier:
         english = modifier + " " + english
-        if modifier.split()[0] in {"this", "that", "these", "those", "which"}:
+        if modifier.split()[0] in {"this", "that", "these", "those", "which", "some", "any", "all", "other", "first"}:
             return english
     if noun.number == "plural":
         return ("the " if role in {"subject", "dative"} else "") + english
