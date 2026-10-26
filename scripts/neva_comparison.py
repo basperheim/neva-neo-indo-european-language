@@ -37,6 +37,7 @@ def english_degree(gloss: str, degree: str) -> str:
         "good": ("better", "best"),
         "bad": ("worse", "worst"),
         "big": ("bigger", "biggest"),
+        "large": ("bigger", "biggest"),
         "new": ("newer", "newest"),
         "cold": ("colder", "coldest"),
         "old": ("older", "oldest"),
