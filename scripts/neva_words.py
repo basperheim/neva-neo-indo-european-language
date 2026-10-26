@@ -70,7 +70,7 @@ def translate_headword(text: str, source: str, target: str) -> str | None:
             return None
         # Single-word dictionary gloss rather than committing to a
         # context-sensitive interpretation of a polysemous word.
-        result = " / ".join(_gloss_senses(row))
+        result = " / ".join(x.strip() for x in row["English"].split(",") if x.strip())
     else:
         return None
     if word[0].isupper():
