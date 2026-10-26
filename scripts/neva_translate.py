@@ -207,9 +207,14 @@ def _render_noun(noun: NounForm, modifier: str | None, role: str) -> str:
 
 
 def _render_np(tokens: list[str], case: str, pos: int, role: str) -> tuple[str, int]:
-    if case == "accusative" and tokens[pos] in OBJECT_PRONOUNS:
-        return OBJECT_PRONOUNS[tokens[pos]], pos + 1
-    noun, adjective, next_pos = _find_noun(tokens, case, pos)
+    # A word like sam can mean standalone "her" or the agreeing determiner
+    # in "sam matheram" (that mother). Prefer the noun phrase if one follows.
+    try:
+        noun, adjective, next_pos = _find_noun(tokens, case, pos)
+    except TranslationError:
+        if case == "accusative" and tokens[pos] in OBJECT_PRONOUNS:
+            return OBJECT_PRONOUNS[tokens[pos]], pos + 1
+        raise
     return _render_noun(noun, adjective, role), next_pos
 
 
