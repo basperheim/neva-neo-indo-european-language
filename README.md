@@ -11,6 +11,7 @@
 - **[Future ChapterGuides integration](docs/CHAPTERGUIDES_INTEGRATION_PLAN.md)** — Go/Gin API, pinned lexicon and Astro page; planning only.
 - **[Noun morphology decision record](docs/NOUN_MORPHOLOGY_PROPOSAL.md)** — original **D1 `-oes` rejected**; **D1b `-es`**, **D2 `-e/-es`**, and **D3/D4/D5/D6 approved**. Approved rules are reflected in the guide, dictionary and Python tools.
 - **[Working lexicon — 798 candidate headwords](data/neva_dictionary_v1_1.csv)** — CSV source of truth; includes English glosses, gender, PIE anchors, word formation, and **Gender basis / Gender status** provenance fields for all 436 nouns, plus **Noun class / Strong stem / Oblique stem** for the accepted closed irregular inventory.
+- **[Experimental offline translator](docs/TRANSLATION_MVP.md)** — bounded Neva ↔ English simple clauses and explicit errors for unsupported input.
 - **[Offline speech/TTS roadmap](docs/OFFLINE_TTS_ROADMAP.md)** — how to produce Neva phonemes and run speech locally, without Google APIs.
 
 ## Try the Python tools
@@ -33,10 +34,14 @@ python3 scripts/neva.py gender novelcompound --head pontos
 python3 scripts/neva.py conjugate beren --tense past
 python3 scripts/neva.py conjugate kapen --tense future
 python3 scripts/neva.py ipa "Kapo beroto vodrom."
+python3 scripts/neva.py translate "Kapo beroto vodrom."
+python3 scripts/neva.py translate "Bero vodrom mathere."
+python3 scripts/neva.py translate --from en --to neva "I carry water."
+python3 scripts/neva.py translate --from en --to neva "I have carried water."
 python3 -m unittest discover -s tests -v
 ```
 
-This is a **lookup, inflection, evidence-qualified gender suggestion and pronunciation prototype**. It does *not* claim to translate arbitrary English into Neva. A translator should follow once morphology, syntax, and a wider lexicon are reviewed.
+This includes a **strict, experimental translator** for a small subset of simple Neva ↔ English sentences, alongside lookup, inflection, gender suggestions, and IPA. It does *not* claim to translate arbitrary English or Neva. Unsupported syntax is rejected rather than guessed. See [the translator scope and limits](docs/TRANSLATION_MVP.md).
 
 ## Core design
 
@@ -64,10 +69,13 @@ data/
 docs/
   NOUN_MORPHOLOGY_PROPOSAL.md
   OFFLINE_TTS_ROADMAP.md
+  TRANSLATION_MVP.md
 scripts/
   neva.py
+  neva_translate.py
 tests/
   test_neva.py
+  test_translation.py
 ```
 
 ## Pronunciation and lexical adaptation
