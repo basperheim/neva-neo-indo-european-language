@@ -36,6 +36,10 @@ VERBS = {
     "seden": ("sit", "sits", "sat", "sat"),
     "gerben": ("write", "writes", "wrote", "written"),
     "esen": ("be", "is", "was", "been"),
+    "luben": ("like", "likes", "liked", "liked"),
+    "prodhen": ("use", "uses", "used", "used"),
+    "veken": ("speak", "speaks", "spoke", "spoken"),
+    "deshen": ("receive", "receives", "received", "received"),
 }
 ENGLISH_NOUNS = {
     "water": "vodrom", "wolf": "vulkos", "horse": "eshvos",
@@ -43,14 +47,22 @@ ENGLISH_NOUNS = {
     "sister": "svesora", "daughter": "dhugathera", "child": "genom",
     "foot": "podos", "pen": "gerbotrom", "computer": "menotrom",
     "door": "dhverom", "tree": "dorom", "sun": "savelom",
+    "language": "denegva", "tongue": "denegva",
+    "time": "temom", "house": "domom", "home": "domom",
+    "cat": "miava", "sheep": "ovisa", "bear": "artos",
+    "chair": "sedotrom", "bed": "svepotrom", "table": "dhotrom",
 }
 ENGLISH_ADJECTIVES = {
     "new": "nevos", "big": "mezos", "cold": "gelos", "good": "vesos",
     "bad": "dusos", "old": "senos", "red": "rudhos",
+    "all": "solvos", "some": "somos", "any": "kvenos",
+    "other": "alteros", "first": "primos",
 }
 # English comparative/superlative spellings are outputs of the regular
 # Neva morphology engine, not additional irregular Neva paradigms.
 for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
+    if _adjective in {"solvos", "somos", "kvenos", "alteros", "primos"}:
+        continue
     for _degree in ("comparative", "superlative"):
         ENGLISH_ADJECTIVES[english_degree(_meaning, _degree)] = inflect_adjective(
             _adjective, _degree
@@ -58,6 +70,8 @@ for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
 PREPOSITIONS = {
     "ad": "toward", "en": "into", "apo": "from",
     "per": "through", "kom": "with", "uper": "over", "pro": "for",
+    "epi": "on", "api": "at", "ambi": "around", "ek": "outside",
+    "posti": "after",
 }
 ENGLISH_PREPOSITIONS = {value: key for key, value in PREPOSITIONS.items()}
 MASS_NOUNS = {"water", "rain", "fire", "rainwater"}
@@ -125,6 +139,8 @@ def adjective_forms() -> dict[str, list[AdjectiveForm]]:
             continue
         gloss = row["English"].split(",", 1)[0].strip().lower()
         for degree in ("positive", "comparative", "superlative"):
+            if degree != "positive" and row["Neva"] in {"solvos", "somos", "kvenos", "alteros", "primos"}:
+                continue
             for gender, numbers in neva.ENDINGS.items():
                 for number, cases in numbers.items():
                     for case in cases:
