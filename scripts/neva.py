@@ -2,7 +2,9 @@
 """Neva working-language CLI. Python 3.10+, standard library only.
 
 This is a lexical/morphological prototype, NOT a general machine translator.
-The current noun paradigm follows the v1.1 overview, not the proposed D1 change.
+D1 rejects masculine plural -oes: existing -oi is retained.
+D3 approves neuter -a plural; D4 approves shared masculine/neuter oblique endings.
+D2 feminine declension and D5 noun ablaut remain under discussion.
 """
 from __future__ import annotations
 
@@ -27,6 +29,18 @@ ENDINGS = {
         "plural": {"nominative": "a", "accusative": "a", "genitive": "on", "dative": "ois"},
     },
 }
+
+# D3, D4 approved. D1 rejected (-oi masculine nominative plural retained).
+# D2 and D5 unresolved: do not silently revise feminine endings or ablaut.
+DERIVATIONAL_GENDERS: tuple[tuple[str, str], ...] = (
+    ("otoros", "M"),
+    ("otrom", "N"),
+    ("otia", "F"),
+    ("itia", "F"),
+    ("iskos", "M"),
+    ("iska", "F"),
+    ("iskom", "N"),
+)
 
 PERSON_ENDINGS = ("o", "es", "eth", "omos", "ethe", "ont")
 PRONOUNS = ("ego", "ty", "so/sa/tod", "vei", "jus", "toi/tai/ta")
@@ -55,6 +69,73 @@ VALID_ONSETS = {
 def load_lexicon() -> list[dict[str, str]]:
     with LEXICON.open(encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def assign_gender(
+    word: str,
+    *,
+    sex: str | None = None,
+    head: str | None = None,
+    inanimate: bool = False,
+) -> dict[str, str]:
+    """Return a gender decision with its basis and review status.
+
+    D6 priority: lexicon gender (inherited candidate), sex-specific referent,
+    derivational suffix, explicit compound head, modern inanimate fallback.
+
+    Existing 'inherited_candidate' labels are NOT historically verified.
+    """
+    if sex not in {None, "male", "female"}:
+        raise ValueError("sex must be male or female")
+    lexicon = {row["Neva"]: row for row in load_lexicon()}
+    recorded = lexicon.get(word)
+    if recorded is not None and recorded["Part of speech"] == "noun":
+        return {
+            "word": word,
+            "gender": recorded["Gender"],
+            "basis": recorded["Gender basis"],
+            "status": recorded["Gender status"],
+        }
+    if recorded is not None:
+        raise ValueError(f"{word!r} exists but is not a noun")
+    if sex is not None:
+        return {
+            "word": word,
+            "gender": "M" if sex == "male" else "F",
+            "basis": "sex_specific_referent",
+            "status": "rule_based",
+        }
+    for suffix, gender in DERIVATIONAL_GENDERS:
+        if word.endswith(suffix) and len(word) > len(suffix):
+            return {
+                "word": word,
+                "gender": gender,
+                "basis": f"derivational:-{suffix}",
+                "status": "rule_based",
+            }
+    if head is not None:
+        entry = lexicon.get(head)
+        if entry is None or entry["Part of speech"] != "noun":
+            raise ValueError(f"compound head {head!r} is not a known Neva noun")
+        return {
+            "word": word,
+            "gender": entry["Gender"],
+            "basis": f"compound_head:{head}",
+            "status": entry["Gender status"] or "provisional",
+        }
+    if inanimate:
+        return {
+            "word": word,
+            "gender": "N",
+            "basis": "modern_inanimate_default",
+            "status": "rule_based",
+        }
+    return {
+        "word": word,
+        "gender": "",
+        "basis": "unresolved_requires_evidence",
+        "status": "provisional",
+    }
 
 
 def noun_stem(headword: str, gender: str) -> str:
@@ -172,6 +253,13 @@ def main() -> None:
     verb.add_argument("infinitive")
     verb.add_argument("--tense", choices=("present", "past", "future"), default="present")
 
+    gender = subcommands.add_parser("gender", help="Look up or propose noun gender (D6)")
+    gender.add_argument("word")
+    gender.add_argument("--head", help="Known final noun in a compound")
+    gender.add_argument("--sex", choices=("male", "female"), help="Sex-specific referent")
+    gender.add_argument("--inanimate", action="store_true",
+                        help="New inanimate concept without an inherited analogy")
+
     pronunciation = subcommands.add_parser("ipa", help="Pronounce Neva orthography as IPA")
     pronunciation.add_argument("text")
 
@@ -188,6 +276,13 @@ def main() -> None:
     elif arguments.command == "conjugate":
         for pronoun, form in zip(PRONOUNS, conjugate(arguments.infinitive, arguments.tense)):
             print(f"{pronoun:12} {form}")
+    elif arguments.command == "gender":
+        assigned = assign_gender(
+            arguments.word, sex=arguments.sex, head=arguments.head,
+            inanimate=arguments.inanimate,
+        )
+        print(f"{assigned['word']}: {assigned['gender'] or 'undetermined'} "
+              f"({assigned['basis']}; {assigned['status']})")
     elif arguments.command == "ipa":
         print(transcribe(arguments.text))
 
