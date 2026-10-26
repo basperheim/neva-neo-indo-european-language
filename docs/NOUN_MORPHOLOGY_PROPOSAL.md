@@ -61,7 +61,7 @@ Dative        vulkois       matherais       vodrois
 
 **Compatibility decision:** Keep the v1.1 form `vulkoi`; D1's proposed `vulkoes` was rejected. D2 feminine endings and D5 noun ablaut remain as existing draft behavior while discussed. No alternative forms should enter production vocabulary yet.
 
-**D6 metadata:** The dictionary records `Gender basis` and `Gender status` for nouns. A base noun with an unverified PIE anchor is marked `inherited_candidate` / `provisional`. Rule-formed derivations and well-identified compound heads are marked `rule_based`. The generator can recommend a new modern inanimate noun as neuter, but it does not overwrite existing gender assignments.
+**D6 metadata:** The dictionary records `Gender basis` and `Gender status` for nouns. A base noun with an unverified PIE anchor is marked `inherited_candidate` / `provisional`. Rule-formed derivations are marked `rule_based`; compounds inherit the head noun's `provisional` status when its historical gender is not yet verified. Other compounds with well-established heads may be `rule_based`. The generator can recommend a new modern inanimate noun as neuter, but it does not overwrite existing gender assignments.
 
 **Review queue:** `kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia` have insufficient or inconsistent head evidence in the current lexicon. Their gender is retained provisionally, not silently reassigned.
 
