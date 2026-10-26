@@ -171,7 +171,28 @@ For a complete honest check of all 100 words in the Wikipedia/Oxford frequency l
 
 ```bash
 python3 scripts/neva.py coverage --limit 100
-python3 scripts/neva.py coverage --status gap
+python3 scripts/neva.py coverage --status partial
 ```
 
 See [vocabulary notes](VOCABULARY_EXPANSION.md) and the [ranked audit](../data/english_top100_coverage.tsv).
+
+## Scoped frequent-English constructions (Neva v1.5)
+
+Added to the working lexicon and CLI are the prepositions `epi` (on), `api` (at a location), `ambi` (around/beside), `ek` (outside), and `posti` (after), normally with accusative. The quantifying adjectives `somos` (some), `kvenos` (any), `solvos` (all), `alteros` (other), and ordinal `primos` (first) inflect like other positive adjectives but **are not gradable**.
+
+Two very small analytic modal constructions are recognized by `scripts/neva_modals.py`:
+
+- `Ego mago beren vodrom.` = I **can** carry water (present ability).
+- `Ego emago beren vodrom.` = I **could** carry water (past ability).
+- `Ego vela bero vodrom.` = I **would** carry water (hypothetical result).
+
+English polite “could,” “would have,” hypothetical epistemic “could,” and general nested modal/relative clauses are **not** supported. More complex semantic scopes of “only, just, even, any, about, get, by” are only partially resolved in language design, even where a lexical entry exists.
+
+```bash
+python3 scripts/neva.py translate --from en --to neva 'I can carry water.'
+python3 scripts/neva.py translate --from en --to neva 'I would carry water.'
+python3 scripts/neva.py translate --from en --to neva 'I carry water on the table.'
+python3 scripts/neva.py coverage --status partial
+```
+
+See [the full 27-gap decision log](ENGLISH_GAPS_RESOLUTION.md), [HANDOFF](../HANDOFF.md), and [AGENTS](../AGENTS.md).
