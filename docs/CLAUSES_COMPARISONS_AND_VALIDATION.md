@@ -1,16 +1,16 @@
 # Neva: relative clauses, causality, conditionals, comparison, and outstanding linguistic work
 
-**Status: proposals for review, not yet adopted** (2026-10-26). Already approved and implemented separately: **shos/sha/shod** “this”, **so/sa/tod** “that”, **kinos/kina/kinom** “which”, and **jaba** “if” (lexical and basic declarative-clause design). Python's determiner inflection and basic noun phrases are implemented; the sentence translator does **not** yet parse arbitrary relative, conditional, or causal subordinate clauses.
+**Status: core rules APPROVED (2026-10-26).** The user has approved **jos/josa/jod** for relative clauses, **kod** for causal clauses, and regular **-oter-/-ist-** for comparative/superlative adjectives. The word **jaba** “if” was already adopted. A **limited, explicitly bounded** translator now handles one simple subordinate clause, some coordinated clauses, relative noun phrases and comparison; it is not a full grammar parser. See [the beginner reader](BEGINNER_READER.md) and [translator limitations](TRANSLATION_MVP.md).
 
 ## 1. Relative clauses: separate from interrogatives
 
 PIE offers *yós / *yéh₂ / *yód “who/which/that” as a relative family (compare Sanskrit *yás/yā/yád*, Greek *hós/hḗ/hó*). It also offers forms related to *kʷi-/*kʷo- in some branches. **Recommended Neva: a separate j- relative family**, so current *kis/kid* remain questions and *kinos/kina/kinom* remain “which [noun]”.
 
-**Nominative candidates:** **jos** (masc.), **josa** (fem.), **jod** (neut.).
+**Approved singular nominatives:** **jos** (masc.), **josa** (fem.), **jod** (neut.).
 
-Caveat: the closest vowel-colored PIE-derived feminine candidate `ja` already exists as Neva **ja** = "yes." We propose **josa**, an **invented analogical feminine** avoiding a function-word homonym. Likewise `joda` for neuter plural rather than another `ja` ambiguity.
+Caveat: the closest vowel-colored PIE-derived feminine candidate `ja` already exists as Neva **ja** = "yes." We adopt **josa**, an **invented analogical feminine** avoiding a function-word homonym. Likewise `joda` for neuter plural rather than another `ja` ambiguity.
 
-**Draft full relative declension (not adopted):**
+**Approved full relative declension** (Neva inventions inspired by PIE):
 
 | Case | M sg | F sg | N sg | M pl | F pl | N pl |
 |---|---|---|---|---|---|---|
@@ -33,20 +33,20 @@ Caveat: the closest vowel-colored PIE-derived feminine candidate `ja` already ex
 
 **Adopted lexical form:** `jaba` /ˈja.ba/ “if,” from Proto-Germanic *jabai (compare Gothic *jabai*, English *if*). The monophthongization is deliberate Neva adaptation, **not** a direct PIE reconstruction.
 
-**Recommended ordinary-clause syntax:** `Jaba [condition], [result].` or `[result] jaba [condition].`
+**Adopted ordinary-clause syntax:** `Jaba [condition], [result].` or `[result] jaba [condition].`
 
 - `Jaba beres vodrom, vel kapo vodrom.` = If you carry water, I will have water.
 - `Vel kapo vodrom jaba beres vodrom.` = I will have water if you carry water.
 
 A real-world or likely condition uses normal **indicative** verb forms; the result can use `vel` future. No new conjugation class is necessary. Hypothetical/unreal “if I were…” can receive an **analytic auxiliary/particle** later if needed, rather than inventing an entire subjunctive paradigm.
 
-**Status:** lexical *jaba* officially in dictionary. Formal two-clause parser support and unreal-conditional marking still future work.
+**Status:** lexical *jaba* officially in dictionary. A bounded two-clause parser supports simple real/likely conditionals in either order. Unreal/counterfactual “if I were…” remains future work.
 
 ## 3. Full 'because' clause: two candidates
 
 Already approved: `pro kid?` = “why?/for what reason?” and `pro tod` = “for that reason/because of that”; these are **prepositional expressions**, not causal subordinate conjunctions.
 
-**Recommended candidate C1: `kod` /kod/ = “because, since” introducing a finite clause.** Inspired by PIE *kʷod*, compare Latin **quod**, whose neuter relative form developed into a causal conjunction. That historical development provides a good semantic path without requiring an extra long compound. Neva already has `kid` “what” and `koda` “when”; `kod` would be a new short word. This resemblance is both evocative and a possible parsing/learning drawback, so **not adopted without a vote**.
+**Approved C1: `kod` /kod/ = “because, since” introducing a finite clause.** Inspired by PIE *kʷod*, compare Latin **quod**, whose neuter relative form developed into a causal conjunction. That historical development provides a good semantic path without requiring an extra long compound. Neva already has `kid` “what” and `koda` “when”; `kod` would be a new short word. This resemblance is both evocative and a possible parsing/learning drawback, the user has now **approved** this concise causal conjunction.
 
 Examples:
 - `Bero vodrom kod mathera ne bereth vodrom.` = I carry water because the mother does not carry water.
@@ -54,7 +54,7 @@ Examples:
 
 Neva conjunctions are independent words, not mandatory verb suffixes. Ordinary factual **finite indicative** clauses suffice. English "I don't carry water because..." has scope ambiguity; put the causal clause first or otherwise state scope clearly when needed.
 
-**Alternative C2:** `pro jod`, literally “for that [which]” or “for the fact that,” once relative `jod` has an accepted meaning. This uses existing approved `pro` plus proposed relative `jod` but requires special grammaticalization to introduce complete clauses. Longer, potentially more compositional; less clean as a single connective.
+**Unadopted alternative C2:** `pro jod`, literally “for that [which]” or “for the fact that,” once relative `jod` has an accepted meaning. This uses existing approved `pro` plus proposed relative `jod` but requires special grammaticalization to introduce complete clauses. Longer, potentially more compositional; less clean as a single connective.
 
 Avoid mistaking the already adopted `pro tod` (“for that reason”) for an all-purpose “because [clause].”
 
@@ -64,7 +64,7 @@ Avoid mistaking the already adopted `pro tod` (“for that reason”) for an all
 
 PIE had comparative *-yos/-is-* and *-(t)ero-* material and a historically widespread superlative *-isto-*; their specialization varied across daughter languages. Neva should make a **single regular series** and retain gender, case and number agreement.
 
-**Recommended simple, vowel-friendly paradigm:**
+**Approved simple, vowel-friendly paradigm:**
 - Basic positive adjective: `nevos / neva / nevom` “new”.
 - Comparative: adjective stem + **-oteros / -otera / -oterom**. `nevoteros` = newer; `mezoteros` = bigger.
 - Superlative: adjective stem + **-istos / -ista / -istom**. `nevistos` = newest; `mezistos` = biggest.
@@ -77,7 +77,7 @@ Here `-oter-` is a Neva standardized formation inspired by PIE *-(t)ero-* and Gr
 | big, bigger, biggest | mezos | mezoteros | mezistos |
 | cold, colder, coldest | gelos | geloteros | gelistos |
 
-All forms decline with ordinary adjective endings. For a comparison "than," **candidate** extension of approved `apo` (“from”) + accusative: `Shos vulkos est mezoteros apo som.` = This wolf is bigger than that one. This is naturalistic but **not yet an approved syntax rule**.
+All forms decline with ordinary adjective endings. For elementary comparisons “than,” **adopted** extension of preposition `apo` (“from”) + accusative: `Shos vulkos est mezoteros apo som vulkom.` = This wolf is bigger than that wolf. The comparative adjective still agrees with the subject. This construction is a Neva simplification rather than a verbatim PIE usage.
 
 Keep only a few separately documented suppletive adjectives if strong historical evidence and high frequency justify them (e.g. good/better/best), not dozens of irregular comparison classes.
 
@@ -104,7 +104,7 @@ Store the reason/source for each exception rather than forcing a complicated rul
 
 ## 6. Vocabulary validation: what it means in practice
 
-**The working dictionary has 808 entries, not 808 peer-reviewed PIE etymologies**; many are productive compound words. Validation means a repeatable lexical review, not another grammar feature.
+**The working dictionary has 812 entries, not 812 peer-reviewed PIE etymologies**; many are productive compound words. Validation means a repeatable lexical review, not another grammar feature.
 
 For each entry:
 1. **Etymology:** check that the quoted PIE root/form is supportable in comparative dictionaries; distinguish “directly inherited-inspired” vs deliberately derived/borrowed Neva forms. Record actual source URL and any controversial reconstruction.
@@ -117,9 +117,9 @@ Start with the **100–200 most useful base words and function words**, then exp
 
 ## 7. Delivery sequence
 
-- **Already adopted/implemented:** Option A distal/proximal demonstratives; agreeing *kinos/kina/kinom* for “which”; *jaba* “if” as a dictionary word and basic syntax guidance.
-- **Next decisions:** relative family `jos/josa/jod` or alternative; causal conjunction `kod` or `pro jod`; comparatives `-oter-` and superlatives `-ist-`; and “than” comparison syntax.
-- **Next software:** support approved subordinate clauses in a real parser (not ad-hoc string replacement), grammatical pronouns/questions, comparative formation, strict ambiguity feedback, and a curated parallel sentence corpus.
+- **Adopted/implemented:** proximal/distal demonstratives; `kinos/kina/kinom` “which”; `jos/josa/jod` relatives; `jaba` “if”; `kod` “because”; regular `-oter-/-ist-`; comparative `apo` + accusative. Python supports their **documented limited grammar subset**, including a 36-sentence tested bilingual corpus.
+- **Next linguistic decisions:** full interrogative case paradigms, “thank you/please/goodbye”, more spatial/directional vocabulary, reflexive and passive constructions, counterfactual conditions, and `atoge` “however.”
+- **Next software:** improve parse-tree diagnostics and ambiguity reporting instead of endlessly extending regex rules; add narrative/relative-clause corpus coverage and carefully scoped English questions.
 - **Then:** offline eSpeak NG/Piper-based TTS, pinned data export to ChapterGuides Go/Gin API and Astro UI, followed by a separate deploy request.
 
 ## Source references
