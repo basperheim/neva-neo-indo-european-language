@@ -131,7 +131,7 @@ class NevaTests(unittest.TestCase):
     def test_d6_dictionary_gender_metadata(self):
         entries = neva.load_lexicon()
         nouns = [entry for entry in entries if entry["Part of speech"] == "noun"]
-        self.assertEqual(len(nouns), 450)
+        self.assertEqual(len(nouns), 451)
         self.assertTrue(all(entry["Gender"] in {"M", "F", "N"} for entry in nouns))
         self.assertTrue(all(entry["Gender basis"] and entry["Gender status"]
                             for entry in nouns))
