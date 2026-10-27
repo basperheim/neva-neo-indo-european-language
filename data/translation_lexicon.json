@@ -26,7 +26,8 @@
     "bear": "artos",
     "chair": "sedotrom",
     "bed": "svepotrom",
-    "table": "dhotrom"
+    "table": "dhotrom",
+    "boy": "bernos"
   },
   "verbs": {
     "beren": {

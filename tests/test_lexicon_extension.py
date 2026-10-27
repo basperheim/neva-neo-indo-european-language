@@ -14,7 +14,7 @@ from neva_translate import translate, TranslationError
 class VocabularyExpansionTests(unittest.TestCase):
     def test_core_new_nouns(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 851)
+        self.assertEqual(len(entries), 852)
         by_word = {r["Neva"]: r for r in entries}
         self.assertEqual(by_word["denegva"]["Gender"], "F")
         self.assertEqual(by_word["denegva"]["English"], "tongue, language")

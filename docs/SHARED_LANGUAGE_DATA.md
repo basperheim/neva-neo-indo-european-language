@@ -27,3 +27,14 @@ To extend supported translator vocabulary, make the change **here** alongside
 the canonical CSV; do not edit the Git clone under ChapterGuides' `tmp/` or fork
 these curated tables in Go. For new or changed rules, coordinate tested updates
 across Python and Go: the JSON is language data, not a portable Python parser.
+
+## Vocabulary smoke test: `bernos`
+
+The regular masculine noun `bernos` (“boy, young male child”; NEVA-0852)
+was added as a Neva adaptation of the Indo-European `*bʰer-` / `*bʰor-no-m`
+family, with an explicitly **analogical e-grade** aligned to Neva `beren`.
+This is not a claim that `bernos` itself is an attested PIE reconstruction.
+Its masculine singular accusative is `bernom`; nominative plural is
+`bernes`. The English word “boy” maps to `bernos` in the shared JSON.
+An external ChapterGuides Gin instance will adopt it on the next validated
+public-repository refresh or the local **development-only** forced-sync route.

@@ -11,10 +11,10 @@ import neva  # noqa: E402
 
 
 class NevaTests(unittest.TestCase):
-    def test_dictionary_has_851_distinct_entries(self):
+    def test_dictionary_has_852_distinct_entries(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 851)
-        self.assertEqual(len({entry["Neva"] for entry in entries}), 851)
+        self.assertEqual(len(entries), 852)
+        self.assertEqual(len({entry["Neva"] for entry in entries}), 852)
 
     def test_new_conjunctions_are_registered(self):
         words = {row["Neva"]: row for row in neva.load_lexicon()}

@@ -14,10 +14,10 @@ from neva_translate import TranslationError, translate
 
 
 class FrequencyGapTests(unittest.TestCase):
-    def test_851_unique_headwords_and_unchanged_declensions(self):
+    def test_852_unique_headwords_and_unchanged_declensions(self):
         rows = neva.load_lexicon()
-        self.assertEqual(len(rows), 851)
-        self.assertEqual(len({x["Neva"] for x in rows}), 851)
+        self.assertEqual(len(rows), 852)
+        self.assertEqual(len({x["Neva"] for x in rows}), 852)
         self.assertEqual(neva.decline("vulkos", "M", "nominative", "plural"), "vulkes")
         self.assertEqual(neva.decline("mathera", "F", "dative", "singular"), "mathere")
         self.assertEqual(neva.decline("denegva", "F", "accusative", "singular"), "denegvam")
