@@ -21,6 +21,8 @@ class SharedDataTests(unittest.TestCase):
         self.assertEqual(neva_translate.ENGLISH_NOUNS, data["english_nouns"])
         self.assertEqual(neva_translate.PREPOSITIONS, data["prepositions"])
         self.assertEqual(neva_translate.MASS_NOUNS, set(data["mass_nouns"]))
+        self.assertEqual(data["english_nouns"]["meat"], "memsom")
+        self.assertIn("meat", data["mass_nouns"])
         self.assertEqual(neva_phrases._PHRASES, data["phrases"]["en_to_neva"])
         self.assertEqual(neva_phrases._NEVA_TO_ENGLISH, data["phrases"]["neva_to_en"])
         for word, verb in data["verbs"].items():

@@ -27,7 +27,8 @@
     "chair": "sedotrom",
     "bed": "svepotrom",
     "table": "dhotrom",
-    "boy": "bernos"
+    "boy": "bernos",
+    "meat": "memsom"
   },
   "verbs": {
     "beren": {
@@ -148,7 +149,8 @@
     "water",
     "rain",
     "fire",
-    "rainwater"
+    "rainwater",
+    "meat"
   ],
   "strong_past": {
     "beren": "bor",

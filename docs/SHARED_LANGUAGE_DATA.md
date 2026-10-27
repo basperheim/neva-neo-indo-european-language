@@ -38,3 +38,18 @@ Its masculine singular accusative is `bernom`; nominative plural is
 `bernes`. The English word “boy” maps to `bernos` in the shared JSON.
 An external ChapterGuides Gin instance will adopt it on the next validated
 public-repository refresh or the local **development-only** forced-sync route.
+
+## Vocabulary-only live synchronization: `memsom` (“meat”)
+
+The canonical dictionary already included `memsom` (neuter noun, “meat”)
+and the regular verb `eden` (“eat”). The English sentence translator did
+not know how to turn the *meaning* “meat” into the object `memsom`.
+The shared `english_nouns` mapping now includes `"meat": "memsom"`,
+and `mass_nouns` includes `"meat"` to render natural English.
+
+Examples: “I eat meat.” and “I eat the meat.” both yield
+`Ego edo memsom.`; the reverse yields “I eat meat.” The limited
+Go translator currently does not preserve definiteness for these objects.
+This is a **JSON-only upstream change**, intentionally leaving the CSV and
+ChapterGuides binary unchanged to prove that hot-reload responds to
+shared lexical JSON checksum changes.
