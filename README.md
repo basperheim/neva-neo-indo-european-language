@@ -88,9 +88,9 @@ This includes a **limited experimental translator** with a conversational/direct
 | Numbers | Singular/plural; no dual. Masc. nominative plural **-es** approved (D1b; original `-oes` rejected, interim `-oi` superseded), neuter nominative/accusative plural **-a** approved (D3) |
 | Subjects | Optional (pro-drop), explicit for emphasis/clarity |
 | Demonstratives/interrogatives | `shos/sha/shod` this; `so/sa/tod` that; `kinos/kina/kinom` which; `kis/kid` who/what |
-| Conditions / causes | `jaba` “if”, `kod` “because” (simple two-clause parser only) |
+| Conditions / causes | `jaba` "if", `kod` "because" (simple two-clause parser only) |
 | Relatives | `jos/josa/jod` with case and number agreement; simple postnominal clauses |
-| Adjective degrees | productive `-oter-` comparative, `-ist-` superlative; `apo` + accusative for “than” |
+| Adjective degrees | productive `-oter-` comparative, `-ist-` superlative; `apo` + accusative for "than" |
 | Verbs | One ending set; small closed set of strong past stems, one suppletive copula |
 | Word formation | Regular suffixes and head-final compounds; D5 approves a closed set of inherited-inspired noun ablaut exceptions, starting with `podos → pedosio` |
 
@@ -135,7 +135,7 @@ tests/
 
 ## Pronunciation and lexical adaptation
 
-PIE-to-Neva sound changes are **historically inspired tendencies**, not a rule that forces every inherited root to have one spelling. Exceptions are allowed when they improve recognizability or preferred phonetics, but must be explicitly noted in the dictionary. For example, **`genom`** (“child”) retains initial `g` despite the tentative `ǵ → z` tendency. Once a Neva word is established, its written pronunciation remains regular.
+PIE-to-Neva sound changes are **historically inspired tendencies**, not a rule that forces every inherited root to have one spelling. Exceptions are allowed when they improve recognizability or preferred phonetics, but must be explicitly noted in the dictionary. For example, **`genom`** ("child") retains initial `g` despite the tentative `ǵ → z` tendency. Once a Neva word is established, its written pronunciation remains regular.
 
 ## Contribution principle
 

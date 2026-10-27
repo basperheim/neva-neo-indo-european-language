@@ -4,7 +4,7 @@
 
 ## Why "language" is `denegva`
 
-Already established Neva `denegva` “tongue” (feminine) comes from the proposed PIE *dn̥ǵʰwéh₂s* tongue. It now has the **additional** conventional meaning **“language”**, just as Latin `lingua` means tongue and language. Neva `vekom` (“speech, utterance”) and `verdom` (“word”) remain distinct. You do not need to invent a different root.
+Already established Neva `denegva` "tongue" (feminine) comes from the proposed PIE *dn̥ǵʰwéh₂s* tongue. It now has the **additional** conventional meaning **"language"**, just as Latin `lingua` means tongue and language. Neva `vekom` ("speech, utterance") and `verdom` ("word") remain distinct. You do not need to invent a different root.
 
 | Case | Singular | Plural |
 |---|---|---|
@@ -26,7 +26,7 @@ python3 scripts/neva.py decline denegva F --case dative --number singular
 # denegve
 ```
 
-The standalone translator can now use dictionary entries and their **exact comma-separated English glosses**. If two Neva headwords could match a bare English word (for example “bear” as an animal versus the verb “bear/carry”), it reports **ambiguity** rather than silently choosing. Complex grammar and idioms still need the sentence translator. When a word is unsupported, ordinary CLI passthrough and `--strict` behavior remain unchanged.
+The standalone translator can now use dictionary entries and their **exact comma-separated English glosses**. If two Neva headwords could match a bare English word (for example "bear" as an animal versus the verb "bear/carry"), it reports **ambiguity** rather than silently choosing. Complex grammar and idioms still need the sentence translator. When a word is unsupported, ordinary CLI passthrough and `--strict` behavior remain unchanged.
 
 ## Animals
 
@@ -87,7 +87,7 @@ These compound instrument forms take the **neuter** case endings. E.g. `sedotrom
 | vetom | year | Existing N |
 | septemodeinom | seven-day week | **Modern seven-day calendar compound**, N |
 
-Other adjectives **already** present include `leukos` bright, `noktos` dark, `tepos` warm, `gelos` cold, `grevos` heavy, `levos` light in weight, `dlongos` long, `mregos` short, `meios` small, `vesos` good, `dusos` bad, and `senos` old. The new adjective `zeninos` means **wise/knowledgeable**, a regular Neva relational derivative of `zenen` (“know”); the meaning is modern lexicalization, not a separately proven PIE adjective.
+Other adjectives **already** present include `leukos` bright, `noktos` dark, `tepos` warm, `gelos` cold, `grevos` heavy, `levos` light in weight, `dlongos` long, `mregos` short, `meios` small, `vesos` good, `dusos` bad, and `senos` old. The new adjective `zeninos` means **wise/knowledgeable**, a regular Neva relational derivative of `zenen` ("know"); the meaning is modern lexicalization, not a separately proven PIE adjective.
 
 **Still missing**: tomorrow/yesterday, times of day beyond dawn/evening, left/right/straight, week days, season names, certain household items (window, spoon, fork), and idioms such as *please*, *thank you*, and *goodbye*. These are good next additions, but each should have an examined source and inflection class.
 
@@ -116,10 +116,10 @@ Some examples:
 - **of**: often a **genitive** relationship (`-osio, -as` etc.), not a universal preposition.
 - **to**: direction `ad`, beneficiary/recipient dative, or verb infinitive `-en`; these are **not synonyms**.
 - **would/could/can**: modal and irrealis grammar genuinely needs decisions.
-- **English “at” (location)** remains a **gap**: Neva `at` already means “but.”
-- **“that”**: demonstrative `so/sa/tod` vs relative `jos/josa/jod`, never one universal suffix.
+- **English "at" (location)** remains a **gap**: Neva `at` already means "but."
+- **"that"**: demonstrative `so/sa/tod` vs relative `jos/josa/jod`, never one universal suffix.
 - **than**: `apo` + accusative in comparative constructions.
-- **most**: adjective degree `-ist-` exists, but quantifier “most people” is **not** automatically covered.
+- **most**: adjective degree `-ist-` exists, but quantifier "most people" is **not** automatically covered.
 
 ### Next priorities
 

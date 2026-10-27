@@ -18,23 +18,23 @@ All commands run at the repository root (copy and paste the lines below).
     python3 scripts/neva.py translate "Ka beres vodrom?"
     # Do you carry water?
 
-    python3 scripts/neva.py translate --from en --to neva "I carry water."
+    python3 scripts/neva.py translate —from en —to neva "I carry water."
     # Ego bero vodrom.
 
-    python3 scripts/neva.py translate --from en --to neva "The mother sees a wolf."
+    python3 scripts/neva.py translate —from en —to neva "The mother sees a wolf."
     # Mathera videth vulkom.
 
-    python3 scripts/neva.py translate --from en --to neva "I have carried water."
+    python3 scripts/neva.py translate —from en —to neva "I have carried water."
     # Ego kapo beroto vodrom.
 
     # Phrasebook: English -> Neva
-    python3 scripts/neva.py translate --from en --to neva 'Hello!'
+    python3 scripts/neva.py translate —from en —to neva 'Hello!'
     # Vese!
 
-    python3 scripts/neva.py translate --from en --to neva 'Good day!'
+    python3 scripts/neva.py translate —from en —to neva 'Good day!'
     # Vesom deinom!
 
-    python3 scripts/neva.py translate --from en --to neva 'How are you?'
+    python3 scripts/neva.py translate —from en —to neva 'How are you?'
     # Komo es?
 
     # Phrasebook: Neva -> English
@@ -46,7 +46,7 @@ All commands run at the repository root (copy and paste the lines below).
     # Hello!  (no conversion: default source is Neva)
 
     # Old strict behavior, exit status 2 on unsupported input
-    python3 scripts/neva.py translate --strict 'Bero inventedword.'
+    python3 scripts/neva.py translate —strict 'Bero inventedword.'
 
     python3 -m unittest discover -s tests -v
 
@@ -86,7 +86,7 @@ Core forms defined: proximal demonstratives shos/sha/shod ("this"), distal demon
 
 Not fully finalized: independent interrogative `kis/kid` case paradigms, general wh-questions, long-distance relative syntax, nested subordinate clauses, and counterfactual conditional mood.
 
-Already adopted: `jaba` (“if”), `kod` (full-clause “because”), and relative pronouns `jos/josa/jod`. Still unapproved: “however” (`atoge`), “although,” and more advanced clause-scope rules. **Atoge** (“however”) remains a candidate. The approved **pro tod** is a causal phrase (“for that reason”); **kod** is the full-clause causal connector. None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
+Already adopted: `jaba` ("if"), `kod` (full-clause "because"), and relative pronouns `jos/josa/jod`. Still unapproved: "however" (`atoge`), "although," and more advanced clause-scope rules. **Atoge** ("however") remains a candidate. The approved **pro tod** is a causal phrase ("for that reason"); **kod** is the full-clause causal connector. None is a fully implemented conjunction in the translator. See [function words](FUNCTION_WORDS_PROPOSAL.md).
 
 Neva ke is an independent connective, inspired by PIE enclitic *-kwe (whose reflexes appear throughout early Indo-European languages). The independent position is a deliberate simplification.
 
@@ -98,10 +98,10 @@ The phrasebook `scripts/neva_phrases.py` maps a few ordinary conversational expr
 
 | English | Neva | Note |
 |---|---|---|
-| Hello! / Hi! | **Vese!** | Conventional greeting adapted from *vese* “well”; a Neva coinage |
-| Good day! | **Vesom deinom!** | *vesom* agrees with neuter *deinom* “day” |
-| How are you? | **Komo es?** | *komo* “how” + second-singular *es* “are” |
-| I am well. | **Em vese.** | First-singular *em* “am” + adverb *vese* |
+| Hello! / Hi! | **Vese!** | Conventional greeting adapted from *vese* "well"; a Neva coinage |
+| Good day! | **Vesom deinom!** | *vesom* agrees with neuter *deinom* "day" |
+| How are you? | **Komo es?** | *komo* "how" + second-singular *es* "are" |
+| I am well. | **Em vese.** | First-singular *em* "am" + adverb *vese* |
 
 The phrasebook accepts optional trailing punctuation and case differences. It does **not** auto-detect the source language. To translate English, pass `--from en --to neva`.
 
@@ -109,19 +109,19 @@ The phrasebook accepts optional trailing punctuation and case differences. It do
 
 In interactive `zsh`, single quotes are the safest way to pass a literal exclamation mark:
 
-    python3 scripts/neva.py translate --from en --to neva 'Hello!'
+    python3 scripts/neva.py translate —from en —to neva 'Hello!'
 
 A `dquote>` prompt indicates an **unclosed double-quoted string**. A history-expansion complaint involving `!` is separate; single quotes avoid that too. If you see `dquote>`, press Ctrl+C to cancel the incomplete command and re-enter it.
 
 ## New determiner CLI
 
-    python3 scripts/neva.py decline-determiner shos --case accusative
+    python3 scripts/neva.py decline-determiner shos —case accusative
     # shom
-    python3 scripts/neva.py decline-determiner kina --case dative
+    python3 scripts/neva.py decline-determiner kina —case dative
     # kine
     python3 scripts/neva.py translate 'Vido shom vulkom.'
     # I see this wolf.
-    python3 scripts/neva.py translate --from en --to neva 'I see this wolf.'
+    python3 scripts/neva.py translate —from en —to neva 'I see this wolf.'
     # Ego vido shom vulkom.
 
 One simple conditional, causal, or relative clause is now supported in the experimental translator, as documented in the [beginner reader](BEGINNER_READER.md). **Nested clauses and unrecognized syntax still require rejection or passthrough.** Do not infer unrestricted scope or idiomatic fluency from a few working examples.

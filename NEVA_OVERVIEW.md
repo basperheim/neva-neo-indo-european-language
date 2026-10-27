@@ -48,7 +48,7 @@ Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/n
 
 The dictionary now has `Gender basis` and `Gender status` columns for 449 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
 
-**Closed noun-ablaut inventory (D5, first entry):** `podos` “foot” (M) replaces older draft `pedos`. Its case endings are **unchanged**, but the explicitly listed stem alternates:
+**Closed noun-ablaut inventory (D5, first entry):** `podos` "foot" (M) replaces older draft `pedos`. Its case endings are **unchanged**, but the explicitly listed stem alternates:
 
 | Case | Singular | Plural |
 |---|---|---|
@@ -71,7 +71,7 @@ Selected irregular object forms: `me` me, `te` you, `som` him, `sam` her, `nos` 
 
 A single set of personal endings, applied to the present stem or the past stem:
 
-| Person | Pronoun | Present ending | *kapen* “have/hold” | Regular past *kapen* |
+| Person | Pronoun | Present ending | *kapen* "have/hold" | Regular past *kapen* |
 |---|---|---|---|---|
 | 1sg | ego | -o | kapo | ekapo |
 | 2sg | ty | -es | kapes | ekapes |
@@ -120,7 +120,7 @@ Yes/no questions are marked with initial **ka**: `Ka beres vodrom?` — Do you c
 
 **Approved demonstratives:** proximal *this/these* uses **shos (M), sha (F), shod (N)**; distal *that/those* uses **so (M), sa (F), tod (N)**. They agree with nouns in gender, case and number. The distal forms also supply third-person pronouns; their historically inspired irregular object and oblique forms are retained rather than forcibly regularized.
 
-**Approved attributive “which”:** **kinos (M), kina (F), kinom (N)**. Independent **kis** (“who?”) and **kid** (“what?”) are unchanged.
+**Approved attributive "which":** **kinos (M), kina (F), kinom (N)**. Independent **kis** ("who?") and **kid** ("what?") are unchanged.
 
 | Case | This M sg. | This F sg. | This N sg. | Which M sg. | Which F sg. | Which N sg. |
 |---|---|---|---|---|---|---|
@@ -129,13 +129,13 @@ Yes/no questions are marked with initial **ka**: `Ka beres vodrom?` — Do you c
 | Genitive | shosio | shas | shosio | kinosio | kinas | kinosio |
 | Dative | shoi | she | shoi | kinoi | kine | kinoi |
 
-Plural nominatives: **shes / shas / sha** (“these”, M/F/N); **kines / kinas / kina** (“which”, M/F/N). Other plural forms and all distal forms are specified in [the adopted decision record](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md) and implemented in `scripts/neva_determiners.py`.
+Plural nominatives: **shes / shas / sha** ("these", M/F/N); **kines / kinas / kina** ("which", M/F/N). Other plural forms and all distal forms are specified in [the adopted decision record](docs/DEMONSTRATIVES_INTERROGATIVES_DECISIONS.md) and implemented in `scripts/neva_determiners.py`.
 
-Examples: **Shod genom** (“this child”), **sha mathera** (“this mother”), **shes vulkes** (“these wolves”), **kinom genom** (“which child?”). The last is a *noun phrase*, not yet a complete interrogative sentence in the translator.
+Examples: **Shod genom** ("this child"), **sha mathera** ("this mother"), **shes vulkes** ("these wolves"), **kinom genom** ("which child?"). The last is a *noun phrase*, not yet a complete interrogative sentence in the translator.
 
-**Existing conjunctions and particles:** `ke` “and”, `ve` “or”, `at` “but/yet”, `ne` “not”, `ka` yes/no question marker, `vel` future marker. **Adopted `jaba`** /ˈja.ba/ means “if” (adapted from Proto-Germanic *jabai*). Simple conditions use ordinary indicative clauses, e.g. `Jaba beres vodrom, vel kapo vodrom.` (“If you carry water, I will have water”). The current translator does **not yet parse** subordinate conditional clauses.
+**Existing conjunctions and particles:** `ke` "and", `ve` "or", `at` "but/yet", `ne` "not", `ka` yes/no question marker, `vel` future marker. **Adopted `jaba`** /ˈja.ba/ means "if" (adapted from Proto-Germanic *jabai*). Simple conditions use ordinary indicative clauses, e.g. `Jaba beres vodrom, vel kapo vodrom.` ("If you carry water, I will have water"). The current translator does **not yet parse** subordinate conditional clauses.
 
-**Now approved:** Relative pronouns **jos/josa/jod**, causal conjunction **kod** (“because” introducing a full finite clause), comparative adjective **-oter-**, superlative **-ist-**, and comparative **apo + accusative** (“than”). The already approved **jaba** (“if”) uses normal finite clauses for real/likely conditions. Relative pronouns agree in gender/number with their antecedents, but their case comes from their grammatical role in the relative clause. Neva `ja` already means “yes”; feminine relative `josa` avoids a collision. The existing `pro tod` remains a prepositional phrase “for that reason”, distinct from finite-clause `kod`. `atoge` (“however”) remains a proposal. See [the approved grammar and outstanding decisions](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md).
+**Now approved:** Relative pronouns **jos/josa/jod**, causal conjunction **kod** ("because" introducing a full finite clause), comparative adjective **-oter-**, superlative **-ist-**, and comparative **apo + accusative** ("than"). The already approved **jaba** ("if") uses normal finite clauses for real/likely conditions. Relative pronouns agree in gender/number with their antecedents, but their case comes from their grammatical role in the relative clause. Neva `ja` already means "yes"; feminine relative `josa` avoids a collision. The existing `pro tod` remains a prepositional phrase "for that reason", distinct from finite-clause `kod`. `atoge` ("however") remains a proposal. See [the approved grammar and outstanding decisions](docs/CLAUSES_COMPARISONS_AND_VALIDATION.md).
 
 Neva independent `ke` is inspired by PIE enclitic `*-kʷe` (compare Latin `-que` and Sanskrit `ca`); proximal `sh-` is independently inspired by PIE deictic `*ḱe-`. These are *different* roots and intentionally different Neva phonemes.
 
@@ -167,19 +167,19 @@ The CLI now accepts `translate` for a deliberately **small, strict** grammar sub
     # I have carried water.
     python3 scripts/neva.py translate "Bero vodrom mathere."
     # I carry water to the mother.
-    python3 scripts/neva.py translate --from en --to neva "I carry water."
+    python3 scripts/neva.py translate —from en —to neva "I carry water."
     # Ego bero vodrom.
-    python3 scripts/neva.py decline-determiner shos --case accusative
+    python3 scripts/neva.py decline-determiner shos —case accusative
     # shom
-    python3 scripts/neva.py decline-relative josa --case accusative
+    python3 scripts/neva.py decline-relative josa —case accusative
     # josam
-    python3 scripts/neva.py compare mezos --degree comparative --gender F
+    python3 scripts/neva.py compare mezos —degree comparative —gender F
     # mezotera
-    python3 scripts/neva.py examples --category Story --limit 5
-    python3 scripts/neva.py translate --from en --to neva "I see this wolf."
+    python3 scripts/neva.py examples —category Story —limit 5
+    python3 scripts/neva.py translate —from en —to neva "I see this wolf."
     # Ego vido shom vulkom.
 
-This is **not** unrestricted machine translation: unsupported clauses and unknown syntax are **returned unchanged with a warning by default**, while `--strict` restores nonzero errors. It never invents meaning for unknown constructions. A provisional phrasebook maps `Vese!` ↔ “Hello!”, `Vesom deinom!` ↔ “Good day!”, and `Komo es?` ↔ “How are you?”. The default direction is Neva → English; English → Neva requires `--from en --to neva`. See [the MVP guide](docs/TRANSLATION_MVP.md) for tests and limitations.
+This is **not** unrestricted machine translation: unsupported clauses and unknown syntax are **returned unchanged with a warning by default**, while `--strict` restores nonzero errors. It never invents meaning for unknown constructions. A provisional phrasebook maps `Vese!` ↔ "Hello!", `Vesom deinom!` ↔ "Good day!", and `Komo es?` ↔ "How are you?". The default direction is Neva → English; English → Neva requires `--from en --to neva`. See [the MVP guide](docs/TRANSLATION_MVP.md) for tests and limitations.
 
 ### Word formation, derivation and compounding
 
@@ -238,9 +238,9 @@ Google Translate can read arbitrary pseudo-Latin inputs when the language's List
 
 ## Everyday vocabulary and grammatical high-frequency words
 
-The dictionary now includes **828 headwords**, with **449 nouns**. Newly specialized basic vocabulary includes **denegva** (F) “tongue; language,” **vekom** (N) “speech,” and **verdom** (N) “word.” This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern “language” term.
+The dictionary now includes **828 headwords**, with **449 nouns**. Newly specialized basic vocabulary includes **denegva** (F) "tongue; language," **vekom** (N) "speech," and **verdom** (N) "word." This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern "language" term.
 
-Regular feminine cases: **denegva / denegvam / denegvas / denegve** (nominative / accusative / genitive / dative singular). Other new words include **ovisa** “sheep,” **gansa** “goose,” **susos** “pig,” **miava** “cat” (onomatopoeic Neva invention), **sedotrom** “chair,” **svepotrom** “bed,” **avosa** “dawn,” and **nu** “now.”
+Regular feminine cases: **denegva / denegvam / denegvas / denegve** (nominative / accusative / genitive / dative singular). Other new words include **ovisa** "sheep," **gansa** "goose," **susos** "pig," **miava** "cat" (onomatopoeic Neva invention), **sedotrom** "chair," **svepotrom** "bed," **avosa** "dawn," and **nu** "now."
 
 Neva now audits all **100** items of the Wikipedia/Oxford English Corpus frequency list in [the coverage dataset](data/english_top100_coverage.tsv): **43 direct headwords**, **23 represented by grammar**, **7 partial senses**, and **27 unresolved gaps**. This is **100/100 assessed, not 100/100 translated**. English articles do not need forms in an article-less language; *of* can be expressed by genitive; future *will* by `vel`; and modal *can/would* still need explicit grammar.
 
@@ -254,7 +254,7 @@ For source-graded vocabulary and notes about later inventions, see [Everyday voc
 
 ## PIE laryngeals (h₁, h₂, h₃) and new prepositions
 
-We propose preserving PIE laryngeal **vowel-coloring effects** while removing laryngeal consonants and vowel-length contrasts: *h₁* leaves nearby *e* uncolored, *h₂* tends toward **a**, and *h₃* toward **o**. This is **not** a naive letter replacement for all environments; zero-grade and consonant clusters need context-sensitive treatment. Proposed `pra` “before/in front of” follows PIE *preh₂-* after *a*-coloring and loss of vowel length. It is **not yet an approved dictionary entry**. Existing prepositions `en/ad/apo/kom/per/uper` remain in the grammar, normally governing the accusative, while dative alone can mark recipients. See [the laryngeal sound rule proposal](docs/LARYNGEAL_SOUND_RULES.md).
+We propose preserving PIE laryngeal **vowel-coloring effects** while removing laryngeal consonants and vowel-length contrasts: *h₁* leaves nearby *e* uncolored, *h₂* tends toward **a**, and *h₃* toward **o**. This is **not** a naive letter replacement for all environments; zero-grade and consonant clusters need context-sensitive treatment. Proposed `pra` "before/in front of" follows PIE *preh₂-* after *a*-coloring and loss of vowel length. It is **not yet an approved dictionary entry**. Existing prepositions `en/ad/apo/kom/per/uper` remain in the grammar, normally governing the accusative, while dative alone can mark recipients. See [the laryngeal sound rule proposal](docs/LARYNGEAL_SOUND_RULES.md).
 
 ## Open problems for a later edition
 

@@ -28,16 +28,16 @@ Reconstructed *preh₂-* denotes **before / in front** and underlies forms such 
 
 `*preh₂- -> [a-coloring + loss of laryngeal + no long vowels] -> pra`
 
-**Proposed Neva `pra`** = “before; in front of,” /pra/; `pr` is already a legal cluster.
+**Proposed Neva `pra`** = "before; in front of," /pra/; `pr` is already a legal cluster.
 
-This is a **proposal for a new preposition**, not yet inserted in the lexicon. The existing `per` “through/across” remains separate. `pro` “for/on behalf of” can be proposed independently from PIE *pró* (not from *preh₂-* by a universal rule).
+This is a **proposal for a new preposition**, not yet inserted in the lexicon. The existing `per` "through/across" remains separate. `pro` "for/on behalf of" can be proposed independently from PIE *pró* (not from *preh₂-* by a universal rule).
 
 ## Counterexamples to naive replacement
 
-- PIE *ph₂tḗr* → Neva **patheros** (“father”) is *lexical remodeling*, not a trivial `h₂ -> a` string operation.
-- PIE *méh₂tēr* → **mathera** (“mother”) is similarly remodeled into the established Neva declension.
-- PIE *h₁es-* → **es-** (“be”) illustrates an uncolored `e` and loss of `h₁`.
-- Neva **genom** (“child”) deliberately keeps initial `g` despite a separately proposed PIE palatovelar change *ǵ → z*: phonetic regularity of Neva **does not** require historically exceptionless etymological adaptation.
+- PIE *ph₂tḗr* → Neva **patheros** ("father") is *lexical remodeling*, not a trivial `h₂ -> a` string operation.
+- PIE *méh₂tēr* → **mathera** ("mother") is similarly remodeled into the established Neva declension.
+- PIE *h₁es-* → **es-** ("be") illustrates an uncolored `e` and loss of `h₁`.
+- Neva **genom** ("child") deliberately keeps initial `g` despite a separately proposed PIE palatovelar change *ǵ → z*: phonetic regularity of Neva **does not** require historically exceptionless etymological adaptation.
 
 ## Next steps to freeze a full sound-change engine
 

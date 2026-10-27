@@ -28,13 +28,13 @@ By default `translate` means Neva → English. For English → Neva, specify `--
 
 | English | Neva | Comment |
 |---|---|---|
-| Hello! | **Vese!** | Conventional Neva greeting from an existing “well” adverb |
+| Hello! | **Vese!** | Conventional Neva greeting from an existing "well" adverb |
 | Good day! | **Vesom deinom!** | Neuter adjective + neuter day |
-| How are you? | **Komo es?** | Literally “How are [you]?” |
+| How are you? | **Komo es?** | Literally "How are [you]?" |
 | I am well. | **Em vese.** | Subject pronoun omitted |
 | Yes. | **Ja.** | Established affirmation |
 | No. | **Ne.** | Conventional negative answer |
-| Good night! | **Vesa nokta!** | Feminine adjective agrees with *nokta* “night” |
+| Good night! | **Vesa nokta!** | Feminine adjective agrees with *nokta* "night" |
 
 **Two-person exchange**
 
@@ -44,7 +44,7 @@ By default `translate` means Neva → English. For English → Neva, specify `--
 > **B:** Em vese. — I am well.  
 > **A:** Vesom deinom! — Good day!
 
-These aren't ancient PIE greetings. They are modern Neva conventions: short, pronounceable, and consistent with the current vocabulary. We still need a natural word or fixed idiom for “thank you,” “please,” and “goodbye” instead of inventing dubious etymologies.
+These aren't ancient PIE greetings. They are modern Neva conventions: short, pronounceable, and consistent with the current vocabulary. We still need a natural word or fixed idiom for "thank you," "please," and "goodbye" instead of inventing dubious etymologies.
 
 ## Asking directions
 
@@ -58,7 +58,7 @@ These aren't ancient PIE greetings. They are modern Neva conventions: short, pro
 | Go through the door! | **Ie per dhverom!** |
 | I go toward the door. | **Io ad dhverom.** |
 
-The commands and *ku* questions are explicitly supported conversational conventions; for other combinations, the general translator understands a **subset** of verbs with preposition + accusative. `ad` means “toward,” `per` means “through,” and `en` means “in/into.” Locations don't need a new locative case. We have **not** yet standardized “left,” “right,” “straight ahead,” or the cardinal directions. That is a useful next vocabulary milestone.
+The commands and *ku* questions are explicitly supported conversational conventions; for other combinations, the general translator understands a **subset** of verbs with preposition + accusative. `ad` means "toward," `per` means "through," and `en` means "in/into." Locations don't need a new locative case. We have **not** yet standardized "left," "right," "straight ahead," or the cardinal directions. That is a useful next vocabulary milestone.
 
 ## A short story: the wolf and the horse
 
@@ -72,23 +72,23 @@ This is a deliberately elementary mini-story using our existing words, comparati
 | **Jaba eshvos videth vulkom, eshvos ieth ad domom.** | If the horse sees a wolf, the horse goes toward the home. |
 | **Vulkos ne ieth ad domom.** | The wolf does not go toward the home. |
 
-The eventual *fable* genre needs more basic vocabulary for motives, actions, emotion, and morals (for instance “fear,” “help,” “wise,” “speak,” “tell”). It's better to build that vocabulary transparently than to pretend a five-sentence scene is a literary epic.
+The eventual *fable* genre needs more basic vocabulary for motives, actions, emotion, and morals (for instance "fear," "help," "wise," "speak," "tell"). It's better to build that vocabulary transparently than to pretend a five-sentence scene is a literary epic.
 
 ## Why these forms work
 
-**Cases:** `vulkos` “wolf” as subject → `vulkom` when it is the object of *see*. `eshvos` “horse” → `eshvom` in the accusative.
+**Cases:** `vulkos` "wolf" as subject → `vulkom` when it is the object of *see*. `eshvos` "horse" → `eshvom` in the accusative.
 
-**Pronouns and demonstratives:** `shos vulkos` = “this wolf” (masculine nominative). `som eshvom` = “that horse” (masculine accusative). Those two agreeing modifiers use different case forms.
+**Pronouns and demonstratives:** `shos vulkos` = "this wolf" (masculine nominative). `som eshvom` = "that horse" (masculine accusative). Those two agreeing modifiers use different case forms.
 
 **Verb person:** `videth` = he/she/it sees; `ieth` = he/she/it goes; `beres` = you carry; `kapo` = I have.
 
 **Conditional:** `jaba [normal present-tense clause], [normal clause]`. No special subjunctive needed for ordinary real/likely conditions.
 
-**Cause:** `kod` introduces a full explanatory clause; `pro tod` means “for that reason” and is a prepositional phrase rather than a finite-clause conjunction.
+**Cause:** `kod` introduces a full explanatory clause; `pro tod` means "for that reason" and is a prepositional phrase rather than a finite-clause conjunction.
 
-**Comparison:** `mezos` “big” → `mezoteros` “bigger” → `mezistos` “biggest.” Use `apo` + accusative in the elementary “bigger than…” pattern. Comparative/superlative adjectives keep ordinary gender, number, and case endings.
+**Comparison:** `mezos` "big" → `mezoteros` "bigger" → `mezistos` "biggest." Use `apo` + accusative in the elementary "bigger than..." pattern. Comparative/superlative adjectives keep ordinary gender, number, and case endings.
 
-**Relative clause:** `Vido matheram josa bereth vodrom.` = “I see a mother who carries water.” Although *matheram* is accusative in the main clause, *josa* is nominative because it is the subject of *bereth* in its own clause.
+**Relative clause:** `Vido matheram josa bereth vodrom.` = "I see a mother who carries water." Although *matheram* is accusative in the main clause, *josa* is nominative because it is the subject of *bereth* in its own clause.
 
 ## Relative and comparative examples
 
