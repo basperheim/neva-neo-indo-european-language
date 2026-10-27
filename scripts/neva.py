@@ -50,12 +50,9 @@ DERIVATIONAL_GENDERS: tuple[tuple[str, str], ...] = (
 
 PERSON_ENDINGS = ("o", "es", "eth", "omos", "ethe", "ont")
 PRONOUNS = ("ego", "ty", "so/sa/tod", "vei", "jus", "toi/tai/ta")
-STRONG_PAST = {
-    "beren": "bor", "seden": "sod", "menen": "mon", "viden": "void",
-    "eden": "od", "gemen": "gom", "vegen": "vog", "legen": "log",
-    "teshen": "tosh", "gerben": "gorb", "peken": "pok", "seken": "sok",
-    "melen": "mol", "plenen": "plon", "deshen": "dosh",
-}
+# Approved closed ablaut inventory comes from shared language data.
+from neva_data import lexical_data
+STRONG_PAST = dict(lexical_data()["strong_past"])
 COPULA_PRESENT = ("em", "es", "est", "emos", "este", "sont")
 IPA = {
     "sh": "ʃ", "th": "θ", "dh": "ð",
@@ -447,6 +444,8 @@ def main() -> None:
             entries = list(csv.DictReader(handle, delimiter="\t"))
         matching = [entry for entry in entries
                     if not arguments.status or entry["Status"] == arguments.status]
+        if not matching:
+            print(f"No coverage entries with status '{arguments.status}'.")
         for entry in matching[:arguments.limit]:
             print(f'{int(entry["Rank"]):3} {entry["English"]:11} '
                   f'{entry["Status"]:8} {entry["Neva expression"]} '

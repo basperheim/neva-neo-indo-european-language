@@ -1,6 +1,10 @@
 # Demonstratives, interrogatives, and remaining grammar decisions
 
+<<<<<<< HEAD
 **Approved 2026-10-26:** **Option A** proximal `shos/sha/shod` versus distal `so/sa/tod`, and **W1** `kinos/kina/kinom` for "which." The forms are in the 828-headword dictionary, decline via `scripts/neva_determiners.py`, and have simple translator support for agreeing noun phrases. The relative `jos/josa/jod` series and `kod` "because" are now also adopted. Complex or nested questions and clauses remain open. Earlier alternative options below are retained for design history.
+=======
+**Approved 2026-10-26:** **Option A** proximal `shos/sha/shod` versus distal `so/sa/tod`, and **W1** `kinos/kina/kinom` for “which.” The forms are in the 851-headword dictionary, decline via `scripts/neva_determiners.py`, and have simple translator support for agreeing noun phrases. The relative `jos/josa/jod` series and `kod` “because” are now also adopted. Complex or nested questions and clauses remain open. Earlier alternative options below are retained for design history.
+>>>>>>> refs/remotes/origin/master
 
 ## Historical basis and design constraints
 
@@ -88,7 +92,7 @@ This is separate from **independent** interrogative `kis` "who" and `kid` "what"
 
 **Priority 2 — make language data dependable**
 5. Review vowel sequences, stress on long compounds, laryngeal coloring and lexical sound-change exceptions. No destructive rederivation of approved vocabulary.
-6. Audit PIE roots, semantic glosses, gender evidence, derivational suffixes, irregular verbs/nouns, and compound head agreement. The 828 entries are a *working candidate lexicon*, not 801 independently reconstructed PIE roots.
+6. Audit PIE roots, semantic glosses, gender evidence, derivational suffixes, irregular verbs/nouns, and compound head agreement. The 851 entries are a *working candidate lexicon*, not 801 independently reconstructed PIE roots.
 7. Expand basic daily vocabulary and idioms, count/time expressions and register; build a sentence corpus with translation and expected IPA.
 
 **Priority 3 — implement the resulting language**

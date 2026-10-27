@@ -23,44 +23,29 @@ OBJECT_PRONOUNS = {
     "me": "me", "te": "you", "som": "him", "sam": "her",
     "nos": "us", "vos": "you all",
 }
-# Deliberately narrow semantic inventory: glossary tokens alone are not a
-# reliable source of irregular English inflection or a verb's argument frame.
+# Semantic inventories are owned by data/translation_lexicon.json, shared
+# with ChapterGuides' Go runtime. This remains intentionally conservative:
+# dictionary glosses are not sufficient to infer English irregular inflection.
+from neva_data import lexical_data
+
+_SHARED = lexical_data()
 VERBS = {
-    "beren": ("carry", "carries", "carried", "carried"),
-    "viden": ("see", "sees", "saw", "seen"),
-    "kapen": ("have", "has", "had", "had"),
-    "menen": ("think", "thinks", "thought", "thought"),
-    "eden": ("eat", "eats", "ate", "eaten"),
-    "gemen": ("come", "comes", "came", "come"),
-    "ien": ("go", "goes", "went", "gone"),
-    "seden": ("sit", "sits", "sat", "sat"),
-    "gerben": ("write", "writes", "wrote", "written"),
-    "esen": ("be", "is", "was", "been"),
+    word: (v["base"], v["third"], v["past"], v["participle"])
+    for word, v in _SHARED["verbs"].items()
 }
-ENGLISH_NOUNS = {
-    "water": "vodrom", "wolf": "vulkos", "horse": "eshvos",
-    "mother": "mathera", "father": "patheros", "brother": "bratheros",
-    "sister": "svesora", "daughter": "dhugathera", "child": "genom",
-    "foot": "podos", "pen": "gerbotrom", "computer": "menotrom",
-    "door": "dhverom", "tree": "dorom", "sun": "savelom",
-}
-ENGLISH_ADJECTIVES = {
-    "new": "nevos", "big": "mezos", "cold": "gelos", "good": "vesos",
-    "bad": "dusos", "old": "senos", "red": "rudhos",
-}
-# English comparative/superlative spellings are outputs of the regular
-# Neva morphology engine, not additional irregular Neva paradigms.
+ENGLISH_NOUNS = dict(_SHARED["english_nouns"])
+ENGLISH_ADJECTIVES = dict(_SHARED["english_adjectives"])
+# English comparative/superlative spellings remain outputs of morphology.
 for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
+    if _adjective in {"solvos", "somos", "kvenos", "alteros", "primos"}:
+        continue
     for _degree in ("comparative", "superlative"):
         ENGLISH_ADJECTIVES[english_degree(_meaning, _degree)] = inflect_adjective(
             _adjective, _degree
         )
-PREPOSITIONS = {
-    "ad": "toward", "en": "into", "apo": "from",
-    "per": "through", "kom": "with", "uper": "over", "pro": "for",
-}
+PREPOSITIONS = dict(_SHARED["prepositions"])
 ENGLISH_PREPOSITIONS = {value: key for key, value in PREPOSITIONS.items()}
-MASS_NOUNS = {"water", "rain", "fire", "rainwater"}
+MASS_NOUNS = set(_SHARED["mass_nouns"])
 PERSON_ENGLISH_TO_NEVA = {
     "i": ("ego", 0), "you": ("ty", 1), "he": ("so", 2),
     "she": ("sa", 2), "it": ("tod", 2), "we": ("vei", 3),
@@ -125,6 +110,8 @@ def adjective_forms() -> dict[str, list[AdjectiveForm]]:
             continue
         gloss = row["English"].split(",", 1)[0].strip().lower()
         for degree in ("positive", "comparative", "superlative"):
+            if degree != "positive" and row["Neva"] in {"solvos", "somos", "kvenos", "alteros", "primos"}:
+                continue
             for gender, numbers in neva.ENDINGS.items():
                 for number, cases in numbers.items():
                     for case in cases:
@@ -215,7 +202,7 @@ def _render_noun(noun: NounForm, modifier: str | None, role: str) -> str:
         english = _english_plural(english)
     if modifier:
         english = modifier + " " + english
-        if modifier.split()[0] in {"this", "that", "these", "those", "which"}:
+        if modifier.split()[0] in {"this", "that", "these", "those", "which", "some", "any", "all", "other", "first"}:
             return english
     if noun.number == "plural":
         return ("the " if role in {"subject", "dative"} else "") + english
@@ -556,6 +543,7 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
 
     from neva_phrases import translate_phrase
     from neva_words import translate_headword
+    from neva_modals import translate_modal
     from neva_clauses import translate_complex
 
     known_phrase = translate_phrase(text, source=source, target=target)
@@ -567,6 +555,9 @@ def translate(text: str, source: str = "neva", target: str = "en") -> str:
         raise TranslationError(str(exc)) from exc
     if known_word is not None:
         return known_word
+    modal_clause = translate_modal(text, source=source, target=target)
+    if modal_clause is not None:
+        return modal_clause
     complex_clause = translate_complex(text, source=source, target=target)
     if complex_clause is not None:
         return complex_clause

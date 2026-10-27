@@ -7,51 +7,13 @@ from __future__ import annotations
 
 import re
 
-# English --> Neva. The forms are provisional conversational conventions.
-# vese "well" is reused as a greeting; vesom agrees with neuter deinom "day".
-_PHRASES = {
-    "hello": "vese",
-    "hi": "vese",
-    "good day": "vesom deinom",
-    "how are you": "komo es",
-    "i am well": "em vese",
-    "yes": "ja",
-    "no": "ne",
-    "good night": "vesa nokta",
-    "where is the door": "ku est dhverom",
-    "where is the house": "ku est domom",
-    "where is the road": "ku est pontos",
-    "go to the door": "ie ad dhverom",
-    "go through the door": "ie per dhverom",
-    "go to the house": "ie ad domom",
-}
+# The Python translator and ChapterGuides Go consume the same authored list.
+from neva_data import lexical_data
 
-_NEVA_TO_ENGLISH = {
-    "vese": "Hello",
-    "vesom deinom": "Good day",
-    "komo es": "How are you",
-    "em vese": "I am well",
-    "ja": "Yes",
-    "ne": "No",
-    "vesa nokta": "Good night",
-    "ku est dhverom": "Where is the door",
-    "ku est domom": "Where is the house",
-    "ku est pontos": "Where is the road",
-    "ie ad dhverom": "Go to the door",
-    "ie per dhverom": "Go through the door",
-    "ie ad domom": "Go to the house",
-}
-
-_CANONICAL_PUNCTUATION = {
-    "how are you": "?",
-    "komo es": "?",
-    "where is the door": "?",
-    "where is the house": "?",
-    "where is the road": "?",
-    "ku est dhverom": "?",
-    "ku est domom": "?",
-    "ku est pontos": "?",
-}
+_PHRASE_DATA = lexical_data()["phrases"]
+_PHRASES = dict(_PHRASE_DATA["en_to_neva"])
+_NEVA_TO_ENGLISH = dict(_PHRASE_DATA["neva_to_en"])
+_CANONICAL_PUNCTUATION = dict(_PHRASE_DATA["canonical_punctuation"])
 
 
 def translate_phrase(text: str, source: str, target: str) -> str | None:

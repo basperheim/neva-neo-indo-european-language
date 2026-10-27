@@ -69,6 +69,24 @@ class TranslatorTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertEqual(translate(source), expected)
 
+    def test_meat_uses_shared_lexicon_without_new_sentence_rules(self):
+        # "memsom" has long existed in the canonical CSV. Its English
+        # sentence semantics are supplied solely through shared JSON.
+        pairs = (
+            ("I eat meat.", "Ego edo memsom."),
+            ("I eat the meat.", "Ego edo memsom."),
+            ("I ate meat.", "Ego odo memsom."),
+        )
+        for source, expected in pairs:
+            with self.subTest(source=source):
+                self.assertEqual(
+                    translate(source, source="en", target="neva"), expected
+                )
+        self.assertEqual(
+            translate("Ego edo memsom.", source="neva", target="en"),
+            "I eat meat.",
+        )
+
     def test_english_statements(self):
         examples = {
             "I carry water.": "Ego bero vodrom.",

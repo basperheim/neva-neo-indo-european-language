@@ -14,7 +14,7 @@ from neva_translate import translate, TranslationError
 class VocabularyExpansionTests(unittest.TestCase):
     def test_core_new_nouns(self):
         entries = neva.load_lexicon()
-        self.assertEqual(len(entries), 828)
+        self.assertEqual(len(entries), 852)
         by_word = {r["Neva"]: r for r in entries}
         self.assertEqual(by_word["denegva"]["Gender"], "F")
         self.assertEqual(by_word["denegva"]["English"], "tongue, language")
@@ -79,7 +79,7 @@ class VocabularyExpansionTests(unittest.TestCase):
         self.assertEqual([int(row["Rank"]) for row in rows], list(range(1, 101)))
         self.assertEqual(len({row["English"] for row in rows}), 100)
         kinds = {row["Status"] for row in rows}
-        self.assertEqual(kinds, {"lemma", "grammar", "partial", "gap"})
+        self.assertEqual(kinds, {"lemma", "grammar", "partial"})
         headwords = {row["Neva"] for row in neva.load_lexicon()}
         for row in rows:
             with self.subTest(rank=row["Rank"], word=row["English"]):
@@ -88,18 +88,18 @@ class VocabularyExpansionTests(unittest.TestCase):
                 if row["Status"] == "lemma":
                     self.assertIn(row["Neva expression"], headwords)
 
-    def test_coverage_cli_reports_explicit_gaps(self):
+    def test_coverage_cli_reports_partial_meanings(self):
         script = ROOT / "scripts" / "neva.py"
         run = subprocess.run(
-            [sys.executable, str(script), "coverage", "--status", "gap",
+            [sys.executable, str(script), "coverage", "--status", "partial",
              "--limit", "5"],
             capture_output=True, text=True,
         )
         self.assertEqual(run.returncode, 0, run.stderr)
         lines = run.stdout.splitlines()
         self.assertEqual(len(lines), 5)
-        self.assertTrue(all("gap" in line for line in lines))
-        self.assertIn("on", run.stdout)
+        self.assertTrue(all("partial" in line for line in lines))
+        self.assertIn("as", run.stdout)
 
     def test_cli_standalone_word_and_uncertain_article(self):
         script = ROOT / "scripts" / "neva.py"

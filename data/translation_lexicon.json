@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "english_nouns": {
+    "water": "vodrom",
+    "wolf": "vulkos",
+    "horse": "eshvos",
+    "mother": "mathera",
+    "father": "patheros",
+    "brother": "bratheros",
+    "sister": "svesora",
+    "daughter": "dhugathera",
+    "child": "genom",
+    "foot": "podos",
+    "pen": "gerbotrom",
+    "computer": "menotrom",
+    "door": "dhverom",
+    "tree": "dorom",
+    "sun": "savelom",
+    "language": "denegva",
+    "tongue": "denegva",
+    "time": "temom",
+    "house": "domom",
+    "home": "domom",
+    "cat": "miava",
+    "sheep": "ovisa",
+    "bear": "artos",
+    "chair": "sedotrom",
+    "bed": "svepotrom",
+    "table": "dhotrom",
+    "boy": "bernos",
+    "meat": "memsom"
+  },
+  "verbs": {
+    "beren": {
+      "base": "carry",
+      "third": "carries",
+      "past": "carried",
+      "participle": "carried"
+    },
+    "viden": {
+      "base": "see",
+      "third": "sees",
+      "past": "saw",
+      "participle": "seen"
+    },
+    "kapen": {
+      "base": "have",
+      "third": "has",
+      "past": "had",
+      "participle": "had"
+    },
+    "menen": {
+      "base": "think",
+      "third": "thinks",
+      "past": "thought",
+      "participle": "thought"
+    },
+    "eden": {
+      "base": "eat",
+      "third": "eats",
+      "past": "ate",
+      "participle": "eaten"
+    },
+    "gemen": {
+      "base": "come",
+      "third": "comes",
+      "past": "came",
+      "participle": "come"
+    },
+    "ien": {
+      "base": "go",
+      "third": "goes",
+      "past": "went",
+      "participle": "gone"
+    },
+    "seden": {
+      "base": "sit",
+      "third": "sits",
+      "past": "sat",
+      "participle": "sat"
+    },
+    "gerben": {
+      "base": "write",
+      "third": "writes",
+      "past": "wrote",
+      "participle": "written"
+    },
+    "esen": {
+      "base": "be",
+      "third": "is",
+      "past": "was",
+      "participle": "been"
+    },
+    "luben": {
+      "base": "like",
+      "third": "likes",
+      "past": "liked",
+      "participle": "liked"
+    },
+    "prodhen": {
+      "base": "use",
+      "third": "uses",
+      "past": "used",
+      "participle": "used"
+    },
+    "veken": {
+      "base": "speak",
+      "third": "speaks",
+      "past": "spoke",
+      "participle": "spoken"
+    },
+    "deshen": {
+      "base": "receive",
+      "third": "receives",
+      "past": "received",
+      "participle": "received"
+    }
+  },
+  "english_adjectives": {
+    "new": "nevos",
+    "big": "mezos",
+    "cold": "gelos",
+    "good": "vesos",
+    "bad": "dusos",
+    "old": "senos",
+    "red": "rudhos",
+    "all": "solvos",
+    "some": "somos",
+    "any": "kvenos",
+    "other": "alteros",
+    "another": "alteros",
+    "first": "primos"
+  },
+  "prepositions": {
+    "ad": "toward",
+    "en": "into",
+    "apo": "from",
+    "per": "through",
+    "kom": "with",
+    "uper": "over",
+    "pro": "for",
+    "epi": "on",
+    "api": "at",
+    "ambi": "around",
+    "ek": "outside",
+    "posti": "after"
+  },
+  "mass_nouns": [
+    "water",
+    "rain",
+    "fire",
+    "rainwater",
+    "meat"
+  ],
+  "strong_past": {
+    "beren": "bor",
+    "seden": "sod",
+    "menen": "mon",
+    "viden": "void",
+    "eden": "od",
+    "gemen": "gom",
+    "vegen": "vog",
+    "legen": "log",
+    "teshen": "tosh",
+    "gerben": "gorb",
+    "peken": "pok",
+    "seken": "sok",
+    "melen": "mol",
+    "plenen": "plon",
+    "deshen": "dosh"
+  },
+  "phrases": {
+    "en_to_neva": {
+      "hello": "vese",
+      "hi": "vese",
+      "good day": "vesom deinom",
+      "how are you": "komo es",
+      "i am well": "em vese",
+      "yes": "ja",
+      "no": "ne",
+      "good night": "vesa nokta",
+      "where is the door": "ku est dhverom",
+      "where is the house": "ku est domom",
+      "where is the road": "ku est pontos",
+      "go to the door": "ie ad dhverom",
+      "go through the door": "ie per dhverom",
+      "go to the house": "ie ad domom"
+    },
+    "neva_to_en": {
+      "vese": "Hello",
+      "vesom deinom": "Good day",
+      "komo es": "How are you",
+      "em vese": "I am well",
+      "ja": "Yes",
+      "ne": "No",
+      "vesa nokta": "Good night",
+      "ku est dhverom": "Where is the door",
+      "ku est domom": "Where is the house",
+      "ku est pontos": "Where is the road",
+      "ie ad dhverom": "Go to the door",
+      "ie per dhverom": "Go through the door",
+      "ie ad domom": "Go to the house"
+    },
+    "canonical_punctuation": {
+      "how are you": "?",
+      "komo es": "?",
+      "where is the door": "?",
+      "where is the house": "?",
+      "where is the road": "?",
+      "ku est dhverom": "?",
+      "ku est domom": "?",
+      "ku est pontos": "?"
+    }
+  }
+}
