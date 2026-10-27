@@ -50,12 +50,9 @@ DERIVATIONAL_GENDERS: tuple[tuple[str, str], ...] = (
 
 PERSON_ENDINGS = ("o", "es", "eth", "omos", "ethe", "ont")
 PRONOUNS = ("ego", "ty", "so/sa/tod", "vei", "jus", "toi/tai/ta")
-STRONG_PAST = {
-    "beren": "bor", "seden": "sod", "menen": "mon", "viden": "void",
-    "eden": "od", "gemen": "gom", "vegen": "vog", "legen": "log",
-    "teshen": "tosh", "gerben": "gorb", "peken": "pok", "seken": "sok",
-    "melen": "mol", "plenen": "plon", "deshen": "dosh",
-}
+# Approved closed ablaut inventory comes from shared language data.
+from neva_data import lexical_data
+STRONG_PAST = dict(lexical_data()["strong_past"])
 COPULA_PRESENT = ("em", "es", "est", "emos", "este", "sont")
 IPA = {
     "sh": "ʃ", "th": "θ", "dh": "ð",

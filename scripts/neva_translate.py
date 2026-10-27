@@ -23,43 +23,19 @@ OBJECT_PRONOUNS = {
     "me": "me", "te": "you", "som": "him", "sam": "her",
     "nos": "us", "vos": "you all",
 }
-# Deliberately narrow semantic inventory: glossary tokens alone are not a
-# reliable source of irregular English inflection or a verb's argument frame.
+# Semantic inventories are owned by data/translation_lexicon.json, shared
+# with ChapterGuides' Go runtime. This remains intentionally conservative:
+# dictionary glosses are not sufficient to infer English irregular inflection.
+from neva_data import lexical_data
+
+_SHARED = lexical_data()
 VERBS = {
-    "beren": ("carry", "carries", "carried", "carried"),
-    "viden": ("see", "sees", "saw", "seen"),
-    "kapen": ("have", "has", "had", "had"),
-    "menen": ("think", "thinks", "thought", "thought"),
-    "eden": ("eat", "eats", "ate", "eaten"),
-    "gemen": ("come", "comes", "came", "come"),
-    "ien": ("go", "goes", "went", "gone"),
-    "seden": ("sit", "sits", "sat", "sat"),
-    "gerben": ("write", "writes", "wrote", "written"),
-    "esen": ("be", "is", "was", "been"),
-    "luben": ("like", "likes", "liked", "liked"),
-    "prodhen": ("use", "uses", "used", "used"),
-    "veken": ("speak", "speaks", "spoke", "spoken"),
-    "deshen": ("receive", "receives", "received", "received"),
+    word: (v["base"], v["third"], v["past"], v["participle"])
+    for word, v in _SHARED["verbs"].items()
 }
-ENGLISH_NOUNS = {
-    "water": "vodrom", "wolf": "vulkos", "horse": "eshvos",
-    "mother": "mathera", "father": "patheros", "brother": "bratheros",
-    "sister": "svesora", "daughter": "dhugathera", "child": "genom",
-    "foot": "podos", "pen": "gerbotrom", "computer": "menotrom",
-    "door": "dhverom", "tree": "dorom", "sun": "savelom",
-    "language": "denegva", "tongue": "denegva",
-    "time": "temom", "house": "domom", "home": "domom",
-    "cat": "miava", "sheep": "ovisa", "bear": "artos",
-    "chair": "sedotrom", "bed": "svepotrom", "table": "dhotrom",
-}
-ENGLISH_ADJECTIVES = {
-    "new": "nevos", "big": "mezos", "cold": "gelos", "good": "vesos",
-    "bad": "dusos", "old": "senos", "red": "rudhos",
-    "all": "solvos", "some": "somos", "any": "kvenos",
-    "other": "alteros", "another": "alteros", "first": "primos",
-}
-# English comparative/superlative spellings are outputs of the regular
-# Neva morphology engine, not additional irregular Neva paradigms.
+ENGLISH_NOUNS = dict(_SHARED["english_nouns"])
+ENGLISH_ADJECTIVES = dict(_SHARED["english_adjectives"])
+# English comparative/superlative spellings remain outputs of morphology.
 for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
     if _adjective in {"solvos", "somos", "kvenos", "alteros", "primos"}:
         continue
@@ -67,14 +43,9 @@ for _meaning, _adjective in list(ENGLISH_ADJECTIVES.items()):
         ENGLISH_ADJECTIVES[english_degree(_meaning, _degree)] = inflect_adjective(
             _adjective, _degree
         )
-PREPOSITIONS = {
-    "ad": "toward", "en": "into", "apo": "from",
-    "per": "through", "kom": "with", "uper": "over", "pro": "for",
-    "epi": "on", "api": "at", "ambi": "around", "ek": "outside",
-    "posti": "after",
-}
+PREPOSITIONS = dict(_SHARED["prepositions"])
 ENGLISH_PREPOSITIONS = {value: key for key, value in PREPOSITIONS.items()}
-MASS_NOUNS = {"water", "rain", "fire", "rainwater"}
+MASS_NOUNS = set(_SHARED["mass_nouns"])
 PERSON_ENGLISH_TO_NEVA = {
     "i": ("ego", 0), "you": ("ty", 1), "he": ("so", 2),
     "she": ("sa", 2), "it": ("tod", 2), "we": ("vei", 3),

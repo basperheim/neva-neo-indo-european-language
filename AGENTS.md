@@ -50,7 +50,17 @@ For an important change, check all three layers: **documented rule → dictionar
 - Keep dictionary IDs unique and monotonically assigned; test count and distinctness, part of speech, morphology, and example translation. Don't remove approved words to fix a surface ambiguity without discussing consequences.
 - Keep accepted tests stable. Update expected headword/noun counts, coverage classifications, the README and overview with each substantial lexicon revision. Do **not** rewrite tests solely to conceal a grammar regression.
 - Prefer a small, explicit parser/AST to ever larger regex chains for the next big translation change. Validate parser ambiguity rather than choosing a plausible-looking but wrong interpretation.
-- Don't promise or imply any ChapterGuides deployment, live API integration, or TTS functionality has happened. Those are **plans only**; `docs/CHAPTERGUIDES_INTEGRATION_PLAN.md` is not deployed Neva code.
+- ChapterGuides has a working Astro Neva interface and Go API in source. Do not claim production deployment, unrestricted translation, or TTS without verification. The historical integration-plan document may be outdated.
+
+## ChapterGuides compatibility contract (important)
+
+- **This repository is the single language authority.** ChapterGuides must periodically consume the canonical CSV and `data/translation_lexicon.json` from the **same Git commit**. Do not modify ChapterGuides' temporary clone to create or approve new Neva vocabulary.
+- **Shared lexical data:** `data/translation_lexicon.json` owns curated noun English↔Neva meanings, English irregular verb forms, adjective/preposition inventories, mass-noun semantics, strong past stems and conversational phrases. Python reads it through `scripts/neva_data.py`; ChapterGuides Go reads the same checked-out JSON. Do not independently hardcode or fork these inventories in Go.
+- **Grammar parity:** The canonical algorithms remain in `scripts/neva.py`, `scripts/neva_translate.py` and related modules. If you change noun case rules, conjugations, pronunciation, syntax, word senses or irregular forms, flag and update the corresponding `chapterguides/go-server/internal/neva/` implementation and cross-language fixtures. Unsupported complex Python structures must return explicit errors in Go, not plausible-looking guesses.
+- **Schema contract:** Additive JSON changes require versioning/validation if consumers change. Changes to the CSV headers, JSON field names, or rules must be coordinated with the Go validator, and must preserve the last-known-good runtime snapshot on malformed updates.
+- **Regression checks:** Run `python3 -m unittest discover -s tests -v` here, and `go test ./internal/neva ./internal/api` under ChapterGuides' `go-server/`. Use the shared sentence corpus for parity where the Go grammar supports the same construction.
+- **Operational status:** ChapterGuides already includes a Neva web interface. Its Go service periodically refreshes Neva data without a PAT, but language changes reach the live service only after a validated refresh and are **not** a claim of production deployment.
+- Never assume that expanding lexical entries automatically extends the Go translator's grammar coverage; the parser is intentionally bounded.
 
 ## Workflow for an AI successor
 
