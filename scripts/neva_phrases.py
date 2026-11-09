@@ -23,12 +23,13 @@ def translate_phrase(text: str, source: str, target: str) -> str | None:
     or distinguish homonymous phrases in a larger grammatical context.
     """
     stripped = text.strip()
-    match = re.fullmatch(r"([A-Za-z]+(?:\s+[A-Za-z]+)*)\s*([.!?])?", stripped)
-    if not match:
+    punct = stripped[-1] if stripped.endswith((".", "!", "?")) else ""
+    body = stripped[:-1].strip() if punct else stripped
+    # Commas and parentheses are admitted only for EXACT phrasebook keys.
+    # They do not relax the limited sentence parser or provide Latin input.
+    if not re.fullmatch(r"[A-Za-z][A-Za-z,()\s]*", body):
         return None
-
-    normalized = " ".join(match.group(1).casefold().split())
-    punct = match.group(2)
+    normalized = re.sub(r"\s*,\s*", ", ", " ".join(body.casefold().split()))
     if source == "en" and target == "neva":
         converted = _PHRASES.get(normalized)
     elif source == "neva" and target == "en":

@@ -1,7 +1,7 @@
 # Neva (Neo-Indo-European) — Core Reference v1.5
 
 **Status:** Working specification v1.5 (decisions updated 2026-10-26); not a historical reconstruction of Proto-Indo-European. **Approved:** D1b masculine nominative plural `-es`, D2 feminine dative `-e/-es`, D3 neuter plural, D4 shared masculine/neuter obliques, D5's *closed inventory* of inherited-inspired irregular nouns, and D6 gender assignment. **Rejected:** the earlier D1 proposal `-oes`; its superseded interim form `-oi` is no longer the masculine nominative plural. **Still open:** wider simplification of vowel sequences in other endings and root vocabulary. See [`docs/NOUN_MORPHOLOGY_PROPOSAL.md`](docs/NOUN_MORPHOLOGY_PROPOSAL.md).  
-**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (855 candidate headwords).  
+**Companion dictionary:** [`data/neva_dictionary_v1_1.csv`](data/neva_dictionary_v1_1.csv) (864 candidate headwords).  
 **Design:** Three genders, four cases, six vowels, restricted consonant clusters, optional subject pronouns, one regular person/number pattern, fifteen ablaut-based strong verbs plus one suppletive verb, productive native compounding.
 
 ## What is frozen, and what is not?
@@ -46,7 +46,7 @@ Three genders: **M -os**, **F -a**, **N -om**. Each gender has a distinct case/n
 5. Unattested modern inanimate concepts without a convincing inherited analogy default to **N**, by Neva convention, not purported PIE law.
 6. When a historical assignment is unclear, retain the working lexical gender but label it **provisional** and document the evidence needing review.
 
-The dictionary now has `Gender basis` and `Gender status` columns for 452 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
+The dictionary now has `Gender basis` and `Gender status` columns for 459 nouns. `inherited_candidate` does **not** mean the PIE gender has been verified. If a compound's head noun has provisional gender, the compound inherits that provisional status even when its head-final formation is regular. Six compounds (`kanotrom`, `nomotrom`, `savelotepom`, `shelom`, `shvonom`, `vodroplevotia`) need head analysis; they remain provisional. The script's `gender` command gives evidence-qualified recommendations and does not automatically rewrite noun entries.
 
 **Closed noun-ablaut inventory (D5, first entry):** `podos` "foot" (M) replaces older draft `pedos`. Its case endings are **unchanged**, but the explicitly listed stem alternates:
 
@@ -241,7 +241,7 @@ Google Translate can read arbitrary pseudo-Latin inputs when the language's List
 <<<<<<< HEAD
 The dictionary now includes **828 headwords**, with **449 nouns**. Newly specialized basic vocabulary includes **denegva** (F) "tongue; language," **vekom** (N) "speech," and **verdom** (N) "word." This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern "language" term.
 =======
-The dictionary now includes **855 headwords**, with **452 nouns**. Newly specialized basic vocabulary includes **denegva** (F) “tongue; language,” **vekom** (N) “speech,” and **verdom** (N) “word.” This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern “language” term.
+The dictionary now includes **864 headwords**, with **459 nouns**. Newly specialized basic vocabulary includes **denegva** (F) “tongue; language,” **vekom** (N) “speech,” and **verdom** (N) “word.” This follows the tongue → language meaning extension familiar from Latin *lingua* and is a Neva lexical decision, not a claim that PIE had a separate modern “language” term.
 >>>>>>> refs/remotes/origin/master
 
 Regular feminine cases: **denegva / denegvam / denegvas / denegve** (nominative / accusative / genitive / dative singular). Other new words include **ovisa** "sheep," **gansa** "goose," **susos** "pig," **miava** "cat" (onomatopoeic Neva invention), **sedotrom** "chair," **svepotrom** "bed," **avosa** "dawn," and **nu** "now."
@@ -285,3 +285,7 @@ The currently **frozen part** is a usable consistent language skeleton. The PIE 
 - **levdhos** /ˈlev.ðos/ (M) — collective noun “folk, people, community,” derived from the PIE athematic masculine *h₁léwdʰis* with a deliberately **regularized Neva thematic -os ending**, not an inherited PIE thematic ending. Plural `levdhes` denotes different peoples/communities; distinguish `manos` “human being.”
 
 Both are PIE-inspired Neva constructions rather than claimed attested historical forms. The shared JSON adds the English verb forms grow/grows/grew/grown. The collective noun is available through the lexicon without assuming English plural “people” maps directly to Neva's singular noun in the bounded sentence translator.
+
+### Phrasebook and culture-linked words (November 9, 2026)
+
+New curated English–Neva phrase pairs include a Caesar quotation in English (`I came, I saw, I conquered`), Juvenal's `Bread and circuses`, a quoted English–Frisian comparison motto, and basic food and carrying sentences. They are **authored translations**, not a claim that Neva's bounded parser handles arbitrary coordinated complex clauses or that Latin is a supported input language. The Latin originals appear only in documentation/phrase notes. The new `veiken` is PIE-inspired from *weyk-*; Latin/Greek-derived everyday loans are marked as such. The quoted English–Frisian comparison phrase is a **fixed metalinguistic proverb**, and its Neva equivalent is not a model for general subject–verb agreement. This revision totals 864 canonical headwords (459 nouns).

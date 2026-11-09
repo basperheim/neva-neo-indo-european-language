@@ -28,7 +28,14 @@
     "bed": "svepotrom",
     "table": "dhotrom",
     "boy": "bernos",
-    "meat": "memsom"
+    "meat": "memsom",
+    "bread": "panom",
+    "butter": "buterom",
+    "cheese": "kasom",
+    "circus": "kirkom",
+    "world": "mundom",
+    "english language": "anglodenegva",
+    "frisian language": "frisodenegva"
   },
   "verbs": {
     "beren": {
@@ -126,6 +133,12 @@
       "third": "grows",
       "past": "grew",
       "participle": "grown"
+    },
+    "veiken": {
+      "base": "conquer",
+      "third": "conquers",
+      "past": "conquered",
+      "participle": "conquered"
     }
   },
   "english_adjectives": {
@@ -141,7 +154,8 @@
     "any": "kvenos",
     "other": "alteros",
     "another": "alteros",
-    "first": "primos"
+    "first": "primos",
+    "green": "grenos"
   },
   "prepositions": {
     "ad": "toward",
@@ -162,7 +176,10 @@
     "rain",
     "fire",
     "rainwater",
-    "meat"
+    "meat",
+    "bread",
+    "butter",
+    "cheese"
   ],
   "strong_past": {
     "beren": "bor",
@@ -196,7 +213,21 @@
       "where is the road": "ku est pontos",
       "go to the door": "ie ad dhverom",
       "go through the door": "ie per dhverom",
-      "go to the house": "ie ad domom"
+      "go to the house": "ie ad domom",
+      "i came, i saw, i conquered": "gomo, voido, eveiko",
+      "bread and circuses": "panom ke kirka",
+      "bread, butter and green cheese is good english and good frisian": "panom, buterom ke grenom kasom est vesa anglodenegva ke vesa frisodenegva",
+      "bread, butter and green cheese is good english and good fries (frisian)": "panom, buterom ke grenom kasom est vesa anglodenegva ke vesa frisodenegva",
+      "i carry water": "ego bero vodrom",
+      "i see a wolf": "ego vido vulkom",
+      "i pour water": "ego gevdo vodrom",
+      "i carry bread": "ego bero panom",
+      "i eat bread": "ego edo panom",
+      "bread and butter": "panom ke buterom",
+      "butter and cheese": "buterom ke kasom",
+      "green cheese": "grenom kasom",
+      "good bread": "vesom panom",
+      "hello, world": "vese, mundom"
     },
     "neva_to_en": {
       "vese": "Hello",
@@ -211,7 +242,20 @@
       "ku est pontos": "Where is the road",
       "ie ad dhverom": "Go to the door",
       "ie per dhverom": "Go through the door",
-      "ie ad domom": "Go to the house"
+      "ie ad domom": "Go to the house",
+      "gomo, voido, eveiko": "I came, i saw, i conquered",
+      "panom ke kirka": "Bread and circuses",
+      "panom, buterom ke grenom kasom est vesa anglodenegva ke vesa frisodenegva": "Bread, butter and green cheese is good english and good frisian",
+      "ego bero vodrom": "I carry water",
+      "ego vido vulkom": "I see a wolf",
+      "ego gevdo vodrom": "I pour water",
+      "ego bero panom": "I carry bread",
+      "ego edo panom": "I eat bread",
+      "panom ke buterom": "Bread and butter",
+      "buterom ke kasom": "Butter and cheese",
+      "grenom kasom": "Green cheese",
+      "vesom panom": "Good bread",
+      "vese, mundom": "Hello, world"
     },
     "canonical_punctuation": {
       "how are you": "?",
@@ -221,7 +265,29 @@
       "where is the road": "?",
       "ku est dhverom": "?",
       "ku est domom": "?",
-      "ku est pontos": "?"
+      "ku est pontos": "?",
+      "i came, i saw, i conquered": ".",
+      "gomo, voido, eveiko": ".",
+      "hello, world": "!",
+      "vese, mundom": "!",
+      "bread, butter and green cheese is good english and good frisian": ".",
+      "panom, buterom ke grenom kasom est vesa anglodenegva ke vesa frisodenegva": "."
+    },
+    "notes": {
+      "i came, i saw, i conquered": "English rendering of Latin 'veni, vidi, vici' (Julius Caesar). Neva uses first-person past forms, not borrowed Latin words.",
+      "bread and circuses": "English rendering of Latin 'panem et circenses' (Juvenal); idiomatic public distractions.",
+      "bread, butter and green cheese is good english and good frisian": "A traditional English–Frisian comparison saying; deliberately quoted with its conventional wording, not general Neva syntax.",
+      "bread, butter and green cheese is good english and good fries (frisian)": "Alternative English spelling of the English–Frisian comparison saying.",
+      "i carry water": "Short demonstration of the regular phrase with a transitive verb.",
+      "i see a wolf": "Short demonstration of subject–verb–object order.",
+      "i pour water": "Short demonstration of gevden plus a water object.",
+      "i carry bread": "Short demonstration of the new bread noun.",
+      "i eat bread": "Short food-related sentence using eden.",
+      "bread and butter": "Simple food phrase.",
+      "butter and cheese": "Simple food phrase.",
+      "green cheese": "Green adjective agrees with neuter cheese noun.",
+      "good bread": "Good adjective agrees with neuter bread noun.",
+      "hello, world": "Neva-style programming greeting."
     }
   }
 }

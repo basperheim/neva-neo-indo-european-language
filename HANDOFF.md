@@ -4,7 +4,7 @@
 **Repository:** https://github.com/basperheim/neva-neo-indo-european-language  
 **Default branch:** `master`  
 **Current working specification:** Neva **v1.5**, including the ranked top-100 English function-word and modal syntax decisions (2026-10-26).  
-**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **855 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
+**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **864 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
 **High-frequency English audit:** `data/english_top100_coverage.tsv` — **57 direct lemmas, 25 grammatical treatments, 18 partial senses, zero wholly unaddressed audit rows**. This is **not** 100% executable translator coverage.  
 **Tests:** `python3 -m unittest discover -s tests -v`; automated GitHub Actions runs on commits.
 
@@ -136,4 +136,10 @@ This summary is intentionally complete enough that the original long chat can be
 
 - Adopted `augen` (regular verb “grow/increase”; PIE *h₂ewg-); the `au` is an existing Neva diphthong, not two separate syllables. Added grow/grows/grew/grown to shared translation JSON; no new irregular Neva tense.
 - Adopted `levdhos` (M collective “folk/people/community”; PIE *h₁léwdʰis*), remodeled with Neva's regular -os ending, plural `levdhes`, separate from `manos` “human being.” Do not claim the PIE noun was thematic. The bounded translator's singular English noun inventory remains conservative.
-- Canonical vocabulary now has **855 headwords**, including **452 nouns**; ChapterGuides syncs both CSV and JSON from a single source commit.
+- Canonical vocabulary now has **864 headwords**, including **459 nouns**; ChapterGuides syncs both CSV and JSON from a single source commit.
+
+## 2026-11-09 — Related phrase search vocabulary
+
+- 9 coined/borrowed headwords added (NEVA-0856..0864): panom, buterom, kasom, grenos, kirkom, veiken, anglodenegva, frisodenegva, mundom; **864 headwords / 459 nouns**.
+- Added authored English↔Neva cultural and everyday phrases to the shared `data/translation_lexicon.json`. Latin `veni, vidi, vici` / `panem et circenses` appear only as English-rendered phrasebook keys with Latin original noted in metadata, **not** a Latin→Neva translator.
+- Phrases with commas are exact curated utterances, *not* dictionary batch split inputs. ChapterGuides may index them separately as read-only Related Phrases with stopword filtering, scoring and a top-ten limit. Keep the main bounded translator conservative.
