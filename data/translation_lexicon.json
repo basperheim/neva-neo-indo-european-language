@@ -120,6 +120,12 @@
       "third": "pours",
       "past": "poured",
       "participle": "poured"
+    },
+    "augen": {
+      "base": "grow",
+      "third": "grows",
+      "past": "grew",
+      "participle": "grown"
     }
   },
   "english_adjectives": {

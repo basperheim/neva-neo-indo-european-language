@@ -1,10 +1,10 @@
 # HANDOFF — Neva Neo-Indo-European Language Project
 
-**Updated:** October 26, 2026  
+**Updated:** November 9, 2026  
 **Repository:** https://github.com/basperheim/neva-neo-indo-european-language  
 **Default branch:** `master`  
 **Current working specification:** Neva **v1.5**, including the ranked top-100 English function-word and modal syntax decisions (2026-10-26).  
-**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **853 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
+**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **855 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
 **High-frequency English audit:** `data/english_top100_coverage.tsv` — **57 direct lemmas, 25 grammatical treatments, 18 partial senses, zero wholly unaddressed audit rows**. This is **not** 100% executable translator coverage.  
 **Tests:** `python3 -m unittest discover -s tests -v`; automated GitHub Actions runs on commits.
 
@@ -131,3 +131,9 @@ This summary is intentionally complete enough that the original long chat can be
 - Adopted **gevden** (GEV-den), regular infinitive "to pour; to cast molten metal", based on PIE *ǵʰewd- and adapted with Neva ǵʰ > g, w > v. This is an invented Neva lexical adaptation, not an attested PIE form.
 - Shared translation inventory gains the English base/past/participle pour/poured/poured. The current lexicon now has **853 headwords** and **451 nouns**.
 - ChapterGuides should consume the canonical CSV and JSON at the same commit during its regular sync; do not fork the lexicon into Go.
+
+## 2026-11-09 — Growth and folk vocabulary
+
+- Adopted `augen` (regular verb “grow/increase”; PIE *h₂ewg-); the `au` is an existing Neva diphthong, not two separate syllables. Added grow/grows/grew/grown to shared translation JSON; no new irregular Neva tense.
+- Adopted `levdhos` (M collective “folk/people/community”; PIE *h₁léwdʰis*), remodeled with Neva's regular -os ending, plural `levdhes`, separate from `manos` “human being.” Do not claim the PIE noun was thematic. The bounded translator's singular English noun inventory remains conservative.
+- Canonical vocabulary now has **855 headwords**, including **452 nouns**; ChapterGuides syncs both CSV and JSON from a single source commit.
