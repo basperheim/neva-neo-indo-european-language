@@ -4,7 +4,7 @@
 **Repository:** https://github.com/basperheim/neva-neo-indo-european-language  
 **Default branch:** `master`  
 **Current working specification:** Neva **v1.5**, including the ranked top-100 English function-word and modal syntax decisions (2026-10-26).  
-**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **851 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
+**Current canonical lexicon:** `data/neva_dictionary_v1_1.csv` — **853 distinct headwords**; filename retained for compatibility, not an indication of outdated content.  
 **High-frequency English audit:** `data/english_top100_coverage.tsv` — **57 direct lemmas, 25 grammatical treatments, 18 partial senses, zero wholly unaddressed audit rows**. This is **not** 100% executable translator coverage.  
 **Tests:** `python3 -m unittest discover -s tests -v`; automated GitHub Actions runs on commits.
 
@@ -65,7 +65,7 @@ The owner asked to **handle those gaps and commit a self-contained handoff plus 
 - New analytic hypothetical marker `vela` “would (hypothetical result)”.
 - Existing `deshen` “receive” handles **one sense** of “get”; `pro tod` handles consequential “so”; `ambi` and `kom` cover different limited senses of “by”; “about” has distinct surrounding/topic uses. No false universal word equivalents.
 
-These form **23 additional headwords**, yielding **851 total**, including **450 nouns** (the new abstract `temom` is neuter). Some source forms are direct PIE-inspired adaptations, others analogical coinages; all should be reviewed if a philological question arises.
+These form **23 additional headwords**, yielding **851 total at that milestone**, including **450 nouns at that milestone** (the new abstract `temom` is neuter). Some source forms are direct PIE-inspired adaptations, others analogical coinages; all should be reviewed if a philological question arises.
 
 **Modal conventions** for very simple statements:
 - `Ego mago beren vodrom.` → I can carry water.
@@ -125,3 +125,9 @@ python3 scripts/neva.py translate --file examples/wolf_and_horse.neva --strict
 > We are continuing the Neva constructed-language project at https://github.com/basperheim/neva-neo-indo-european-language. Please first read the root AGENTS.md, HANDOFF.md, README.md and NEVA_OVERVIEW.md plus the current GitHub tests. Follow the adopted grammar, do not invent PIE etymologies, and distinguish proposed changes from approved ones. Then help me continue expanding Neva's conversational vocabulary and translator.
 
 This summary is intentionally complete enough that the original long chat can be deleted without losing the **documented project state**. Decisions not recorded in repository docs or tests should be verified with the user instead of inferred from inaccessible conversations.
+
+## 2026-11-09 — New pouring verb
+
+- Adopted **gevden** (GEV-den), regular infinitive "to pour; to cast molten metal", based on PIE *ǵʰewd- and adapted with Neva ǵʰ > g, w > v. This is an invented Neva lexical adaptation, not an attested PIE form.
+- Shared translation inventory gains the English base/past/participle pour/poured/poured. The current lexicon now has **853 headwords** and **451 nouns**.
+- ChapterGuides should consume the canonical CSV and JSON at the same commit during its regular sync; do not fork the lexicon into Go.

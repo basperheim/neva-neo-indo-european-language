@@ -114,6 +114,12 @@
       "third": "receives",
       "past": "received",
       "participle": "received"
+    },
+    "gevden": {
+      "base": "pour",
+      "third": "pours",
+      "past": "poured",
+      "participle": "poured"
     }
   },
   "english_adjectives": {
